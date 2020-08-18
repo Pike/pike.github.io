@@ -42,12 +42,12 @@ But this changed the risks in our release cycle. We started off having a single 
 
 I learned quite a bit looking at our risks, I hope I could share some of that.
 
-.. |80%, no freeze, up to 100| image:: https://blog.mozilla.org/axel/files/2013/02/Bildschirmfoto-2013-02-13-um-15.20.07.png
+.. |80%, no freeze, up to 100| image:: images/2013/02/Bildschirmfoto-2013-02-13-um-15.20.07.png
    :class: aligncenter size-full wp-image-505
    :width: 796px
    :height: 391px
    :target: http://pike.github.com/release-scale/?freezes=0&locales=1,3,20,100&likely=80
-.. |80%, 5 freezes, up to 100| image:: https://blog.mozilla.org/axel/files/2013/02/Bildschirmfoto-2013-02-13-um-15.55.08.png
+.. |80%, 5 freezes, up to 100| image:: images/2013/02/Bildschirmfoto-2013-02-13-um-15.55.08.png
    :class: aligncenter size-full wp-image-507
    :width: 776px
    :height: 374px

@@ -26,11 +26,11 @@ Stas and I made a lot of progress on support for Fluent in our core infrastructu
 
 The images are by Adrian Gaudebert and licensed under a `Creative Commons Attribution-NonCommercial 4.0 International License <http://creativecommons.org/licenses/by-nc/4.0/>`__.
 
-.. |image0| image:: https://blog.mozilla.org/l10n/files/2017/07/P1070323-600x142.jpg
+.. |image0| image:: images/2017/07/P1070323-600x142.jpg
    :class: aligncenter size-large wp-image-1137
    :width: 600px
    :height: 142px
-.. |image1| image:: https://blog.mozilla.org/l10n/files/2017/07/P1070317-252x336.jpg
+.. |image1| image:: images/2017/07/P1070317-252x336.jpg
    :class: alignright size-medium wp-image-1138
    :width: 252px
    :height: 336px

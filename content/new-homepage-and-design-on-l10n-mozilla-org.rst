@@ -12,8 +12,8 @@ The l10n site now integrates better with the rest of the mozilla websites, and t
 
 Special thanks go to `Matjaz Horvat <https://mozillians.org/u/mathjazz/>`__, it's his first big landing to elmo, the code behind l10n.m.o. The homepage redo was spearheaded by `Jeff Beatty <https://mozillians.org/u/gueroJeff/>`__, and the design was done by `Matt Ternoway <http://www.ternowaydesigns.com/>`__.
 
-.. |l10n.mozilla.org with the theme| image:: https://blog.mozilla.org/l10n/files/2013/06/Home-page-preview.png
+.. |l10n.mozilla.org with the theme| image:: images/2013/06/Home-page-preview.png
    :class: size-full wp-image-593
    :width: 597px
    :height: 476px
-   :target: http://blog.mozilla.org/l10n/files/2013/06/Home-page-preview.png
+   :target: images/2013/06/Home-page-preview.png

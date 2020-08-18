@@ -75,23 +75,23 @@ Repositories involved in this post:
 -  `en-US repo for 1.2 <http://hg.mozilla.org/releases/gaia-l10n/v1_2/en-US/>`__
 -  `shamaps for en-US by gaiaconv <http://hg.mozilla.org/users/axel_mozilla.com/gaia-shamaps/>`__
 
-.. |gaia-central conversion| image:: https://blog.mozilla.org/axel/files/2013/09/Screen-Shot-2013-09-19-at-4.34.03-PM.png
+.. |gaia-central conversion| image:: images/2013/09/Screen-Shot-2013-09-19-at-4.34.03-PM.png
    :class: aligncenter size-full wp-image-545
    :width: 600px
    :height: 200px
-   :target: https://blog.mozilla.org/axel/files/2013/09/Screen-Shot-2013-09-19-at-4.34.03-PM.png
-.. |old en-US for v1-train| image:: https://blog.mozilla.org/axel/files/2013/09/Screen-Shot-2013-09-19-at-4.34.33-PM.png
+   :target: images/2013/09/Screen-Shot-2013-09-19-at-4.34.03-PM.png
+.. |old en-US for v1-train| image:: images/2013/09/Screen-Shot-2013-09-19-at-4.34.33-PM.png
    :class: aligncenter size-full wp-image-546
    :width: 630px
    :height: 200px
-   :target: https://blog.mozilla.org/axel/files/2013/09/Screen-Shot-2013-09-19-at-4.34.33-PM.png
-.. |merge| image:: https://blog.mozilla.org/axel/files/2013/09/Screen-Shot-2013-09-19-at-4.35.06-PM.png
+   :target: images/2013/09/Screen-Shot-2013-09-19-at-4.34.33-PM.png
+.. |merge| image:: images/2013/09/Screen-Shot-2013-09-19-at-4.35.06-PM.png
    :class: aligncenter size-full wp-image-547
    :width: 600px
    :height: 200px
-   :target: https://blog.mozilla.org/axel/files/2013/09/Screen-Shot-2013-09-19-at-4.35.06-PM.png
-.. |more conversions post-merge| image:: https://blog.mozilla.org/axel/files/2013/09/Screen-Shot-2013-09-19-at-4.36.13-PM.png
+   :target: images/2013/09/Screen-Shot-2013-09-19-at-4.35.06-PM.png
+.. |more conversions post-merge| image:: images/2013/09/Screen-Shot-2013-09-19-at-4.36.13-PM.png
    :class: aligncenter size-full wp-image-548
    :width: 600px
    :height: 200px
-   :target: https://blog.mozilla.org/axel/files/2013/09/Screen-Shot-2013-09-19-at-4.36.13-PM.png
+   :target: images/2013/09/Screen-Shot-2013-09-19-at-4.36.13-PM.png

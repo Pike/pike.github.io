@@ -100,7 +100,7 @@ Given that we're OpenSource, we also want to carry over attribution. Thus our co
 
 Once the baseline is migrated, localizers can dive in and improve. They can then start using parameterized Terms to adjust grammar, for example. Or add a plural form where English didn't need one. Or introduce a platform-specific terminology that only exists in their language.
 
-.. |image0| image:: https://blog.mozilla.org/axel/files/2019/04/arewefluentyet.png
+.. |image0| image:: images/2019/04/arewefluentyet.png
    :class: aligncenter size-full wp-image-603
    :width: 600px
    :height: 367px

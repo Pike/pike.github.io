@@ -68,13 +68,13 @@ The forth migration sets the start and end times for the rapid release cycle, in
 
 **Phew**. You made it. Now all I need to do is to fix the code that uses all that data.
 
-.. |Static relation between AppVersion and Tree| image:: https://blog.mozilla.org/axel/files/2012/03/old-style.png
+.. |Static relation between AppVersion and Tree| image:: images/2012/03/old-style.png
    :class: alignnone size-full wp-image-455
    :width: 372px
    :height: 163px
-   :target: http://blog.mozilla.org/axel/files/2012/03/old-style.png
-.. |Connect AppVersions and Trees through a model in time| image:: https://blog.mozilla.org/axel/files/2012/03/new-style.png
+   :target: images/2012/03/old-style.png
+.. |Connect AppVersions and Trees through a model in time| image:: images/2012/03/new-style.png
    :class: alignnone size-full wp-image-454
    :width: 338px
    :height: 182px
-   :target: http://blog.mozilla.org/axel/files/2012/03/new-style.png
+   :target: images/2012/03/new-style.png

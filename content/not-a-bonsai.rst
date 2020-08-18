@@ -28,5 +28,5 @@ The biggest challenge I have is making it accessible, though. Suggestions welcom
 
 A note of warning to end this post. We're adding services at a faster pace than CPUs on the l10n server. Please pound this one with care, i.e., don't pound it. It's gonna enforce limits on searches right now to some extent, be nice. Thanks.
 
-.. |Sample search dialog| image:: https://blog.mozilla.org/axel/files/2009/02/bild-1-300x228.png
+.. |Sample search dialog| image:: images/2009/02/bild-1-300x228.png
    :class: aligncenter

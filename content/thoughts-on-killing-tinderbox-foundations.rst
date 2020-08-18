@@ -46,7 +46,7 @@ What even buildbot doesn't know:
 
 -  Dependencies between builds. Buildbot has two builtin methods to run builds that depend on prior builds, but it doesn't keep track of that relationship.
 
-For those into schema, one possible version of that is `depicted in this graph <http://blog.mozilla.org/axel/files/2009/05/mbdb.png>`__.
+For those into schema, one possible version of that is `depicted in this graph <images/2009/05/mbdb.png>`__.
 
 Then, there are things we keep ...
 

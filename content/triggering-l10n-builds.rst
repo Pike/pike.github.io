@@ -47,9 +47,9 @@ For the curious ones thinking about how we can use our computing resources, and 
 
 I hope that this post gives you a more visual idea of what we need to do in l10n builds land, and why.
 
-.. |l10n build 6| image:: https://blog.mozilla.org/axel/files/2009/02/bild-6.png
-.. |l10n build 7| image:: https://blog.mozilla.org/axel/files/2009/02/bild-7.png
-.. |l10n build 8| image:: https://blog.mozilla.org/axel/files/2009/02/bild-8.png
-.. |localizer-triggered build| image:: https://blog.mozilla.org/axel/files/2009/02/bild-4.png
-.. |en-US and nightly l10n builds| image:: https://blog.mozilla.org/axel/files/2009/02/bild-5.png
-.. |en-US and l10n builds for a l10n-impact change| image:: https://blog.mozilla.org/axel/files/2009/02/bild-3.png
+.. |l10n build 6| image:: images/2009/02/bild-6.png
+.. |l10n build 7| image:: images/2009/02/bild-7.png
+.. |l10n build 8| image:: images/2009/02/bild-8.png
+.. |localizer-triggered build| image:: images/2009/02/bild-4.png
+.. |en-US and nightly l10n builds| image:: images/2009/02/bild-5.png
+.. |en-US and l10n builds for a l10n-impact change| image:: images/2009/02/bild-3.png

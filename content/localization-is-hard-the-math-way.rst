@@ -26,7 +26,7 @@ So we're starting to see repeating strings at a length of 15 words. They stay to
 
 Which is my lengthy math-way of saying: Making a consistent localization is hard.
 
-.. |Firefox 2 Sentences| image:: https://blog.mozilla.org/axel/files/2007/10/string-histogram.PNG
-   :target: http://blog.mozilla.org/axel/files/2007/10/string-histogram.PNG
-.. |List of tuples in Firefox 2 sentences| image:: https://blog.mozilla.org/axel/files/2007/10/tuplecounts.PNG
-   :target: http://blog.mozilla.org/axel/files/2007/10/tuplecounts.PNG
+.. |Firefox 2 Sentences| image:: images/2007/10/string-histogram.PNG
+   :target: images/2007/10/string-histogram.PNG
+.. |List of tuples in Firefox 2 sentences| image:: images/2007/10/tuplecounts.PNG
+   :target: images/2007/10/tuplecounts.PNG

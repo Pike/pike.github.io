@@ -5,7 +5,7 @@ Can't you graph that graph
 :tags: L10n, mercurial, Mozilla
 :slug: cant-you-graph-that-graph
 
-   I'm going to just recreate blame, he said. It's going to be easy, he said.
+I'm going to just recreate blame, he said. It's going to be easy, he said.
 
 We have a project to migrate the localization of Firefox to one repository for all channels, nick-named cross-channel, or x-channel in short. The plan is to create one repository that holds all the en-US strings we need for Firefox and friends on all channels. One repository to rule them all, if you wish. So you need to get the contents of ``mozilla-central``, ``comm-central``, ``*-aurora``, ``*-beta``, ``*-release``, and also some of ``*-esr??`` together in one repository, with, say, one ``toolkit/chrome/global/customizeToolbar.dtd`` file that has all the strings that are used by any of the apps on any branch.
 
@@ -33,7 +33,7 @@ Looking at a subset of the current graph, it's clear that there are more arcs to
 
 |image0|
 
-Anytime you have an arc that just leap-frogs to an ancestor, you can safely remove that. I indicated some in the graph above, and you'll find more - I was just tired of annotating in Preview. As said before, I already did that for grandchildren. Writing this post I realize that it's probably easy enough to do it for grandgrandchildren, too. But it's also clear from the `full graph <https://blog.mozilla.org/axel/files/2017/03/m-c-l10n-blame-graph-almost-simple.svg>`__, that that algorithm probably won't scale up. Seems I need to find a good spot at which to write an explicit loop detection.
+Anytime you have an arc that just leap-frogs to an ancestor, you can safely remove that. I indicated some in the graph above, and you'll find more - I was just tired of annotating in Preview. As said before, I already did that for grandchildren. Writing this post I realize that it's probably easy enough to do it for grandgrandchildren, too. But it's also clear from the `full graph <images/2017/03/m-c-l10n-blame-graph-almost-simple.svg>`__, that that algorithm probably won't scale up. Seems I need to find a good spot at which to write an explicit loop detection.
 
 This endeavour sounds a bit academic at first, why would you care? There are two reasons:
 
@@ -43,7 +43,7 @@ Also, this isn't a one-time effort. The set of files we need to expose in the ta
 
 PS: The tune for this post is "That Smell" by Lynyrd Skynyrd.
 
-.. |image0| image:: https://blog.mozilla.org/axel/files/2017/03/arcs-to-remove.png
+.. |image0| image:: images/2017/03/arcs-to-remove.png
    :class: aligncenter size-full wp-image-594
    :width: 487px
    :height: 721px

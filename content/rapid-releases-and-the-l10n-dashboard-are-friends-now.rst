@@ -26,8 +26,8 @@ More so, the state of localizations changes from "n missing strings, probably in
 
 And there's quite a few things we need to do, in particular for desktop.
 
-.. |image0| image:: https://blog.mozilla.org/axel/files/2012/06/Bildschirmfoto-2012-06-09-um-19.01.16.png
+.. |image0| image:: images/2012/06/Bildschirmfoto-2012-06-09-um-19.01.16.png
    :class: alignnone size-full wp-image-471
    :width: 991px
    :height: 257px
-   :target: http://blog.mozilla.org/axel/files/2012/06/Bildschirmfoto-2012-06-09-um-19.01.16.png
+   :target: images/2012/06/Bildschirmfoto-2012-06-09-um-19.01.16.png

@@ -49,8 +49,8 @@ For Firefox, could one train on English and localized DOM? For Android's XML lay
 
 Do you know of existing research in this direction?
 
-.. |image0| image:: https://blog.mozilla.org/axel/files/2018/07/Pieced-together-UI-300x94.png
+.. |image0| image:: images/2018/07/Pieced-together-UI-300x94.png
    :class: aligncenter size-medium wp-image-600
    :width: 300px
    :height: 94px
-   :target: https://blog.mozilla.org/axel/files/2018/07/Pieced-together-UI.png
+   :target: images/2018/07/Pieced-together-UI.png

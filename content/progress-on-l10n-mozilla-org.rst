@@ -29,13 +29,13 @@ You should also look at the bugzilla section. A couple of bugs with recent activ
 
 Known issues: We still have localizations showing status for ``central/nightly``, even though those teams don't work on central. Some teams do, but not all. Also, the sparklines start at some point in the past 50 days, that's because we don't figure out the status before. `We could <https://bugzilla.mozilla.org/show_bug.cgi?id=1014497>`__.
 
-.. |good progress| image:: https://blog.mozilla.org/axel/files/2014/05/Screen-Shot-2014-05-22-at-12.44.15-PM.png
+.. |good progress| image:: images/2014/05/Screen-Shot-2014-05-22-at-12.44.15-PM.png
    :class: aligncenter size-full wp-image-563
    :width: 220px
    :height: 64px
-   :target: https://blog.mozilla.org/axel/files/2014/05/Screen-Shot-2014-05-22-at-12.44.15-PM.png
-.. |not so much| image:: https://blog.mozilla.org/axel/files/2014/05/Screen-Shot-2014-05-22-at-12.47.58-PM.png
+   :target: images/2014/05/Screen-Shot-2014-05-22-at-12.44.15-PM.png
+.. |not so much| image:: images/2014/05/Screen-Shot-2014-05-22-at-12.47.58-PM.png
    :class: aligncenter size-full wp-image-564
    :width: 228px
    :height: 74px
-   :target: https://blog.mozilla.org/axel/files/2014/05/Screen-Shot-2014-05-22-at-12.47.58-PM.png
+   :target: images/2014/05/Screen-Shot-2014-05-22-at-12.47.58-PM.png
