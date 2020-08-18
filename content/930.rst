@@ -1,7 +1,0 @@
-9:30
-####
-:date: 2007-05-09 02:22
-:category: Mozilla
-:slug: 930
-
-`Firefox Flicks <http://www.firefoxflicks.com/>`__ works, listen to the cover version of Wheee in `wet feets in plone <http://www.archive.org/details/SeanKellyGettingYourFeetWetwithPlone>`__ at minute 9:30.

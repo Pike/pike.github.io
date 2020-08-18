@@ -1,0 +1,44 @@
+150/2=73
+########
+:date: 2009-06-12 09:51
+:category: L10n, Mozilla
+:tags: L10n, Mozilla
+:slug: 2009/06/150273
+
+Our brave build folks have cut the tags on Firefox 3.5 RC 1, and I figured I give a little feedback on that from the l10n side.
+
+As RC 1 was based on new strings, we required each localization to sign-off on the status of their localization to be ready for release. We're still doing this by opening what we call a "opt-in thread", a message sent to .l10n after the last l10n-impact landing to which localizers reply with a link to the revision of their localization that is good to go. Part of that communication is the message when code-freeze is planned to be, and the message that plans don't always work out. So we're keeping the the opt-in thread open actually up to the point where we really kick off the builds.
+
+The output of that process are two files which control our release automation process, ``shipped-locales`` and ``l10n-changesets``. For the curious, we're tracking which locales ship on which platforms in the first, and it's part of the code repo, and which locales ship which hg revision in the second, which is in the buildbot-configs repo.
+
+The whole process lead to 150 different opt-in sourcestamps which came in by either public replies in the newsgroup, or as private mails in my inbox (or both). I pick those up, and click on some buttons on a version of the l10n dashboard running on my home machine, review the changes to previous sign-offs (yes, I do have a web interface that does comparison between two revisions in hg), and accept or reject the sign-off. If I reject, I follow up in .l10n with why I did that. That adds up to 159 posts in that thread, by 72 authors. Dependent on how imminent the release is, or seems to be, I "back up" my local data by attaching files to the `tracking bug <https://bugzilla.mozilla.org/show_bug.cgi?id=493637>`__. This led to one version of ``shipped-locales``, and a whopping 16 versions of ``l10n-changesets``. Or, in short ...
+
+============== =======================================================
+<bhearsum|afk> Pike: when should i expect an updated l10n-changestets?
+<Pike>         bhearsum: ...
+<Pike>         ...
+<Pike>         ...
+<Pike>         now
+<bhearsum>     heh
+<bhearsum>     cool!
+============== =======================================================
+
+What's really cool here is that we're actually at a point where we pick up improvements to our localization up to the last minute, with tools that make us feel comfortable about that, and with a release environment that is able to digest all that noise and produce builds for 73 localizations in a matter of a few hours.
+
+.. raw:: html
+
+   <p>
+
+.. raw:: html
+
+   <center>
+
+73
+
+.. raw:: html
+
+   </center>
+
+.. raw:: html
+
+   </p>
