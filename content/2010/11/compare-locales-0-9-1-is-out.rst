@@ -11,7 +11,7 @@ I released compare-locales 0.9.1 yesterday on pypi. Do the regular
 
 to update your local copy.
 
-This update includes two bug-fixes compared to `0.9 <http://blog.mozilla.org/axel/2010/10/04/cl09/>`__,
+This update includes two bug-fixes compared to `0.9 <{filename}/2010/10/cl09.rst>`__,
 
 -  Don't warn about XML-defined entities like &amp;, `bug 604404 <https://bugzilla.mozilla.org/show_bug.cgi?id=604404>`__
 -  Ensure that merged entities have a trailing newline, `bug 612619 <https://bugzilla.mozilla.org/show_bug.cgi?id=612619>`__

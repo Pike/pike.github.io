@@ -5,9 +5,9 @@ Migrating to the rapid release process
 :tags: L10n, Mozilla
 :slug: 2012/03/migrating-to-the-rapid-release-process
 
-Wait, what, migrating to the rapid release process? Aren't we, like, doing that? Well, not in the data models that drive the l10n dashboard. What follows is two-fold, for one, why would I be hacking on a patch for `half a year <http://blog.mozilla.org/axel/2011/08/24/sung-to-the-tune-of/>`__? But also, there are some interesting technical tidbits on how to do intensive data migrations in a django project. I'll link to the actual code in full later, right now the patch is still in flux. I'll need to write this stuff down to get a review on the patch, so why not here.
+Wait, what, migrating to the rapid release process? Aren't we, like, doing that? Well, not in the data models that drive the l10n dashboard. What follows is two-fold, for one, why would I be hacking on a patch for `half a year <{filename}/2011/08/sung-to-the-tune-of.rst>`__? But also, there are some interesting technical tidbits on how to do intensive data migrations in a django project. I'll link to the actual code in full later, right now the patch is still in flux. I'll need to write this stuff down to get a review on the patch, so why not here.
 
-I've blogged about `data models before <http://blog.mozilla.org/axel/2011/07/22/data-models-and-vom-kopf-auf-die-fuse/>`__, but here's a quick glossary:
+I've blogged about `data models before <{filename}/2011/07/data-models-and-vom-kopf-auf-die-fuse.rst>`__, but here's a quick glossary:
 
 ``Tree`` models a set of repositories to run automated tests against, namely, *compare-locales*. ``AppVersion`` models the thing we're shipping, say Firefox 3.6 or Firefox 13.
 

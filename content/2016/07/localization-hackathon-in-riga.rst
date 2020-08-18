@@ -14,7 +14,7 @@ On Friday evening, we kicked things off warm and dry. That's worth noting, as th
 
 I really like the conversations about contribution patterns. We start the discussion with the question on how often people would like to localize. The answers quickly lead into discussions about localization quality, and which context localizers prefer to get that. But also to the role that Mozilla plays in people's lives. Getting a better understanding of both are critical as we're trying to make localization at Mozilla better.
 
-Afterwards, stas and I gave some general project updates. The Mozilla firehose is overwhelming, so it's good to give an update on the things that matter to the people in the room. In particular, stas covered `L20n <http://blog.mozilla.org/l10n/2016/06/29/l20n-in-firefox-a-summary-for-localizers/>`__, which was well received. I talked about how we want to do Firefox l10n less bound to aurora and beta release channels, which people also liked.
+Afterwards, stas and I gave some general project updates. The Mozilla firehose is overwhelming, so it's good to give an update on the things that matter to the people in the room. In particular, stas covered `L20n <https://blog.mozilla.org/l10n/2016/06/29/l20n-in-firefox-a-summary-for-localizers/>`__, which was well received. I talked about how we want to do Firefox l10n less bound to aurora and beta release channels, which people also liked.
 
 We also talked about MQM, a standard of classifying issues found around localization. Once again we learned that it's hard to explain them.
 

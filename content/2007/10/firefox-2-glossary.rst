@@ -4,7 +4,7 @@ Firefox 2 glossary
 :category: L10n
 :slug: 2007/10/firefox-2-glossary
 
-As I have `been blogging before <http://blog.mozilla.org/axel/2007/10/17/localization-is-hard-the-math-way/>`__, I try to create a `glossary for Firefox 2 <http://l10n.mozilla.org/~axel/glossary/>`__. I'm leaving out all the gory details, but it's been a hard fight between me trying to be clever and being dumb. I'm still not happy with the code that creates the data, but still, I think this iteration generates output that looks good enough to share, and get busted by others.
+As I have `been blogging before <{filename}/2007/10/localization-is-hard-the-math-way.rst>`__, I try to create a `glossary for Firefox 2 <http://l10n.mozilla.org/~axel/glossary/>`__. I'm leaving out all the gory details, but it's been a hard fight between me trying to be clever and being dumb. I'm still not happy with the code that creates the data, but still, I think this iteration generates output that looks good enough to share, and get busted by others.
 
 With all the grumpiness about my code, I'm pretty happy that I didn't have to do the web part, so thanks to `shaver <http://shaver.off.net/diary>`__ for poking `plasticmillion <http://www.allpeers.com/blog/2007/10/14/new-mozpad-api-project-statistics-online/>`__ about `exhibit <http://simile.mit.edu/exhibit/>`__. That went pretty slick up to a site of my standards. Read, with full visual suckage. I did find a `bug in exhibit <http://simile.mit.edu/issues/browse/EXHIBIT-239>`__, though.
 

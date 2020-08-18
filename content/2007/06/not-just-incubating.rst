@@ -4,7 +4,7 @@ Not just incubating
 :category: L10n, Mozilla
 :slug: 2007/06/not-just-incubating
 
-I have written about the incubator `before <http://blog.mozilla.org/axel/2007/04/30/the-incubator/>`__, it's a tool that should help localizations newly in CVS to work towards release. It's based on buildbot, and I whacked it pretty hard recently.
+I have written about the incubator `before <{filename}/2007/04/the-incubator.rst>`__, it's a tool that should help localizations newly in CVS to work towards release. It's based on buildbot, and I whacked it pretty hard recently.
 
 The `result <http://l10n.mozilla.org/buildbot/>`__ can be seen on the l10n server again. What's new?
 

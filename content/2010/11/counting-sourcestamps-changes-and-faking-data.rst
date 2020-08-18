@@ -5,7 +5,7 @@ Counting sourcestamps, changes, and faking data
 :tags: build, buildbot, Mozilla
 :slug: 2010/11/counting-sourcestamps-changes-and-faking-data
 
-As a follow up to my `previous post <http://blog.mozilla.org/axel/2010/11/10/looking-at-the-internals-of-our-builds/>`__ on my digging through our build status, I want to look with a bit more detail, pretend it'd all be simple and what it could be, and, well, add the promised chocolate to coconut. Bounty.
+As a follow up to my `previous post <{filename}/2010/11/looking-at-the-internals-of-our-builds.rst>`__ on my digging through our build status, I want to look with a bit more detail, pretend it'd all be simple and what it could be, and, well, add the promised chocolate to coconut. Bounty.
 
 Let's look at the actual data for two and half landings. First, I'll start with a rather simple landing by roc, `revision 1b43... on mozilla-central <http://hg.mozilla.org/mozilla-central/pushloghtml?changeset=1b43ce0bda4fae>`__. Let me summarize the `builds <http://l10n.mozilla-community.org/coconut/sources?revision=1b43ce0bda4fae9292f63c253af44f3794d62604&count=200>`__ real quick:
 

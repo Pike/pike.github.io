@@ -5,7 +5,7 @@ Running into builds, just testing
 :tags: build, buildbot, L10n, Mozilla
 :slug: 2009/06/running-into-builds-just-testing
 
-I've blogged previously on how to `set up a staging environment <http://blog.mozilla.org/axel/2009/06/01/l10n-ecosystem-in-a-fishbowl/>`__ to test the l10n build system, but I didn't go into any detail on how to actually do builds in that set up. That shall be fixed.
+I've blogged previously on how to `set up a staging environment <{filename}/2009/06/l10n-ecosystem-in-a-fishbowl.rst>`__ to test the l10n build system, but I didn't go into any detail on how to actually do builds in that set up. That shall be fixed.
 
 I'm picking you up at the point where
 

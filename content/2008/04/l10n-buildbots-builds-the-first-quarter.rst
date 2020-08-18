@@ -17,4 +17,3 @@ The lags go as high up as almost 2 hours, the really big jumps seem to be proble
 The bad news is, the code is mostly non-reviewed, and should use a pending feature for buildbot, custom build properties. Otherwise, reconfig will never work.
 
 .. |Histogram of build lags| image:: /images/2008/04/lag-histogram.png
-   :target: http://blog.mozilla.org/axel/2008/04/14/l10n-buildbots-builds-the-first-quarter/histogram-of-build-lags/
