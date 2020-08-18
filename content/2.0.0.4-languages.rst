@@ -1,0 +1,11 @@
+2.0.0.4 languages
+#################
+:date: 2007-06-05 07:50
+:category: L10n, Mozilla
+:slug: 2.0.0.4-languages
+
+There are a few changes in our language support that came with `Firefox 2.0.0.4 <http://www.mozilla.com/en-US/firefox/2.0.0.4/releasenotes/>`__. We have officially released `Afrikaans <http://www.mozilla.com/en-US/firefox/all.html#af>`__ and `Belarusian <http://www.mozilla.com/en-US/firefox/all.html#be>`__. Congratulations to both teams. If you know someone that should or could use those versions and doesn't, please point them at the download page, as those links aren't that `easy to find <https://bugzilla.mozilla.org/show_bug.cgi?id=382551>`__ otherwise.
+
+We would like to see as many testers as possible for our beta releases, too. You can find download links to Georgian, Kurdish, and Romanian on the `release notes <http://www.mozilla.com/en-US/firefox/2.0.0.4/releasenotes/#localizedbuilds>`__. Those builds are only tested by the localization teams so far and may still contain stop-ship bugs. We need your help to find out.
+
+Feedback on all of these is welcome on `bugzilla <https://bugzilla.mozilla.org/enter_bug.cgi?product=Mozilla%20Localizations>`__, or on their respective feedback forums if you're more familiar with those.
