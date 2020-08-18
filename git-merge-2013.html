@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <title>git-merge 2013</title>
+
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+<link href="/git-merge-2013.html" rel="canonical" />
+  <!-- Feed -->
+
+  <link href="/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+  <!-- Code highlight color scheme -->
+      <link href="/theme/css/code_blocks/github.css" rel="stylesheet">
+
+
+  <!-- Custom fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+
+    <meta name="description" content="I spent Friday and Saturday on git-merge, an unconference on git. Thursday was developer day, for core contributors to git itself, and...">
+
+    <meta name="author" content="Axel Hecht">
+
+    <meta name="tags" content="git">
+    <meta name="tags" content="GitMerge">
+    <meta name="tags" content="Mozilla">
+
+
+
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="Axel Hecht"/>
+<meta property="og:title" content="git-merge 2013"/>
+<meta property="og:description" content="I spent Friday and Saturday on git-merge, an unconference on git. Thursday was developer day, for core contributors to git itself, and..."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="/git-merge-2013.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2013-05-13 05:36:00+00:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="/author/axel-hecht.html">
+<meta property="article:section" content="Mozilla"/>
+<meta property="article:tag" content="git"/>
+<meta property="article:tag" content="GitMerge"/>
+<meta property="article:tag" content="Mozilla"/>
+<meta property="og:image" content="/theme/images/post-bg.jpg">
+
+<!-- Twitter Card -->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "git-merge 2013",
+  "headline": "git-merge 2013",
+  "datePublished": "2013-05-13 05:36:00+00:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Axel Hecht",
+    "url": "/author/axel-hecht.html"
+  },
+  "image": "/theme/images/post-bg.jpg",
+  "url": "/git-merge-2013.html",
+  "description": "I spent Friday and Saturday on git-merge, an unconference on git. Thursday was developer day, for core contributors to git itself, and..."
+}
+</script>
+</head>
+<!-- TODO : Body class -->
+<body class="home-template">
+
+<nav id="menu">
+  <a class="close-button">Close</a>
+  <div class="nav-wrapper">
+    <p class="nav-label">Menu</p>
+    <ul>
+
+
+    </ul>
+  </div>
+</nav>
+    <!-- Progressbar -->
+    <div class="progress-container">
+        <span class="progress-bar"></span>
+    </div>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header id="post-header" >
+      <div class="inner">
+        <nav id="navigation">
+            <span id="home-button" class="nav-button">
+                <a class="home-button" href="/" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+            </span>
+          <span id="menu-button" class="nav-button">
+            <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+          </span>
+        </nav>
+        <h1 class="post-title">git-merge 2013</h1>
+        <!-- TODO : Proper class for headline -->
+        <span class="post-meta">
+                <a href="/author/axel-hecht.html">Axel Hecht</a>
+            | <time datetime="Mon 13 May 2013">Mon 13 May 2013</time>
+        </span>
+        <!-- TODO : Modified check -->
+      </div>
+    </header>
+
+  <section id="wrapper">
+    <a class="hidden-close"></a>
+
+    <!-- Post content -->
+    <main class="content" role="main">
+        <article class="post">
+        <div class="inner">
+            <section class="post-content">
+                <p>I spent Friday and Saturday on <a class="reference external" href="http://git-merge.com/">git-merge</a>, an unconference on git. Thursday was developer day, for core contributors to git itself, and libgit2/jgit. I didn't go there. Friday was &quot;user&quot; day, and Saturday was hackday. I figured it might be useful to go to the userday, and turned out, it was. It wasn't all that much about users at all. It was strictly unconference, so people would take the stage and give a quick lightening talk, and later in the day we had a few breakout sessions. The most user-like people were folks migrating to git just now, and they had a good deal of folks to talk to in the breakout session.</p>
+<p>The rest of Friday was actually library and tool hackers talking about what they're doing. There are notes on <a class="reference external" href="https://github.com/git-merge/user-day/blob/master/docs/01-index.md">github.com/git-merge/user-day</a>, but I do want to hightlight a few.</p>
+<p><a class="reference external" href="https://github.com/mhagger/git-imerge">imerge</a> is probably the most interesting to gecko hackers. It allows you to merge or rebase intensive histories with conflicts incrementally, with tons of automation. It even allows to do test runs on the merges it does automatically. If you ever resolved the same conflict 10 times in one rebase, this is for you.</p>
+<p>libgit2 was under the hood of many, with core contributors of the library itself being there, plus the maintainers of at least the C# and the python bindings. There was also a good deal of tooling based on jgit, a pure-java implementation of git.</p>
+<p>Much debate on java vs not, actually. And Cmd-F1. Little conflict between git and hg.</p>
+<p>I also got to enjoy the github backend talk by <a class="reference external" href="https://github.com/vmg">vmg</a>, with Ernie, Bert, and smoke through chimneys. I had seen a recording of it before, but it was well worth it seeing it live.</p>
+<p>I joined the breakout session about teaching git, and had the pleasure to be in a group that tought git in various parts of the globe. Yes, that might be relevant to me, so that was good exercise. I talked with <a class="reference external" href="https://github.com/schacon">Scott Schacon</a> about localized version of the git book, and localized github docs, too.</p>
+<p>Given that I had the chance to talk and co-hack with all those tooling guys, I decided to drop by on Saturday for the hack day. I wanted to take the opportunity to talk about my weird repository rewrite questions, and so I did.</p>
+<p>Saturday was great. I only got 20 lines of code written, but I finally understood what git is about in the back-end. There's loads of hackery that you can do, and funny enough, both I and <a class="reference external" href="https://github.com/ben">Ben</a> ended up hacking on a repository rewrite algorithm, which helped me a lot, both talking about the structure of the code, as well as vetting the approach. His code in C# is actually in a <a class="reference external" href="https://github.com/libgit2/libgit2sharp/pull/429">PR</a>. Worth a look for people that want to see how to hack tooling on top of that binding. I tried the same in python, and succeeded to some extent. David Ibáñez helped me a great deal. But it also showed me the difference between the C# API and the python bindings. If only mono was easy to get up on the mac.</p>
+<p>On the conference itself, it was set up at the Radisson Blu next to the Berliner Dom, which is a nice venue for that size. Wifi worked, food and beer were there. It's sad that many people claimed tickets and didn't show up. Now you know what you missed, and what you made other people miss. Bad bunny, no chocolates! Thanks again for Jen for setting things up great.</p>
+<p>Thanks to all the folks at git-merge for making it a great event. See you in Berlin…</p>
+
+            </section>
+
+            <section class="post-info">
+                <div class="post-share">
+                    <a class="twitter" href="https://twitter.com/share?text=git-merge 2013&amp;url=/git-merge-2013.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
+                    </a>
+                    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=/git-merge-2013.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
+                    </a>
+                    <a class="googleplus" href="https://plus.google.com/share?url=/git-merge-2013.html" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <i class="ic ic-googleplus"></i><span class="hidden">Google+</span>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+
+                <aside class="post-tags">
+<a href="/tag/git.html">git</a><a href="/tag/gitmerge.html">GitMerge</a><a href="/tag/mozilla.html">Mozilla</a>                </aside>
+
+                <div class="clear"></div>
+
+
+                </section>
+
+
+                <aside class="post-nav">
+                    <div class="clear"></div>
+                </aside>
+
+            </div>
+        </article>
+    </main>
+      <!-- TODO : Body class -->
+    <div id="body-class" style="display: none;" class=""></div>
+
+    <footer id="footer">
+      <div class="inner">
+        <section class="credits">
+
+
+          <span class="credits-theme">Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a></span>
+          <span class="credits-software">Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a></span>
+        </section>
+      </div>
+    </footer>
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/javascript" src="/theme/js/script.js"></script>
+
+</body>
+</html>

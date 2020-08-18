@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <title>Bugzilla dancing for l10n changes</title>
+
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+<link href="/2007/03/bugzilla-dancing-for-l10n-changes.html" rel="canonical" />
+  <!-- Feed -->
+
+  <link href="/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+  <!-- Code highlight color scheme -->
+      <link href="/theme/css/code_blocks/github.css" rel="stylesheet">
+
+
+  <!-- Custom fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+
+    <meta name="description" content="We're having a string change on a stable branch, and I'd like to give an overview of what I did how to make this less painful. Less is...">
+
+    <meta name="author" content="Axel Hecht">
+
+
+
+
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="Axel Hecht"/>
+<meta property="og:title" content="Bugzilla dancing for l10n changes"/>
+<meta property="og:description" content="We're having a string change on a stable branch, and I'd like to give an overview of what I did how to make this less painful. Less is..."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="/2007/03/bugzilla-dancing-for-l10n-changes.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2007-03-08 11:25:00+00:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="/author/axel-hecht.html">
+<meta property="article:section" content="L10n, Mozilla"/>
+<meta property="og:image" content="/theme/images/post-bg.jpg">
+
+<!-- Twitter Card -->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "Bugzilla dancing for l10n changes",
+  "headline": "Bugzilla dancing for l10n changes",
+  "datePublished": "2007-03-08 11:25:00+00:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Axel Hecht",
+    "url": "/author/axel-hecht.html"
+  },
+  "image": "/theme/images/post-bg.jpg",
+  "url": "/2007/03/bugzilla-dancing-for-l10n-changes.html",
+  "description": "We're having a string change on a stable branch, and I'd like to give an overview of what I did how to make this less painful. Less is..."
+}
+</script>
+</head>
+<!-- TODO : Body class -->
+<body class="home-template">
+
+<nav id="menu">
+  <a class="close-button">Close</a>
+  <div class="nav-wrapper">
+    <p class="nav-label">Menu</p>
+    <ul>
+
+
+    </ul>
+  </div>
+</nav>
+    <!-- Progressbar -->
+    <div class="progress-container">
+        <span class="progress-bar"></span>
+    </div>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header id="post-header" >
+      <div class="inner">
+        <nav id="navigation">
+            <span id="home-button" class="nav-button">
+                <a class="home-button" href="/" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+            </span>
+          <span id="menu-button" class="nav-button">
+            <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+          </span>
+        </nav>
+        <h1 class="post-title">Bugzilla dancing for l10n changes</h1>
+        <!-- TODO : Proper class for headline -->
+        <span class="post-meta">
+                <a href="/author/axel-hecht.html">Axel Hecht</a>
+            | <time datetime="Thu 08 March 2007">Thu 08 March 2007</time>
+        </span>
+        <!-- TODO : Modified check -->
+      </div>
+    </header>
+
+  <section id="wrapper">
+    <a class="hidden-close"></a>
+
+    <!-- Post content -->
+    <main class="content" role="main">
+        <article class="post">
+        <div class="inner">
+            <section class="post-content">
+                <p>We're having a <a class="reference external" href="https://bugzilla.mozilla.org/show_bug.cgi?id=372409">string change on a stable branch</a>, and I'd like to give an overview of what I did how to make this less painful. Less is intentionally a relative measure, it's still really very badly painful.</p>
+<p>The biggest part of this change was to actually settle on the intended outcome. How should locales behave that make the change, how should locales behave that don't. What should happen to users with language packs, and what with the language pack versioning. In this particular case, language packs aren't loaded yet, so they don't really matter, but in general, it's a question worthwhile answering.</p>
+<p>Now, how to get those changes? The (IMHO) best way is to get patches from the localizers that apply easily. The previous step should identify a concrete patch to implement by the localizers. That didn't work out perfectly this time, but we caught the difference in time.</p>
+<p>Landing seperate patches in tracking bugs leads to all kinds of messy problems, so I went for one bug per language in CVS, whether built or not, and one central tracking bug.</p>
+<div class="line-block">
+<div class="line">Bugzilla magic, part 1: How to file 50 bugs without getting totally frustrated? I created an HTML form which takes an initial comment, the summary, a blocked bug, and then, on the press of a button, creates bug-filing links for all locales. I hard-coded the list of locales for now. It substitutes &#64;AB_CD&#64; in all fields for the current locale, and picks the right component in the Mozilla Localizations product, which works for all languages but Slovak right now. The goodness of us hunting for bugzilla components now. I can then click on each link, or just use keyboard navigation. Just opening the links via window.open() works, but really stress tests bugzilla (and Firefox), so that's not that good. Anyway, it took me about 50 minutes to file 57 bugs. That includes a bunch of distraction while waiting for bugzilla, I'd wish filing bugs would be a snap. Still, not bad, less than a minute per bug. Released lanuages block the tracking bug, others don't, which was hand-work for now.</div>
+<div class="line">For the non-released languages I made those block the central bug once they had a patch.</div>
+</div>
+<p>Within 24 hours, we had 20 patches, within 48 hours, we had 36 (plus 1 which I still have to find out why it didn't apply). I had to adjust only two patches myself, all others where either fine from the start, or fixed by the localizer on my comments.</p>
+<p>YAY on our localization community.</p>
+<p>Now, do you want to apply some 36 patches by hand? I don't, so</p>
+<p>Bugzilla magic, Part 2: Creating a bad big patch. Create a bug query that gets all bugs that block the tracking bug and have an attachment that is a patch (&quot;Attachment is patch&quot;, &quot;is equal to&quot;, &quot;1&quot; is the magic trio) . Then click on the XML button, which creates one XML document of all bugs on that query, including all the information. And attachement IDs :-). Now open Jesse's jsshell bookmarklet and get the attachement IDs:</p>
+<blockquote>
+<div class="line-block">
+<div class="line">res=document.evaluate('bugzilla/bug/attachment[&#64;isobsolete=&quot;0&quot;][&#64;ispatch=&quot;1&quot;]/attachid',</div>
+<div class="line">document, null,XPathResult.ANY_TYPE,null);</div>
+<div class="line">out=[];nd=res.iterateNext();</div>
+<div class="line">while (nd) {out.push(nd.textContent);nd=res.iterateNext();}</div>
+<div class="line">out.join(' ')</div>
+</div>
+</blockquote>
+<p>Now I moved over to bash:</p>
+<blockquote>
+for att in &lt;insert list of attachement IDs here&gt; ; do wget --no-check-certificate -O- '<a class="reference external" href="https://bugzilla.mozilla.org/attachment.cgi?id='$att">https://bugzilla.mozilla.org/attachment.cgi?id='$att</a> &gt; $att;done</blockquote>
+<p><tt class="docutils literal">cat</tt> all those patches together, test the patch and fix the chunks that don't apply, and off you go with 36 fixed locales in 48 hours.</p>
+
+            </section>
+
+            <section class="post-info">
+                <div class="post-share">
+                    <a class="twitter" href="https://twitter.com/share?text=Bugzilla dancing for l10n changes&amp;url=/2007/03/bugzilla-dancing-for-l10n-changes.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
+                    </a>
+                    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=/2007/03/bugzilla-dancing-for-l10n-changes.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
+                    </a>
+                    <a class="googleplus" href="https://plus.google.com/share?url=/2007/03/bugzilla-dancing-for-l10n-changes.html" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <i class="ic ic-googleplus"></i><span class="hidden">Google+</span>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+
+
+                <div class="clear"></div>
+
+
+                </section>
+
+
+                <aside class="post-nav">
+                    <div class="clear"></div>
+                </aside>
+
+            </div>
+        </article>
+    </main>
+      <!-- TODO : Body class -->
+    <div id="body-class" style="display: none;" class=""></div>
+
+    <footer id="footer">
+      <div class="inner">
+        <section class="credits">
+
+
+          <span class="credits-theme">Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a></span>
+          <span class="credits-software">Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a></span>
+        </section>
+      </div>
+    </footer>
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/javascript" src="/theme/js/script.js"></script>
+
+</body>
+</html>

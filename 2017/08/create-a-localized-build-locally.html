@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <title>Create a localized build locally</title>
+
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+<link href="/2017/08/create-a-localized-build-locally.html" rel="canonical" />
+  <!-- Feed -->
+
+  <link href="/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+  <!-- Code highlight color scheme -->
+      <link href="/theme/css/code_blocks/github.css" rel="stylesheet">
+
+
+  <!-- Custom fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+
+    <meta name="description" content="Yesterday we changed the way that you create localized builds on mozilla-central. This works for developers doing regular builds, as...">
+
+    <meta name="author" content="Axel Hecht">
+
+
+
+
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="Axel Hecht"/>
+<meta property="og:title" content="Create a localized build locally"/>
+<meta property="og:description" content="Yesterday we changed the way that you create localized builds on mozilla-central. This works for developers doing regular builds, as..."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="/2017/08/create-a-localized-build-locally.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2017-08-04 16:19:00+00:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="/author/axel-hecht.html">
+<meta property="article:section" content="Firefox, Firefox Mobile, Localization, Planet"/>
+<meta property="og:image" content="/theme/images/post-bg.jpg">
+
+<!-- Twitter Card -->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "Create a localized build locally",
+  "headline": "Create a localized build locally",
+  "datePublished": "2017-08-04 16:19:00+00:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Axel Hecht",
+    "url": "/author/axel-hecht.html"
+  },
+  "image": "/theme/images/post-bg.jpg",
+  "url": "/2017/08/create-a-localized-build-locally.html",
+  "description": "Yesterday we changed the way that you create localized builds on mozilla-central. This works for developers doing regular builds, as..."
+}
+</script>
+</head>
+<!-- TODO : Body class -->
+<body class="home-template">
+
+<nav id="menu">
+  <a class="close-button">Close</a>
+  <div class="nav-wrapper">
+    <p class="nav-label">Menu</p>
+    <ul>
+
+
+    </ul>
+  </div>
+</nav>
+    <!-- Progressbar -->
+    <div class="progress-container">
+        <span class="progress-bar"></span>
+    </div>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header id="post-header" >
+      <div class="inner">
+        <nav id="navigation">
+            <span id="home-button" class="nav-button">
+                <a class="home-button" href="/" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+            </span>
+          <span id="menu-button" class="nav-button">
+            <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+          </span>
+        </nav>
+        <h1 class="post-title">Create a localized build locally</h1>
+        <!-- TODO : Proper class for headline -->
+        <span class="post-meta">
+                <a href="/author/axel-hecht.html">Axel Hecht</a>
+            | <time datetime="Fri 04 August 2017">Fri 04 August 2017</time>
+        </span>
+        <!-- TODO : Modified check -->
+      </div>
+    </header>
+
+  <section id="wrapper">
+    <a class="hidden-close"></a>
+
+    <!-- Post content -->
+    <main class="content" role="main">
+        <article class="post">
+        <div class="inner">
+            <section class="post-content">
+                <p>Yesterday we changed the way that you create localized builds on mozilla-central.</p>
+<p>This works for developers doing regular builds, as well as developers or localizers without a compile environment. Sadly, users of artifact builds are <a class="reference external" href="https://bugzilla.mozilla.org/show_bug.cgi?id=1387485">not supported</a>.</p>
+<p>For language packs, a mere</p>
+<p><tt class="docutils literal">./mach build <span class="pre">langpack-de</span></tt></p>
+<p>will work. If you'd rather wish to build a localized package, you'll want to get the package first. If you're building yourself, that's</p>
+<p><tt class="docutils literal">./mach package</tt></p>
+<p>and if you want to get a Nightly build from archive.mozilla.org, just</p>
+<p><tt class="docutils literal">./mach build <span class="pre">wget-en-US</span></tt></p>
+<p>If you want to do that for Firefox for Android, you'll need to specify which platform you want. Set <tt class="docutils literal">EN_US_BINARY_URL</tt> to the <a class="reference external" href="http://archive.mozilla.org/pub/mobile/nightly/">latest-mozilla-central-*</a> path for the binary you want to test.</p>
+<p>And then you just</p>
+<p><tt class="docutils literal">./mach build <span class="pre">installers-fr</span></tt></p>
+<p>That'll take care about getting the french l10n repository, and do all the necessary things to get you a nice little installer/package in <tt class="docutils literal">dist</tt>. Pick your favorite language from <a class="reference external" href="https://hg.mozilla.org/l10n-central/?sort=lastchange">our repositories</a>. Care for a RTL build? <tt class="docutils literal">./mach <span class="pre">installers-fa</span></tt> will get you a Persian one ;-) .</p>
+<p>As with other repositories we clone into <tt class="docutils literal"><span class="pre">~/.mozbuild</span></tt>, you'll want to update those every now and then. They're in <tt class="docutils literal"><span class="pre">l10n-central/*</span></tt>, a repository for each language you tried.</p>
+<p>Documentation is on <a class="reference external" href="https://firefox-source-docs.mozilla.org/build/buildsystem/locales.html">firefox-source-docs.rtd</a>, bugs <a class="reference external" href="https://bugzilla.mozilla.org/enter_bug.cgi?product=Core&amp;component=Build%20Config&amp;cc=l10n&#64;mozilla.com">go here</a>. This works for Firefox, Firefox for Android, and Thunderbird.</p>
+<p>And now you can safely forget all the things you never wanted to know about localized builds.</p>
+
+            </section>
+
+            <section class="post-info">
+                <div class="post-share">
+                    <a class="twitter" href="https://twitter.com/share?text=Create a localized build locally&amp;url=/2017/08/create-a-localized-build-locally.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
+                    </a>
+                    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=/2017/08/create-a-localized-build-locally.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
+                    </a>
+                    <a class="googleplus" href="https://plus.google.com/share?url=/2017/08/create-a-localized-build-locally.html" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <i class="ic ic-googleplus"></i><span class="hidden">Google+</span>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+
+
+                <div class="clear"></div>
+
+
+                </section>
+
+
+                <aside class="post-nav">
+                    <div class="clear"></div>
+                </aside>
+
+            </div>
+        </article>
+    </main>
+      <!-- TODO : Body class -->
+    <div id="body-class" style="display: none;" class=""></div>
+
+    <footer id="footer">
+      <div class="inner">
+        <section class="credits">
+
+
+          <span class="credits-theme">Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a></span>
+          <span class="credits-software">Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a></span>
+        </section>
+      </div>
+    </footer>
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/javascript" src="/theme/js/script.js"></script>
+
+</body>
+</html>

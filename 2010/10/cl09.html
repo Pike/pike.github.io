@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <title>Releasing compare-locales 0.9, aka, the value checker</title>
+
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+<link href="/2010/10/cl09.html" rel="canonical" />
+  <!-- Feed -->
+
+  <link href="/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+  <!-- Code highlight color scheme -->
+      <link href="/theme/css/code_blocks/github.css" rel="stylesheet">
+
+
+  <!-- Custom fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+
+    <meta name="description" content="I've just uploaded version 0.9 of compare-locales onto pypi. It's finally the version that does all the fancy value checks that I've...">
+
+    <meta name="author" content="Axel Hecht">
+
+    <meta name="tags" content="L10n">
+    <meta name="tags" content="Mozilla">
+
+
+
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="Axel Hecht"/>
+<meta property="og:title" content="Releasing compare-locales 0.9, aka, the value checker"/>
+<meta property="og:description" content="I've just uploaded version 0.9 of compare-locales onto pypi. It's finally the version that does all the fancy value checks that I've..."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="/2010/10/cl09.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2010-10-04 09:06:00+00:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="/author/axel-hecht.html">
+<meta property="article:section" content="L10n, Mozilla"/>
+<meta property="article:tag" content="L10n"/>
+<meta property="article:tag" content="Mozilla"/>
+<meta property="og:image" content="/theme/images/post-bg.jpg">
+
+<!-- Twitter Card -->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "Releasing compare-locales 0.9, aka, the value checker",
+  "headline": "Releasing compare-locales 0.9, aka, the value checker",
+  "datePublished": "2010-10-04 09:06:00+00:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Axel Hecht",
+    "url": "/author/axel-hecht.html"
+  },
+  "image": "/theme/images/post-bg.jpg",
+  "url": "/2010/10/cl09.html",
+  "description": "I've just uploaded version 0.9 of compare-locales onto pypi. It's finally the version that does all the fancy value checks that I've..."
+}
+</script>
+</head>
+<!-- TODO : Body class -->
+<body class="home-template">
+
+<nav id="menu">
+  <a class="close-button">Close</a>
+  <div class="nav-wrapper">
+    <p class="nav-label">Menu</p>
+    <ul>
+
+
+    </ul>
+  </div>
+</nav>
+    <!-- Progressbar -->
+    <div class="progress-container">
+        <span class="progress-bar"></span>
+    </div>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header id="post-header" >
+      <div class="inner">
+        <nav id="navigation">
+            <span id="home-button" class="nav-button">
+                <a class="home-button" href="/" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+            </span>
+          <span id="menu-button" class="nav-button">
+            <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+          </span>
+        </nav>
+        <h1 class="post-title">Releasing compare-locales 0.9, aka, the value checker</h1>
+        <!-- TODO : Proper class for headline -->
+        <span class="post-meta">
+                <a href="/author/axel-hecht.html">Axel Hecht</a>
+            | <time datetime="Mon 04 October 2010">Mon 04 October 2010</time>
+        </span>
+        <!-- TODO : Modified check -->
+      </div>
+    </header>
+
+  <section id="wrapper">
+    <a class="hidden-close"></a>
+
+    <!-- Post content -->
+    <main class="content" role="main">
+        <article class="post">
+        <div class="inner">
+            <section class="post-content">
+                <p>I've just uploaded version <a class="reference external" href="http://pypi.python.org/pypi/compare-locales/0.9">0.9 of compare-locales onto pypi</a>. It's finally the version that does all the fancy value checks that I've been talking about for a while, and that some of the localizers have seen flying by in their bugmail.</p>
+<p>Here's what it does:</p>
+<p>For DTDs, I create fake xml docs, and try to parse them. This should find encoding errors, as well as unbalanced XML tags or stray '&amp;' ampersands. There's one thing that's tricky, and that is references to entities. I do get the list of entities from en-US, so I do have a good idea which should work (really, please). On the other hand, referencing other entities may not be an error. &amp;rdquot; for example could be totally fine. If referenced in an XHTML document, that is. Not if it was included in a XUL document. Of course both breeds could include the same DTD file. I can't really tell, so I've added a new category of reporting, called <em>warnings</em>.</p>
+<p>For properties files, I check a bunch of printf tricks. Some of those are warnings, some of those are errors. Which is which basically depended on code-inspection. I also did some heuristics based on comments referencing the plural docs to check for our plurals-special variable handling.</p>
+<p>Outstanding are the installer variable checks still, didn't want to hold back this release for that. They're somewhat tricky in the details and yet more tedious to get right than the other checks.</p>
+<p>What does that mean for localizers? You wanna get the error count down to zero. The warnings count may or may not go down to zero, that's your call.</p>
+<p>The new version isn't in public use anywhere yet, the deployment will go like this:</p>
+<ul class="simple">
+<li>Get a round of public feedback on this release.</li>
+<li>Use on the dashboard (likely gonna happen when I do the 2.0 branch dance, too).</li>
+<li>Try to get the new version used on the build system.</li>
+</ul>
+<p>Please give the new version a bit of pounding in your local l10n-merge builds, too. It should strip entities with errors from your localization, and merge in <tt class="docutils literal"><span class="pre">en-US</span></tt> strings for that.</p>
+<p>Feel free to <a class="reference external" href="https://bugzilla.mozilla.org/enter_bug.cgi?product=Mozilla%20Localizations&amp;component=Infrastructure&amp;rep_platform=All&amp;op_sys=All&amp;short_desc=%5Bcompare-locales%5D">file bugs</a> on issues you find.</p>
+
+            </section>
+
+            <section class="post-info">
+                <div class="post-share">
+                    <a class="twitter" href="https://twitter.com/share?text=Releasing compare-locales 0.9, aka, the value checker&amp;url=/2010/10/cl09.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
+                    </a>
+                    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=/2010/10/cl09.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
+                    </a>
+                    <a class="googleplus" href="https://plus.google.com/share?url=/2010/10/cl09.html" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <i class="ic ic-googleplus"></i><span class="hidden">Google+</span>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+
+                <aside class="post-tags">
+<a href="/tag/l10n.html">L10n</a><a href="/tag/mozilla.html">Mozilla</a>                </aside>
+
+                <div class="clear"></div>
+
+
+                </section>
+
+
+                <aside class="post-nav">
+                    <div class="clear"></div>
+                </aside>
+
+            </div>
+        </article>
+    </main>
+      <!-- TODO : Body class -->
+    <div id="body-class" style="display: none;" class=""></div>
+
+    <footer id="footer">
+      <div class="inner">
+        <section class="credits">
+
+
+          <span class="credits-theme">Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a></span>
+          <span class="credits-software">Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a></span>
+        </section>
+      </div>
+    </footer>
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/javascript" src="/theme/js/script.js"></script>
+
+</body>
+</html>

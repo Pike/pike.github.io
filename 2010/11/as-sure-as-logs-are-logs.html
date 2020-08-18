@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <title>As sure as logs are logs</title>
+
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+<link href="/2010/11/as-sure-as-logs-are-logs.html" rel="canonical" />
+  <!-- Feed -->
+
+  <link href="/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+  <!-- Code highlight color scheme -->
+      <link href="/theme/css/code_blocks/github.css" rel="stylesheet">
+
+
+  <!-- Custom fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+
+    <meta name="description" content="... or not. As promised, I'll write a bit about build logs today. You'll see what our logs are, and, to begin with, I'll take you on a...">
+
+    <meta name="author" content="Axel Hecht">
+
+    <meta name="tags" content="build">
+    <meta name="tags" content="buildbot">
+    <meta name="tags" content="Mozilla">
+
+
+
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="Axel Hecht"/>
+<meta property="og:title" content="As sure as logs are logs"/>
+<meta property="og:description" content="... or not. As promised, I'll write a bit about build logs today. You'll see what our logs are, and, to begin with, I'll take you on a..."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="/2010/11/as-sure-as-logs-are-logs.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2010-11-15 12:04:00+00:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="/author/axel-hecht.html">
+<meta property="article:section" content="Mozilla"/>
+<meta property="article:tag" content="build"/>
+<meta property="article:tag" content="buildbot"/>
+<meta property="article:tag" content="Mozilla"/>
+<meta property="og:image" content="/theme/images/post-bg.jpg">
+
+<!-- Twitter Card -->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "As sure as logs are logs",
+  "headline": "As sure as logs are logs",
+  "datePublished": "2010-11-15 12:04:00+00:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Axel Hecht",
+    "url": "/author/axel-hecht.html"
+  },
+  "image": "/theme/images/post-bg.jpg",
+  "url": "/2010/11/as-sure-as-logs-are-logs.html",
+  "description": "... or not. As promised, I'll write a bit about build logs today. You'll see what our logs are, and, to begin with, I'll take you on a..."
+}
+</script>
+</head>
+<!-- TODO : Body class -->
+<body class="home-template">
+
+<nav id="menu">
+  <a class="close-button">Close</a>
+  <div class="nav-wrapper">
+    <p class="nav-label">Menu</p>
+    <ul>
+
+
+    </ul>
+  </div>
+</nav>
+    <!-- Progressbar -->
+    <div class="progress-container">
+        <span class="progress-bar"></span>
+    </div>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header id="post-header" >
+      <div class="inner">
+        <nav id="navigation">
+            <span id="home-button" class="nav-button">
+                <a class="home-button" href="/" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+            </span>
+          <span id="menu-button" class="nav-button">
+            <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+          </span>
+        </nav>
+        <h1 class="post-title">As sure as logs are logs</h1>
+        <!-- TODO : Proper class for headline -->
+        <span class="post-meta">
+                <a href="/author/axel-hecht.html">Axel Hecht</a>
+            | <time datetime="Mon 15 November 2010">Mon 15 November 2010</time>
+        </span>
+        <!-- TODO : Modified check -->
+      </div>
+    </header>
+
+  <section id="wrapper">
+    <a class="hidden-close"></a>
+
+    <!-- Post content -->
+    <main class="content" role="main">
+        <article class="post">
+        <div class="inner">
+            <section class="post-content">
+                <p>... or not.</p>
+<p>As promised, I'll write a bit about build logs today. You'll see what our logs are, and, to begin with, I'll take you on a tour through <tt class="docutils literal">buildMessage</tt> to explain how the logs we have end up being what you see served off of tinderbox.</p>
+<p>First off, buildbot is basically the same thing as any regular gecko app, one main thread and loads of callbacks. So when reading on, all your spontanous reactions are good.</p>
+<p>The <tt class="docutils literal">buildMessage</tt> code does:</p>
+<ol class="arabic simple">
+<li>synchronous IO to load all logs of a build into memory, basically up to some 70M</li>
+<li>synchronous string handling to paste all that data together, with some extra padding</li>
+<li>synchronous compression of the resulting string</li>
+<li>synchronous base64 encoding of the compressed string</li>
+</ol>
+<p>All on the main thread, all in one go, blocking. All of that to give you a single lengthy unformatted blob of text. Why?</p>
+<p>Because our build logs are actually not a single lengthy unformatted blob of text, which is what tinderbox wants.</p>
+<p>Let's have a peek into what our build logs are, really. In my previous posts, I introduced you to the concept of build steps. They're really the basic entity of work to be done for a build. Now, the logs are stored in buildbot pretty much in how the data comes, that is, each log is associated with a step, and the storage is happening as the chunks arrive. Commonly, that'd be stdout and stderr data coming from shell commands run on the slave. The information about which stream the data is on is persisted, too, as is the order, so any log looks like this, basically:</p>
+<table cellspacing="0" cellpadding="5" border="1"><tr><td rowspan="6" style="vertical-align: top;"><p>Step reference</p>
+</td><td><p><em>header</em></p>
+</td><td><p>length</p>
+</td><td><p>data</p>
+</tr></tr><tr><td><p><em>stdout</em></p>
+</td><td><p>length</p>
+</td><td><p>data</p>
+</tr></tr><tr><td><p><em>stdout</em></p>
+</td><td><p>length</p>
+</td><td><p>data</p>
+</tr></tr><tr><td><p><em>stdout</em></p>
+</td><td><p>length</p>
+</td><td><p>data</p>
+</tr></tr><tr><td><p><em>stderr</em></p>
+</td><td><p>length</p>
+</td><td><p>data</p>
+</tr></tr><tr><td><p><em>stdout</em></p>
+</td><td><p>length</p>
+</td><td><p>data</p>
+</tr></tr></table><p>As most of you aren't among the few priviledged ones to actually look at the real logs, I've set up a fake log page for you to take a look. It's an l10n repack, mostly because they're somewhat small in both step count and log size, and because I'm used to them. Here's the <a class="reference external" href="http://people.mozilla.org/~axel/logs-example/#repack_installers">actual make step</a> highlighted. You can see the introduction being shown in blue, which is the common color for <em>header</em> chunks. Buildbot just uses that channel to show setup and shutdown information on the step. Then there's the actual make output in black. If there was something on stderr, it'd be styled in red. Sorry, I didn't quickly come up with something that has stderr.</p>
+<p>The first take-away is that you can get to just the build output of the step you're interested in.</p>
+<p>If you're nostalgic, you can check the checkbox for tinderbox, the css style sheet changes to show you what you'd get from tinderbox. Try to find the information again?</p>
+<p>One further detail, there can be more than one log per step. Buildsteps that set build properties quite commonly have two logs, one that keeps track of the command that got run, and another that keeps track of the actually changed build properties. You can look at an example in the <a class="reference external" href="http://people.mozilla.org/~axel/logs-example/#set_builddir">builddir step</a>. The boring last line is the second log.</p>
+<p>Log files are really not all that complicated, and much more useful than what we get back from tinderbox. Let's look at some of the pros:</p>
+<p>Log files come in as the build goes. This enables buildbot to publish build logs in almost realtime. There's little-to-no cost for that, too, a simple node.js proxy can ensure that only one log is read at any time. Another benefit is, one can archive logs incrementally, removing the current stress on the masters to publish more data than they want to chew in one go.</p>
+<p>Log files are per task. As the logs are associated with a step, which has a name and a builder, there's pretty rich information available on what the data in question is actually about. Think about hg-specific error parsers for one step, ftp-specific ones for the next, and mochitest-specific ones for the one after that. All in one build. If we'd archive the raw data, we can easily improve our parsers and be compatible with old logs. Or add new steps to the build process without fear to break existing log parsers.</p>
+<p>Tinderbox can still be fed. Even if we're not sending out tinderbox log mails from the masters, we can still do the processing out of band in an external process or even external machine, offload the masters, and not enforce us to change all infrastructure in one go.</p>
+<p>There is a hard piece, too, storage. Build logs are plenty, and they're anywhere from a dozen bytes to 70M. Within the same build, even. There a hundreds of thousands small files, and thousands of really large ones. I hope that adding some information on what our build logs really are helps to spike a design discussion on this. If to compress, on which level. Retention, per step type, even? Store as single files, in one dir, or in a hierarchy, or as tar balls? Or all of the above as part of retention? Is hbase a fit?</p>
+
+            </section>
+
+            <section class="post-info">
+                <div class="post-share">
+                    <a class="twitter" href="https://twitter.com/share?text=As sure as logs are logs&amp;url=/2010/11/as-sure-as-logs-are-logs.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
+                    </a>
+                    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=/2010/11/as-sure-as-logs-are-logs.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
+                    </a>
+                    <a class="googleplus" href="https://plus.google.com/share?url=/2010/11/as-sure-as-logs-are-logs.html" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <i class="ic ic-googleplus"></i><span class="hidden">Google+</span>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+
+                <aside class="post-tags">
+<a href="/tag/build.html">build</a><a href="/tag/buildbot.html">buildbot</a><a href="/tag/mozilla.html">Mozilla</a>                </aside>
+
+                <div class="clear"></div>
+
+
+                </section>
+
+
+                <aside class="post-nav">
+                    <div class="clear"></div>
+                </aside>
+
+            </div>
+        </article>
+    </main>
+      <!-- TODO : Body class -->
+    <div id="body-class" style="display: none;" class=""></div>
+
+    <footer id="footer">
+      <div class="inner">
+        <section class="credits">
+
+
+          <span class="credits-theme">Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a></span>
+          <span class="credits-software">Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a></span>
+        </section>
+      </div>
+    </footer>
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/javascript" src="/theme/js/script.js"></script>
+
+</body>
+</html>

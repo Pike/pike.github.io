@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <title>Localization is hard, the math way</title>
+
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+<link href="/2007/10/localization-is-hard-the-math-way.html" rel="canonical" />
+  <!-- Feed -->
+
+  <link href="/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+  <!-- Code highlight color scheme -->
+      <link href="/theme/css/code_blocks/github.css" rel="stylesheet">
+
+
+  <!-- Custom fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+
+    <meta name="description" content="I thought I share some statistics about our localizable strings. I'm currently trying to create a tool that would help localizers to...">
+
+    <meta name="author" content="Axel Hecht">
+
+
+
+
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="Axel Hecht"/>
+<meta property="og:title" content="Localization is hard, the math way"/>
+<meta property="og:description" content="I thought I share some statistics about our localizable strings. I'm currently trying to create a tool that would help localizers to..."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="/2007/10/localization-is-hard-the-math-way.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2007-10-17 14:48:00+00:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="/author/axel-hecht.html">
+<meta property="article:section" content="L10n"/>
+<meta property="og:image" content="/theme/images/post-bg.jpg">
+
+<!-- Twitter Card -->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "Localization is hard, the math way",
+  "headline": "Localization is hard, the math way",
+  "datePublished": "2007-10-17 14:48:00+00:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Axel Hecht",
+    "url": "/author/axel-hecht.html"
+  },
+  "image": "/theme/images/post-bg.jpg",
+  "url": "/2007/10/localization-is-hard-the-math-way.html",
+  "description": "I thought I share some statistics about our localizable strings. I'm currently trying to create a tool that would help localizers to..."
+}
+</script>
+</head>
+<!-- TODO : Body class -->
+<body class="home-template">
+
+<nav id="menu">
+  <a class="close-button">Close</a>
+  <div class="nav-wrapper">
+    <p class="nav-label">Menu</p>
+    <ul>
+
+
+    </ul>
+  </div>
+</nav>
+    <!-- Progressbar -->
+    <div class="progress-container">
+        <span class="progress-bar"></span>
+    </div>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header id="post-header" >
+      <div class="inner">
+        <nav id="navigation">
+            <span id="home-button" class="nav-button">
+                <a class="home-button" href="/" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+            </span>
+          <span id="menu-button" class="nav-button">
+            <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+          </span>
+        </nav>
+        <h1 class="post-title">Localization is hard, the math way</h1>
+        <!-- TODO : Proper class for headline -->
+        <span class="post-meta">
+                <a href="/author/axel-hecht.html">Axel Hecht</a>
+            | <time datetime="Wed 17 October 2007">Wed 17 October 2007</time>
+        </span>
+        <!-- TODO : Modified check -->
+      </div>
+    </header>
+
+  <section id="wrapper">
+    <a class="hidden-close"></a>
+
+    <!-- Post content -->
+    <main class="content" role="main">
+        <article class="post">
+        <div class="inner">
+            <section class="post-content">
+                <p>I thought I share some statistics about our localizable strings. I'm currently trying to create a tool that would help localizers to find terms or phrases that show up in Firefox often. Roughly, an automated way to do glossaries. So, the basic idea is to go through our localizable files, and search for phrases that come up elsewhere. Example:</p>
+<blockquote>
+<p>I love to localize.</p>
+<p>I don't really love to blog.</p>
+</blockquote>
+<p>should factor out &quot;love to&quot;. So, how does one do that? First, you get all localizable strings. Or not all, just the ones in properties files and DTDs. And neglect those that are just simple chars, those are likely access and commandkeys, not much to see there. Some of those entries have multiple sentences in them, so split those. Then split all words. Now you have a sequence of sequences of words. So you &quot;just&quot; have to find the unique subsequences of those sequences.</p>
+<p>Let's do the math. Here's the number of sentences per length of sentence for Firefox 2, with a logarithmic y-axis.</p>
+<p><a class="reference external" href="/images/2007/10/string-histogram.PNG"><img alt="Firefox 2 Sentences" src="/images/2007/10/string-histogram.PNG" /></a></p>
+<p>So, the maximum length of a sentence is 71 words, and we have one of that. The other end of the diagram are 1791 localizable strings that are just one word, among of those are 858 uniques.</p>
+<p>Now, we talked about subsequences, how many of those do we have then? I'm having a chart for that, too. I dropped the long tail, and don't do logarithmic scale, as that is hiding some of the more interesting artifacts for the shorter strings.</p>
+<p><a class="reference external" href="/images/2007/10/tuplecounts.PNG"><img alt="List of tuples in Firefox 2 sentences" src="/images/2007/10/tuplecounts.PNG" /></a></p>
+<p>So we're starting to see repeating strings at a length of 15 words. They stay to be few down to a length of 4 or 5, with a majority of dupes only for single words. For 2-tuples, it's almost a tie. Yet there are 20k words in our localizable files that need to be compared, and the same for all the subsequences, and doing my ad-hoc math, which I assume to be algorithm-wise not totally clueless, that amounts to half a million tuple compares to find the list of shared n-tuples in our localizable strings, sorted by frequency.</p>
+<p>Which is my lengthy math-way of saying: Making a consistent localization is hard.</p>
+
+            </section>
+
+            <section class="post-info">
+                <div class="post-share">
+                    <a class="twitter" href="https://twitter.com/share?text=Localization is hard, the math way&amp;url=/2007/10/localization-is-hard-the-math-way.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
+                    </a>
+                    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=/2007/10/localization-is-hard-the-math-way.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
+                    </a>
+                    <a class="googleplus" href="https://plus.google.com/share?url=/2007/10/localization-is-hard-the-math-way.html" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <i class="ic ic-googleplus"></i><span class="hidden">Google+</span>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+
+
+                <div class="clear"></div>
+
+
+                </section>
+
+
+                <aside class="post-nav">
+                    <div class="clear"></div>
+                </aside>
+
+            </div>
+        </article>
+    </main>
+      <!-- TODO : Body class -->
+    <div id="body-class" style="display: none;" class=""></div>
+
+    <footer id="footer">
+      <div class="inner">
+        <section class="credits">
+
+
+          <span class="credits-theme">Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a></span>
+          <span class="credits-software">Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a></span>
+        </section>
+      </div>
+    </footer>
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/javascript" src="/theme/js/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <title>Risk management for releases at scale</title>
+
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+<link href="/risk-management-for-releases-at-scale.html" rel="canonical" />
+  <!-- Feed -->
+
+  <link href="/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+  <!-- Code highlight color scheme -->
+      <link href="/theme/css/code_blocks/github.css" rel="stylesheet">
+
+
+  <!-- Custom fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+
+    <meta name="description" content="Let me share some recent revelations I had. It all started with the infamous Berlin airport. Not the nice one in Tegel, but the BBI...">
+
+    <meta name="author" content="Axel Hecht">
+
+    <meta name="tags" content="L10n">
+    <meta name="tags" content="Mozilla">
+
+
+
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="Axel Hecht"/>
+<meta property="og:title" content="Risk management for releases at scale"/>
+<meta property="og:description" content="Let me share some recent revelations I had. It all started with the infamous Berlin airport. Not the nice one in Tegel, but the BBI..."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="/risk-management-for-releases-at-scale.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2013-02-15 08:26:00+00:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="/author/axel-hecht.html">
+<meta property="article:section" content="L10n, Mozilla"/>
+<meta property="article:tag" content="L10n"/>
+<meta property="article:tag" content="Mozilla"/>
+<meta property="og:image" content="/theme/images/post-bg.jpg">
+
+<!-- Twitter Card -->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "Risk management for releases at scale",
+  "headline": "Risk management for releases at scale",
+  "datePublished": "2013-02-15 08:26:00+00:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Axel Hecht",
+    "url": "/author/axel-hecht.html"
+  },
+  "image": "/theme/images/post-bg.jpg",
+  "url": "/risk-management-for-releases-at-scale.html",
+  "description": "Let me share some recent revelations I had. It all started with the infamous Berlin airport. Not the nice one in Tegel, but the BBI..."
+}
+</script>
+</head>
+<!-- TODO : Body class -->
+<body class="home-template">
+
+<nav id="menu">
+  <a class="close-button">Close</a>
+  <div class="nav-wrapper">
+    <p class="nav-label">Menu</p>
+    <ul>
+
+
+    </ul>
+  </div>
+</nav>
+    <!-- Progressbar -->
+    <div class="progress-container">
+        <span class="progress-bar"></span>
+    </div>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header id="post-header" >
+      <div class="inner">
+        <nav id="navigation">
+            <span id="home-button" class="nav-button">
+                <a class="home-button" href="/" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+            </span>
+          <span id="menu-button" class="nav-button">
+            <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+          </span>
+        </nav>
+        <h1 class="post-title">Risk management for releases at scale</h1>
+        <!-- TODO : Proper class for headline -->
+        <span class="post-meta">
+                <a href="/author/axel-hecht.html">Axel Hecht</a>
+            | <time datetime="Fri 15 February 2013">Fri 15 February 2013</time>
+        </span>
+        <!-- TODO : Modified check -->
+      </div>
+    </header>
+
+  <section id="wrapper">
+    <a class="hidden-close"></a>
+
+    <!-- Post content -->
+    <main class="content" role="main">
+        <article class="post">
+        <div class="inner">
+            <section class="post-content">
+                <p>Let me share some recent revelations I had. It all started with the infamous Berlin airport. Not the nice one in Tegel, but the BBI desaster. The one we've thought we'd open last year, and now we don't know which year.</p>
+<p>Part of the newscoverage here in Germany was all about how they didn't do any risk analysis, and are doomed, and how that other project for the Olympics in London did do risk analysis, and got in under budget, ahead of time.</p>
+<p>So what's good for the Olympics can't be bad for Firefox, and I started <a class="reference external" href="http://pike.github.com/release-scale/docs/math.html">figuring out the math</a> behind our risk to ship Firefox, at a given time, with loads of localizations. <em>How likely is it that we'll make it?</em></p>
+<p>Interestingly enough, the same algorithm can also be applied to a set of features that are scheduled for a particular Firefox release. Locales, features, blockers, product-managers, developers, all the same thing :-). Any bucket of N things trying to make a single deadline have similar risks. And the same cure. So bear with me. I'll sprinkle graphs as we go to illustrate. They'll <a class="reference external" href="http://pike.github.com/release-scale/">link to a site</a> that I've set up to play with the numbers, reproducing the shown graphs.</p>
+<p>The setup is like this: Every single item (localization, for exampe) has a risk, and I'm assuming the same risk across the board. I'm trying to do that N times, and I'm interested in how likely I'll get all of them. And then I evaluate the impact of different amounts of freeze cycles. If you're like me, and don't believe any statistics unless they're done by throwing dices, check out the <a class="reference external" href="http://pike.github.com/release-scale/dices/">dices demo</a>.</p>
+<p>Anyway, let's start with 20% risk per locale, no freeze, and up to 100 locales.</p>
+<p><a class="reference external" href="http://pike.github.com/release-scale/?freezes=0&amp;locales=1,3,20,100&amp;likely=80"><img alt="80%, no freeze, up to 100" class="aligncenter size-full wp-image-505" src="images/2013/02/Bildschirmfoto-2013-02-13-um-15.20.07.png" style="width: 796px; height: 391px;" /></a></p>
+<p>Ouch. We're crossing 50-50 at 3 items already, and anything at scale is a pretty flat zero-chance. Why's that? What we're seeing is an exponential decay, the base being 80%, and the power being how often we do that. This is <strong>revelation one</strong> I had this week.</p>
+<p>How can we help this? If only our teams would fail less often? Feel free to play with the numbers, like setting the successrate from 80% to 90%. Better, but the system at large still doesn't scale. To fight an exponential risk, we need a cure that's exponential.</p>
+<p>Turns out freezes are just that. And that'd be <strong>revelation two</strong> I had this week. Let's add some 5 additional frozen development cycles.</p>
+<p><a class="reference external" href="http://pike.github.com/release-scale/?freezes=5&amp;locales=1,3,20,100&amp;likely=80"><img alt="80%, 5 freezes, up to 100" class="aligncenter size-full wp-image-507" src="images/2013/02/Bildschirmfoto-2013-02-13-um-15.55.08.png" style="width: 776px; height: 374px;" /></a></p>
+<p>Oh hai. At small scales, even just one frozen cycle kills risks. Three features without freeze have a 50-50 chance, but with just one freeze cycle we're already at 88%, which is better than the risk of each individual feature. At large scales like we're having in l10n, 2 freezes control the risk to mostly linear, 3 freezes being pretty solid. If I'm less confident and go down to 70% per locale, 4 or 5 cycles create a winning strategy. In other words, for a base risk of 20-30%, 4-5 freeze cycles make the problem for a localized release scale.</p>
+<p>It's actually intuitive that freezes are (kinda) exponentially good. The math is a tad more complicated, but simplified, if your per-item success rate is 70%, you only have to solve your problem for 30% of your items in the next cycle, and for 9% in the second cycle. Thus, you're fighting scale with scale. You can see this in action on the <a class="reference external" href="http://pike.github.com/release-scale/dices/">dices demo</a>, which plays through this each time you &quot;throw&quot; the dices.</p>
+<p>Now onwards to my <strong>third revelation</strong> while looking at this data. Features and blockers are just like localizations. Going in to the rapid release cycle with Firefox 5 etc, we've made two rules:</p>
+<ul class="simple">
+<li>Feature-freeze and string-freeze are on migration day from central to aurora</li>
+<li>Features not making the freeze take the next train</li>
+</ul>
+<p>That worked fine for a while, but since then, mozilla has grown as an organization. We've also built out dependencies inside our organization that make us want particular features in particular releases. That's actually a good situation to be in. It's good that people care, and it's good that we're working on things that have organizational context.</p>
+<p>But this changed the risks in our release cycle. We started off having a single risk of exponential scale after the migration date (l10n). Today, we have features going in to the cycle, and localizations thereof. At this point, having feature-freeze and string-freeze being the same thing becomes a risk for the release cycle at large. We should think about how to separate the two to mitigate the risk for each effectively, and ship awesome and localized software.</p>
+<p>I learned quite a bit looking at our risks, I hope I could share some of that.</p>
+
+            </section>
+
+            <section class="post-info">
+                <div class="post-share">
+                    <a class="twitter" href="https://twitter.com/share?text=Risk management for releases at scale&amp;url=/risk-management-for-releases-at-scale.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
+                    </a>
+                    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=/risk-management-for-releases-at-scale.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
+                    </a>
+                    <a class="googleplus" href="https://plus.google.com/share?url=/risk-management-for-releases-at-scale.html" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <i class="ic ic-googleplus"></i><span class="hidden">Google+</span>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+
+                <aside class="post-tags">
+<a href="/tag/l10n.html">L10n</a><a href="/tag/mozilla.html">Mozilla</a>                </aside>
+
+                <div class="clear"></div>
+
+
+                </section>
+
+
+                <aside class="post-nav">
+                    <div class="clear"></div>
+                </aside>
+
+            </div>
+        </article>
+    </main>
+      <!-- TODO : Body class -->
+    <div id="body-class" style="display: none;" class=""></div>
+
+    <footer id="footer">
+      <div class="inner">
+        <section class="credits">
+
+
+          <span class="credits-theme">Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a></span>
+          <span class="credits-software">Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a></span>
+        </section>
+      </div>
+    </footer>
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/javascript" src="/theme/js/script.js"></script>
+
+</body>
+</html>

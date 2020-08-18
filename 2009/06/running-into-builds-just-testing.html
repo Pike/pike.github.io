@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <title>Running into builds, just testing</title>
+
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+<link href="/2009/06/running-into-builds-just-testing.html" rel="canonical" />
+  <!-- Feed -->
+
+  <link href="/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+  <!-- Code highlight color scheme -->
+      <link href="/theme/css/code_blocks/github.css" rel="stylesheet">
+
+
+  <!-- Custom fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+
+    <meta name="description" content="I've blogged previously on how to set up a staging environment to test the l10n build system, but I didn't go into any detail on how to...">
+
+    <meta name="author" content="Axel Hecht">
+
+    <meta name="tags" content="build">
+    <meta name="tags" content="buildbot">
+    <meta name="tags" content="L10n">
+    <meta name="tags" content="Mozilla">
+
+
+
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="Axel Hecht"/>
+<meta property="og:title" content="Running into builds, just testing"/>
+<meta property="og:description" content="I've blogged previously on how to set up a staging environment to test the l10n build system, but I didn't go into any detail on how to..."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="/2009/06/running-into-builds-just-testing.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2009-06-10 10:29:00+00:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="/author/axel-hecht.html">
+<meta property="article:section" content="L10n, Mozilla"/>
+<meta property="article:tag" content="build"/>
+<meta property="article:tag" content="buildbot"/>
+<meta property="article:tag" content="L10n"/>
+<meta property="article:tag" content="Mozilla"/>
+<meta property="og:image" content="/theme/images/post-bg.jpg">
+
+<!-- Twitter Card -->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "Running into builds, just testing",
+  "headline": "Running into builds, just testing",
+  "datePublished": "2009-06-10 10:29:00+00:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Axel Hecht",
+    "url": "/author/axel-hecht.html"
+  },
+  "image": "/theme/images/post-bg.jpg",
+  "url": "/2009/06/running-into-builds-just-testing.html",
+  "description": "I've blogged previously on how to set up a staging environment to test the l10n build system, but I didn't go into any detail on how to..."
+}
+</script>
+</head>
+<!-- TODO : Body class -->
+<body class="home-template">
+
+<nav id="menu">
+  <a class="close-button">Close</a>
+  <div class="nav-wrapper">
+    <p class="nav-label">Menu</p>
+    <ul>
+
+
+    </ul>
+  </div>
+</nav>
+    <!-- Progressbar -->
+    <div class="progress-container">
+        <span class="progress-bar"></span>
+    </div>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header id="post-header" >
+      <div class="inner">
+        <nav id="navigation">
+            <span id="home-button" class="nav-button">
+                <a class="home-button" href="/" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+            </span>
+          <span id="menu-button" class="nav-button">
+            <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+          </span>
+        </nav>
+        <h1 class="post-title">Running into builds, just testing</h1>
+        <!-- TODO : Proper class for headline -->
+        <span class="post-meta">
+                <a href="/author/axel-hecht.html">Axel Hecht</a>
+            | <time datetime="Wed 10 June 2009">Wed 10 June 2009</time>
+        </span>
+        <!-- TODO : Modified check -->
+      </div>
+    </header>
+
+  <section id="wrapper">
+    <a class="hidden-close"></a>
+
+    <!-- Post content -->
+    <main class="content" role="main">
+        <article class="post">
+        <div class="inner">
+            <section class="post-content">
+                <p>I've blogged previously on how to <a class="reference external" href="/2009/06/l10n-ecosystem-in-a-fishbowl.html">set up a staging environment</a> to test the l10n build system, but I didn't go into any detail on how to actually do builds in that set up. That shall be fixed.</p>
+<p>I'm picking you up at the point where</p>
+<p><tt class="docutils literal">twistd <span class="pre">get-pushes</span> <span class="pre">-n</span> <span class="pre">-t</span> 1 <span class="pre">-s</span> l10n_site.settings</tt></p>
+<p>is running stable. You probably want to <tt class="docutils literal">tail <span class="pre">-f</span> twistd.log</tt> to follow what it's doing. This piece is going to watch the hg repositories in <tt class="docutils literal">stage/repos</tt> and feed all the pushes to those into the db. Next is to make sure that you actually get builds.</p>
+<p>The first thing you need to do is to configure the <tt class="docutils literal"><span class="pre">l10n-master</span></tt> to access the same database as the <tt class="docutils literal"><span class="pre">django-site</span></tt>. Just make sure that <tt class="docutils literal">DATABASE_*</tt> settings in <tt class="docutils literal"><span class="pre">l10n-master/settings.py</span></tt> and <tt class="docutils literal"><span class="pre">django-site/l10n_site/settings.py</span></tt> match. The other setting to sync is <tt class="docutils literal">REPOSITORY_BASE</tt>, which needs to match in both <tt class="docutils literal">settings.py</tt>s. I suggest setting that to an empy dir next to the l10n-master. I wouldn't use the <tt class="docutils literal">stage/repos</tt> dir, mostly because I didn't test that. Now you set up the master for buildbot, by running</p>
+<p><tt class="docutils literal">buildbot <span class="pre">create-master</span> .</tt></p>
+<p>inside the l10n-master clone. Next thing is to create a <tt class="docutils literal">slave</tt> dir, which is well put next to the <tt class="docutils literal"><span class="pre">l10n-master</span></tt>. Despite what buildbot usually likes, this slave should be on the same machine that the rest is running on.</p>
+<p><tt class="docutils literal">mkdir slave buildbot <span class="pre">create-slave</span> slave localhost:9021 cs pwd</tt></p>
+<p>So much for the general setup. With the twistd daemon running to get the pushes, you can now switch on the master and the slave, by doing a <tt class="docutils literal">buildbot start .</tt> in both dirs. I suggest that you keep a <tt class="docutils literal">tail <span class="pre">-f</span> twistd.log</tt> running on the master. If you decide to set things up to track the upstream repositories, I start the master, then the slave, and if both are up fine, I start the twistd daemon for get-pushes.</p>
+<p>Now let's trigger some builds:</p>
+<p>Open <tt class="docutils literal"><span class="pre">stage/workdir/mozilla/browser/locales/en-US/file.properties</span></tt> in your favorite editor, and do a modification. I suggest to just do a whitespace edit, or to change the value of the existing entity, as that is going to keep your localizations green. Check the change in to the working clone, and then push. The get-pushes output should show that it got a new push, and then on the next cycle, feed the push into the database. You'll notice by the output of a hg pull showing up in the log. On the next poll on the l10n-master, builds for all 4 locales should trigger. You should see an update of four builds on <a class="reference external" href="http://localhost:8000/builds/waterfall">the waterfall</a>, and 4 locales on the <tt class="docutils literal">test</tt> tree on the <a class="reference external" href="http://localhost:8000/dashboard/">local dashboard</a>.</p>
+
+            </section>
+
+            <section class="post-info">
+                <div class="post-share">
+                    <a class="twitter" href="https://twitter.com/share?text=Running into builds, just testing&amp;url=/2009/06/running-into-builds-just-testing.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
+                    </a>
+                    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=/2009/06/running-into-builds-just-testing.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
+                    </a>
+                    <a class="googleplus" href="https://plus.google.com/share?url=/2009/06/running-into-builds-just-testing.html" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <i class="ic ic-googleplus"></i><span class="hidden">Google+</span>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+
+                <aside class="post-tags">
+<a href="/tag/build.html">build</a><a href="/tag/buildbot.html">buildbot</a><a href="/tag/l10n.html">L10n</a><a href="/tag/mozilla.html">Mozilla</a>                </aside>
+
+                <div class="clear"></div>
+
+
+                </section>
+
+
+                <aside class="post-nav">
+                    <div class="clear"></div>
+                </aside>
+
+            </div>
+        </article>
+    </main>
+      <!-- TODO : Body class -->
+    <div id="body-class" style="display: none;" class=""></div>
+
+    <footer id="footer">
+      <div class="inner">
+        <section class="credits">
+
+
+          <span class="credits-theme">Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a></span>
+          <span class="credits-software">Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a></span>
+        </section>
+      </div>
+    </footer>
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/javascript" src="/theme/js/script.js"></script>
+
+</body>
+</html>

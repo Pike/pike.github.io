@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <title>oh my eyes, but good still</title>
+
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+<link href="/2009/07/oh-my-eyes-but-good-still.html" rel="canonical" />
+  <!-- Feed -->
+
+  <link href="/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+  <!-- Code highlight color scheme -->
+      <link href="/theme/css/code_blocks/github.css" rel="stylesheet">
+
+
+  <!-- Custom fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+
+    <meta name="description" content="I've uploaded a snapshot of a build in progress on my test display which gives a bit better insight on what's possible to show about a...">
+
+    <meta name="author" content="Axel Hecht">
+
+    <meta name="tags" content="build">
+    <meta name="tags" content="buildbot">
+    <meta name="tags" content="Mozilla">
+
+
+
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="Axel Hecht"/>
+<meta property="og:title" content="oh my eyes, but good still"/>
+<meta property="og:description" content="I've uploaded a snapshot of a build in progress on my test display which gives a bit better insight on what's possible to show about a..."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="/2009/07/oh-my-eyes-but-good-still.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2009-07-12 14:19:00+00:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="/author/axel-hecht.html">
+<meta property="article:section" content="Mozilla"/>
+<meta property="article:tag" content="build"/>
+<meta property="article:tag" content="buildbot"/>
+<meta property="article:tag" content="Mozilla"/>
+<meta property="og:image" content="/theme/images/post-bg.jpg">
+
+<!-- Twitter Card -->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "oh my eyes, but good still",
+  "headline": "oh my eyes, but good still",
+  "datePublished": "2009-07-12 14:19:00+00:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Axel Hecht",
+    "url": "/author/axel-hecht.html"
+  },
+  "image": "/theme/images/post-bg.jpg",
+  "url": "/2009/07/oh-my-eyes-but-good-still.html",
+  "description": "I've uploaded a snapshot of a build in progress on my test display which gives a bit better insight on what's possible to show about a..."
+}
+</script>
+</head>
+<!-- TODO : Body class -->
+<body class="home-template">
+
+<nav id="menu">
+  <a class="close-button">Close</a>
+  <div class="nav-wrapper">
+    <p class="nav-label">Menu</p>
+    <ul>
+
+
+    </ul>
+  </div>
+</nav>
+    <!-- Progressbar -->
+    <div class="progress-container">
+        <span class="progress-bar"></span>
+    </div>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header id="post-header" >
+      <div class="inner">
+        <nav id="navigation">
+            <span id="home-button" class="nav-button">
+                <a class="home-button" href="/" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+            </span>
+          <span id="menu-button" class="nav-button">
+            <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+          </span>
+        </nav>
+        <h1 class="post-title">oh my eyes, but good still</h1>
+        <!-- TODO : Proper class for headline -->
+        <span class="post-meta">
+                <a href="/author/axel-hecht.html">Axel Hecht</a>
+            | <time datetime="Sun 12 July 2009">Sun 12 July 2009</time>
+        </span>
+        <!-- TODO : Modified check -->
+      </div>
+    </header>
+
+  <section id="wrapper">
+    <a class="hidden-close"></a>
+
+    <!-- Post content -->
+    <main class="content" role="main">
+        <article class="post">
+        <div class="inner">
+            <section class="post-content">
+                <p><a class="reference external" href="http://www.flickr.com/photos/axelhecht/3713183052/"><img alt="Builds for a change" src="http://farm4.static.flickr.com/3619/3713183052_00243e5d33_m.jpg" style="width: 240px; height: 121px;" /></a>I've uploaded a snapshot of a build in progress on my test display which gives a bit better insight on what's possible to show about a build based on the information that buildbot has, or a build database had. The important pieces here compared to tinderbox are:</p>
+<ul class="simple">
+<li>Builds in progress are associated with the check-in that triggered the build.</li>
+<li>Builds in progress show individual build steps.</li>
+<li>Finished builds are displayed in compact form. In this case, all builds end with warnings, and thus come back in a shade of orange.</li>
+<li>Builds not yet started that are already requested are displayed on top.</li>
+</ul>
+<p>I didn't go into the detail of mentioning which builders are having pending builds. This is mostly me waiting for django 1.1 and aggregation support, but in the end it's as simple as a GROUP BY. Nor did I try to make that display visually pretty, hell no.</p>
+<p>In the context of our regular builds, it's worthwhile mentioning what unit test and talos runs would look like, i.e., &quot;builds&quot; that are scheduled after the binary builds are done. Those wouldn't show up until they're actually scheduled, which is fair enough, as that is what's actually happening. If a windows build fails, there won't be unit tests nor talos builds run. You wouldn't end up in a situation where you think you're done and you aren't, though. (Talos not working this way aside, that needs thought due to different masters etc.) The actual builders don't finish until they triggered the spin-off runs, so you either see the binary build as still running, or you see the triggered runs as pending. Here, as soon as you don't have anything running or pending and your boxens are green, you're off the hook.</p>
+<p>I also added microsummaries and RSS feeds for this view, so you can use the web to learn about your the fire you lit up.</p>
+
+            </section>
+
+            <section class="post-info">
+                <div class="post-share">
+                    <a class="twitter" href="https://twitter.com/share?text=oh my eyes, but good still&amp;url=/2009/07/oh-my-eyes-but-good-still.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
+                    </a>
+                    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=/2009/07/oh-my-eyes-but-good-still.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
+                    </a>
+                    <a class="googleplus" href="https://plus.google.com/share?url=/2009/07/oh-my-eyes-but-good-still.html" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <i class="ic ic-googleplus"></i><span class="hidden">Google+</span>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+
+                <aside class="post-tags">
+<a href="/tag/build.html">build</a><a href="/tag/buildbot.html">buildbot</a><a href="/tag/mozilla.html">Mozilla</a>                </aside>
+
+                <div class="clear"></div>
+
+
+                </section>
+
+
+                <aside class="post-nav">
+                    <div class="clear"></div>
+                </aside>
+
+            </div>
+        </article>
+    </main>
+      <!-- TODO : Body class -->
+    <div id="body-class" style="display: none;" class=""></div>
+
+    <footer id="footer">
+      <div class="inner">
+        <section class="credits">
+
+
+          <span class="credits-theme">Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a></span>
+          <span class="credits-software">Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a></span>
+        </section>
+      </div>
+    </footer>
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/javascript" src="/theme/js/script.js"></script>
+
+</body>
+</html>

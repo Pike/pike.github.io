@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <title>got l10n builds</title>
+
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+<link href="/got-l10n-builds.html" rel="canonical" />
+  <!-- Feed -->
+
+  <link href="/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+  <!-- Code highlight color scheme -->
+      <link href="/theme/css/code_blocks/github.css" rel="stylesheet">
+
+
+  <!-- Custom fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+
+    <meta name="description" content="'nuff said? Not even remotely. We've had l10n builds as long as I'm working on l10n, actually, I got involved around the time when we...">
+
+    <meta name="author" content="Axel Hecht">
+
+    <meta name="tags" content="build">
+    <meta name="tags" content="L10n">
+    <meta name="tags" content="Mozilla">
+
+
+
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="Axel Hecht"/>
+<meta property="og:title" content="got l10n builds"/>
+<meta property="og:description" content="'nuff said? Not even remotely. We've had l10n builds as long as I'm working on l10n, actually, I got involved around the time when we..."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="/got-l10n-builds.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2009-06-05 03:22:00+00:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="/author/axel-hecht.html">
+<meta property="article:section" content="L10n, Mozilla"/>
+<meta property="article:tag" content="build"/>
+<meta property="article:tag" content="L10n"/>
+<meta property="article:tag" content="Mozilla"/>
+<meta property="og:image" content="/theme/images/post-bg.jpg">
+
+<!-- Twitter Card -->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "got l10n builds",
+  "headline": "got l10n builds",
+  "datePublished": "2009-06-05 03:22:00+00:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Axel Hecht",
+    "url": "/author/axel-hecht.html"
+  },
+  "image": "/theme/images/post-bg.jpg",
+  "url": "/got-l10n-builds.html",
+  "description": "'nuff said? Not even remotely. We've had l10n builds as long as I'm working on l10n, actually, I got involved around the time when we..."
+}
+</script>
+</head>
+<!-- TODO : Body class -->
+<body class="home-template">
+
+<nav id="menu">
+  <a class="close-button">Close</a>
+  <div class="nav-wrapper">
+    <p class="nav-label">Menu</p>
+    <ul>
+
+
+    </ul>
+  </div>
+</nav>
+    <!-- Progressbar -->
+    <div class="progress-container">
+        <span class="progress-bar"></span>
+    </div>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header id="post-header" >
+      <div class="inner">
+        <nav id="navigation">
+            <span id="home-button" class="nav-button">
+                <a class="home-button" href="/" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+            </span>
+          <span id="menu-button" class="nav-button">
+            <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+          </span>
+        </nav>
+        <h1 class="post-title">got l10n builds</h1>
+        <!-- TODO : Proper class for headline -->
+        <span class="post-meta">
+                <a href="/author/axel-hecht.html">Axel Hecht</a>
+            | <time datetime="Fri 05 June 2009">Fri 05 June 2009</time>
+        </span>
+        <!-- TODO : Modified check -->
+      </div>
+    </header>
+
+  <section id="wrapper">
+    <a class="hidden-close"></a>
+
+    <!-- Post content -->
+    <main class="content" role="main">
+        <article class="post">
+        <div class="inner">
+            <section class="post-content">
+                <p>'nuff said? Not even remotely.</p>
+<p>We've had l10n builds as long as I'm working on l10n, actually, I got involved around the time when we started to do them upstream. They always were considerably better than each localizer doing their build at home on whatever (virus-infected) hardware they found, with help from other community members for the platforms they didn't have. But at the light of day, it was more</p>
+<blockquote>
+That? Yeah, I know. That's crap.</blockquote>
+<p>And I know you can hear my voice in your head right now :-).</p>
+<p>Those days are gone. We're running Firefox and Fennec builds on the releng infrastructure now for a few days that are actually sound builds made to service our l10n community. Some highlights:</p>
+<ul class="simple">
+<li>Builds are finished some 10 minutes after a localizer landing, on all three platforms.</li>
+<li>There's no deadlock between different locales, thanks to all l10n builds running on a pool of slaves.</li>
+<li>Builds are &quot;l10n-merged&quot;, against the actual build that's repackaged. Independent of missing strings or files, you have a build that can be tested.</li>
+<li>No more race conditions between nightly and trunk source status.</li>
+</ul>
+<p>The impact of this shouldn't be under-estimated. We are, for the first time in years, producing builds that allow a localizer to actually immediately test. Localizers can work incrementally, translate one feature, check-in, test. No worries if something landed in en-US in the meantime, or whatnot. With the new builds, I have seen various localizers coming from hundreds of missing strings to a tested build on two or three platforms in a matter of a few hours. Back in the days, that was the waiting time for the first build. The new locales all pull all-nighters to get their final bits in. They want to, and now they actually can.</p>
+<p>I want to thank coop and armenzg for their great help in making this happen, aki for porting it over to fennec. Of course thanks go to joduinn and sethb, too, for bearing with the ongoing meetings we have, trying to battle the crap down. To dynamis for the initial work on l10n-merge. Also thanks to bsmedberg and Chase for the initial works on both automation and build process, and ted for the various reviews on making our build system catch up.</p>
+<p>Finally, we're not going to stop here. Armen is working on creating the necessary files to get l10n builds on a nightly update channel. Yep, you heard right, that's where we are right now. I know that KaiRo is working on getting the goodness over to the comm-central apps. And yours truly is hacking on the dashboard together with gandalf, more on that in a different post.</p>
+
+            </section>
+
+            <section class="post-info">
+                <div class="post-share">
+                    <a class="twitter" href="https://twitter.com/share?text=got l10n builds&amp;url=/got-l10n-builds.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
+                    </a>
+                    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=/got-l10n-builds.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
+                    </a>
+                    <a class="googleplus" href="https://plus.google.com/share?url=/got-l10n-builds.html" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <i class="ic ic-googleplus"></i><span class="hidden">Google+</span>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+
+                <aside class="post-tags">
+<a href="/tag/build.html">build</a><a href="/tag/l10n.html">L10n</a><a href="/tag/mozilla.html">Mozilla</a>                </aside>
+
+                <div class="clear"></div>
+
+
+                </section>
+
+
+                <aside class="post-nav">
+                    <div class="clear"></div>
+                </aside>
+
+            </div>
+        </article>
+    </main>
+      <!-- TODO : Body class -->
+    <div id="body-class" style="display: none;" class=""></div>
+
+    <footer id="footer">
+      <div class="inner">
+        <section class="credits">
+
+
+          <span class="credits-theme">Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a></span>
+          <span class="credits-software">Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a></span>
+        </section>
+      </div>
+    </footer>
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/javascript" src="/theme/js/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <title>L10n ecosystem in a fishbowl</title>
+
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+<link href="/l10n-ecosystem-in-a-fishbowl.html" rel="canonical" />
+  <!-- Feed -->
+
+  <link href="/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+  <!-- Code highlight color scheme -->
+      <link href="/theme/css/code_blocks/github.css" rel="stylesheet">
+
+
+  <!-- Custom fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+
+    <meta name="description" content="Building the infrastructure for our l10n builds is hard, mostly because it's consisting of a ton of things that you don't have control...">
+
+    <meta name="author" content="Axel Hecht">
+
+    <meta name="tags" content="build">
+    <meta name="tags" content="buildbot">
+    <meta name="tags" content="L10n">
+    <meta name="tags" content="Mozilla">
+
+
+
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="Axel Hecht"/>
+<meta property="og:title" content="L10n ecosystem in a fishbowl"/>
+<meta property="og:description" content="Building the infrastructure for our l10n builds is hard, mostly because it's consisting of a ton of things that you don't have control..."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="/l10n-ecosystem-in-a-fishbowl.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2009-06-01 07:02:00+00:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="/author/axel-hecht.html">
+<meta property="article:section" content="L10n, Mozilla"/>
+<meta property="article:tag" content="build"/>
+<meta property="article:tag" content="buildbot"/>
+<meta property="article:tag" content="L10n"/>
+<meta property="article:tag" content="Mozilla"/>
+<meta property="og:image" content="/theme/images/post-bg.jpg">
+
+<!-- Twitter Card -->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "L10n ecosystem in a fishbowl",
+  "headline": "L10n ecosystem in a fishbowl",
+  "datePublished": "2009-06-01 07:02:00+00:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Axel Hecht",
+    "url": "/author/axel-hecht.html"
+  },
+  "image": "/theme/images/post-bg.jpg",
+  "url": "/l10n-ecosystem-in-a-fishbowl.html",
+  "description": "Building the infrastructure for our l10n builds is hard, mostly because it's consisting of a ton of things that you don't have control..."
+}
+</script>
+</head>
+<!-- TODO : Body class -->
+<body class="home-template">
+
+<nav id="menu">
+  <a class="close-button">Close</a>
+  <div class="nav-wrapper">
+    <p class="nav-label">Menu</p>
+    <ul>
+
+
+    </ul>
+  </div>
+</nav>
+    <!-- Progressbar -->
+    <div class="progress-container">
+        <span class="progress-bar"></span>
+    </div>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header id="post-header" >
+      <div class="inner">
+        <nav id="navigation">
+            <span id="home-button" class="nav-button">
+                <a class="home-button" href="/" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+            </span>
+          <span id="menu-button" class="nav-button">
+            <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+          </span>
+        </nav>
+        <h1 class="post-title">L10n ecosystem in a fishbowl</h1>
+        <!-- TODO : Proper class for headline -->
+        <span class="post-meta">
+                <a href="/author/axel-hecht.html">Axel Hecht</a>
+            | <time datetime="Mon 01 June 2009">Mon 01 June 2009</time>
+        </span>
+        <!-- TODO : Modified check -->
+      </div>
+    </header>
+
+  <section id="wrapper">
+    <a class="hidden-close"></a>
+
+    <!-- Post content -->
+    <main class="content" role="main">
+        <article class="post">
+        <div class="inner">
+            <section class="post-content">
+                <p>Building the infrastructure for our l10n builds is hard, mostly because it's consisting of a ton of things that you don't have control over. We're building 3 and a half applications, Firefox, Thunderbird, Fennec, and Sunbird for calendar. Firefox is built on three versions, one of which is still coming from CVS. Thunderbird is one version on CVS, one on hg. We're touching some 170 hg repos, and a single check-in can do anything between no build, one build, or up to almost 200 builds. Rinse, repeat, yeah, 200 builds for a single landing. Worse than that, you don't have any control over who's landing what when where. Bottom line, you really can't test a change in the l10n build automation reliably in our production setup.</p>
+<p>You can create a fake ecosystem, though, and I'll explain a bit how that works. Of course it doesn't end up being trivial, but it's contained. It's not trying to cover the CVS branches, those would require a setup of bonsai, which I chicken away from. Take this post with a grain of salt, I assume there are some errors here as most of it is typed from memory.</p>
+<p>As with any recipe, here are the list of ingredients:</p>
+<ul class="simple">
+<li>A set of hg repositories, both for a fake application and some fake l10n repos.</li>
+<li>An hg server serving those repositories (make that port 8001).</li>
+<li>Some buildbot infrastructure working on top of these repositories that you're trying to test.</li>
+<li>Possibly an instance of the l10n dashboard presenting both the build and the l10n data.</li>
+</ul>
+<p>The initial chunk is creating the repositories. I created a helper script <a class="reference external" href="http://hg.mozilla.org/build/buildbotcustom/file/default/bin/l10n-stage/create-stage">create-stage</a> that does that, which is part of <a class="reference external" href="http://hg.mozilla.org/build/buildbotcustom/file/default/bin/l10n-stage/">buildbotcustom/bin/l10n-stage</a>. It's main purpose is to get the templates, hooks etc that are part of our server-side setup on hg.mozilla.org, create some upstream repos for en-US and l10n, and push some initial content from a set of working clones. You call it like</p>
+<p><tt class="docutils literal">python <span class="pre">l10n-stage</span> <span class="pre">-l</span> stagedir</tt></p>
+<p>The <tt class="docutils literal"><span class="pre">-l</span></tt> keeps the l10n repositories from pushing their initial content, which yields a scenario that is closer to what we have upstream, i.e., a flock of en-US pushes before the l10n repos start. This command creates a bunch of main repositories in the <tt class="docutils literal">repos</tt> subdir of <tt class="docutils literal">stagedir</tt>, and a bunch of working clones in <tt class="docutils literal">workdir</tt>. It also creates a <tt class="docutils literal">webdir.conf</tt>, that you'll use to run the local hg http server. Let's run that now, in <tt class="docutils literal">stagedir</tt>:</p>
+<p><tt class="docutils literal">hg serve <span class="pre">-p</span> 8001 <span class="pre">--webdir-conf=webdir.conf</span> <span class="pre">-t</span> repos/hg_templates</tt></p>
+<p>Now you have a local setup of a application repository called <tt class="docutils literal">mozilla</tt>, and 4 localizations in <tt class="docutils literal">l10n</tt>, <tt class="docutils literal">ab</tt>, <tt class="docutils literal">de</tt>, <tt class="docutils literal"><span class="pre">ja-JP-mac</span></tt>, <tt class="docutils literal"><span class="pre">x-testing</span></tt>. They're all equipped with the same hooks that we run on hg.m.o, in particular, they support pushlog.</p>
+<p>Now on to the buildbot infrastructure. There's a sibling script to create-stage, <a class="reference external" href="http://hg.mozilla.org/build/buildbotcustom/file/default/bin/l10n-stage/create-buildbot">create-buildbot</a>, which should create a master setup that is rather close to what we run on releng. It supports various degrees of parallelism for multiple slaves on three platforms, does only dummy builds, though. IIRC. I want to go into more detail on how to set up the new dashboard master, though.</p>
+<p>The dashboard master is merely running compare-locales on the actual source repositories. It does come with our bonsai replacement <tt class="docutils literal">pushes</tt>, though. That's basically a pushlog spanning repositories, including file and branch indexing. Here's the basic software components you'll need:</p>
+<ul class="simple">
+<li>django 1.0.x (1.1pre might work, too)</li>
+<li>buildbot 0.7.10p1, older versions won't work</li>
+</ul>
+<p>and from hg.m.o, you'll need <a class="reference external" href="http://hg.mozilla.org/build/compare-locales/">compare-locales</a>, <a class="reference external" href="http://hg.mozilla.org/users/axel_mozilla.com/locale-inspector/">locale-inspector</a>, <a class="reference external" href="http://hg.mozilla.org/users/axel_mozilla.com/l10n-master/">l10n-master</a>, <a class="reference external" href="http://hg.mozilla.org/build/buildbotcustom/">buildbotcustom</a> and <a class="reference external" href="http://hg.mozilla.org/users/axel_mozilla.com/django-site/">django-site</a>.</p>
+<p>Firstly, you set up the db. sqlite and mysql should both work, mysql is actively tested. Edit the various settings.py files to reference your db, with an absolute path if sqlite, and create the schema. The main entry point to the django site is l10n_site, go in there to run <tt class="docutils literal">python manage.py syncdb</tt>. Another edit you want to do is to point <tt class="docutils literal">REPOSITORY_BASE</tt> to a dir where you can stage another set of clones of your repos. I suggest to not share the hg master repo dir here.</p>
+<p>Next, create a buildbot master and a slave. You do that by running the buildbot create-master command on your local clone of <tt class="docutils literal"><span class="pre">l10n-master</span></tt>. You'll need to adapt l10nbuilds.ini to the test set up,</p>
+<pre class="literal-block">
+[test]
+app = browser
+type = hg
+locales = all
+mozilla = mozilla
+l10n = l10n
+repo = http://localhost:8001/
+l10n.ini = browser/locales/l10n.ini
+builders = compare
+</pre>
+<p>I should put that into the repo somewhere, I guess.</p>
+<p>Setting up the slave is trivial, you need to make sure it's on the same machine, though. It will run on the django clones directly.</p>
+<p>Before starting master and slave, make sure that all the deps are in your <tt class="docutils literal">PYTHONPATH</tt>.</p>
+<p>Last but not least, you need to get all the pushes from your repo setup into your django setup. First, you need to tell the db which repositories it's supposed to get from where. I created sample data for the test app, which you can load by</p>
+<p><tt class="docutils literal">python manage.py loaddata localhost</tt></p>
+<p>The repositories I use for the production environment are in <tt class="docutils literal">hg_mozilla_org</tt>, fwiw. You fill the database with the actual push data by running a twisted daemon. Inside django-site, run</p>
+<p><tt class="docutils literal">twistd <span class="pre">get-pushes</span> <span class="pre">-n</span> <span class="pre">-t</span> 1 <span class="pre">-s</span> l10n_site.settings</tt></p>
+<p>That will ping one repo per second, not update, with data from <tt class="docutils literal">l10n_site.settings</tt>. Now you have everything set up, and you can start to edit en-US and l10n files in your workingdir, and push, and see how that changes your builds and dashboard.</p>
+<p>The buildbot waterfall will be on port 8364, and with <tt class="docutils literal">python manage.py runserver</tt>, the dashboard will show up on port 8000. None of this is setup to be on a production server at this point, but it's good for testing.</p>
+<p><em>Update: Forgot to mention that you need to bootstrap the repo lists.</em></p>
+
+            </section>
+
+            <section class="post-info">
+                <div class="post-share">
+                    <a class="twitter" href="https://twitter.com/share?text=L10n ecosystem in a fishbowl&amp;url=/l10n-ecosystem-in-a-fishbowl.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
+                    </a>
+                    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=/l10n-ecosystem-in-a-fishbowl.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
+                    </a>
+                    <a class="googleplus" href="https://plus.google.com/share?url=/l10n-ecosystem-in-a-fishbowl.html" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <i class="ic ic-googleplus"></i><span class="hidden">Google+</span>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+
+                <aside class="post-tags">
+<a href="/tag/build.html">build</a><a href="/tag/buildbot.html">buildbot</a><a href="/tag/l10n.html">L10n</a><a href="/tag/mozilla.html">Mozilla</a>                </aside>
+
+                <div class="clear"></div>
+
+
+                </section>
+
+
+                <aside class="post-nav">
+                    <div class="clear"></div>
+                </aside>
+
+            </div>
+        </article>
+    </main>
+      <!-- TODO : Body class -->
+    <div id="body-class" style="display: none;" class=""></div>
+
+    <footer id="footer">
+      <div class="inner">
+        <section class="credits">
+
+
+          <span class="credits-theme">Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a></span>
+          <span class="credits-software">Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a></span>
+        </section>
+      </div>
+    </footer>
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/javascript" src="/theme/js/script.js"></script>
+
+</body>
+</html>

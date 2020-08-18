@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <title>Porcupine, meet Churchill</title>
+
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+<link href="/2010/07/porcupine-meet-churchill.html" rel="canonical" />
+  <!-- Feed -->
+
+  <link href="/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+  <!-- Code highlight color scheme -->
+      <link href="/theme/css/code_blocks/github.css" rel="stylesheet">
+
+
+  <!-- Custom fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+
+    <meta name="description" content="I've been talking with Seth today on how we can answer questions about the status of l10n. My grumpy argument was that I wouldn't know...">
+
+    <meta name="author" content="Axel Hecht">
+
+    <meta name="tags" content="L10n">
+    <meta name="tags" content="Mozilla">
+
+
+
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="Axel Hecht"/>
+<meta property="og:title" content="Porcupine, meet Churchill"/>
+<meta property="og:description" content="I've been talking with Seth today on how we can answer questions about the status of l10n. My grumpy argument was that I wouldn't know..."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="/2010/07/porcupine-meet-churchill.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2010-07-27 12:16:00+00:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="/author/axel-hecht.html">
+<meta property="article:section" content="L10n, Mozilla"/>
+<meta property="article:tag" content="L10n"/>
+<meta property="article:tag" content="Mozilla"/>
+<meta property="og:image" content="/theme/images/post-bg.jpg">
+
+<!-- Twitter Card -->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "Porcupine, meet Churchill",
+  "headline": "Porcupine, meet Churchill",
+  "datePublished": "2010-07-27 12:16:00+00:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Axel Hecht",
+    "url": "/author/axel-hecht.html"
+  },
+  "image": "/theme/images/post-bg.jpg",
+  "url": "/2010/07/porcupine-meet-churchill.html",
+  "description": "I've been talking with Seth today on how we can answer questions about the status of l10n. My grumpy argument was that I wouldn't know..."
+}
+</script>
+</head>
+<!-- TODO : Body class -->
+<body class="home-template">
+
+<nav id="menu">
+  <a class="close-button">Close</a>
+  <div class="nav-wrapper">
+    <p class="nav-label">Menu</p>
+    <ul>
+
+
+    </ul>
+  </div>
+</nav>
+    <!-- Progressbar -->
+    <div class="progress-container">
+        <span class="progress-bar"></span>
+    </div>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header id="post-header" >
+      <div class="inner">
+        <nav id="navigation">
+            <span id="home-button" class="nav-button">
+                <a class="home-button" href="/" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+            </span>
+          <span id="menu-button" class="nav-button">
+            <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+          </span>
+        </nav>
+        <h1 class="post-title">Porcupine, meet Churchill</h1>
+        <!-- TODO : Proper class for headline -->
+        <span class="post-meta">
+                <a href="/author/axel-hecht.html">Axel Hecht</a>
+            | <time datetime="Tue 27 July 2010">Tue 27 July 2010</time>
+        </span>
+        <!-- TODO : Modified check -->
+      </div>
+    </header>
+
+  <section id="wrapper">
+    <a class="hidden-close"></a>
+
+    <!-- Post content -->
+    <main class="content" role="main">
+        <article class="post">
+        <div class="inner">
+            <section class="post-content">
+                <p>I've been talking with Seth today on how we can answer questions about the status of l10n. My grumpy argument was that I wouldn't know how to make graphs over time actually show progress, instead of just &quot;failure&quot;. I had two naive graphs, one is showing all missing strings summed up over all locales. That graph would be dominated by the long tail of several dozen locales with a few hundred strings each, and you wouldn't see a dozen fighting over a few strings each.</p>
+<p>The other is what I nick-name &quot;porcupine graph&quot;, show how many locales have no missing strings, vs those that have some missing strings. This is what's actually implemented on the l10n dashboard as tree progress graphs. But how ever small a string change would be, it goes to all red. And it doesn't help that one can't mix green and red color gradients, so the graph usually shows spikes of red and a little black.</p>
+<p><a class="reference external" href="http://www.flickr.com/photos/axelhecht/4834738435/"><img alt="porcupine" src="http://farm5.static.flickr.com/4090/4834738435_c1dac145a2_z.jpg" style="width: 640px; height: 378px;" /></a></p>
+<p>Who'd want that as their progress stats, huh?</p>
+<p>Now, during the chat with Seth I came up with the idea to just give a little bit of leeway, and accept some missing strings to be OK, at least for some time. I filed <a class="reference external" href="https://bugzilla.mozilla.org/show_bug.cgi?id=582280">bug 582280</a> on that, and made a rough initial implementation of it. Nothing fancy, just a constant ignored bound of missing strings. Let's see how the past two weeks of Firefox 4 look now, with just a total of 5 missing strings being OK, <tt class="docutils literal"><span class="pre">?bound=5</span></tt>:</p>
+<p><a class="reference external" href="http://www.flickr.com/photos/axelhecht/4834738689/"><img alt="two weeks good and bad" src="http://farm5.static.flickr.com/4106/4834738689_45d9cb4219_z.jpg" style="width: 640px; height: 378px;" /></a></p>
+<p>Now Churchill won over the porcupine, but it's still pretty red. Which is OK, we haven't even branched yet, right? So I went ahead and figured I'd add an option <tt class="docutils literal">hideBad</tt>:</p>
+<p><a class="reference external" href="http://www.flickr.com/photos/axelhecht/4834738881/"><img alt="two weeks good" src="http://farm5.static.flickr.com/4085/4834738881_2b3beba630_z.jpg" style="width: 640px; height: 383px;" /></a></p>
+<p>Wow, progress. This graph actually looks like our community rocks as much as it does. Gets me grumpy, because this was really just about half an hour of work, plus a few years of thinking.</p>
+<p>Now, how do we look on the long run, say, well over half a year? Bumping the bound up to 15, we're doing like</p>
+<p><a class="reference external" href="http://www.flickr.com/photos/axelhecht/4834746465/"><img alt="half year progress" src="http://farm5.static.flickr.com/4105/4834746465_c9cd423d83_z.jpg" style="width: 640px; height: 382px;" /></a></p>
+<p>Pretty good, heh? You can <a class="reference external" href="https://l10n-stage-sj.mozilla.org/dashboard/tree-status/fx40x?starttime=1255682183&amp;bound=15&amp;hideBad">play with it on the dashboard</a>, too. The overall take aways would be:</p>
+<p>We have about 20 locales that really track trunk.</p>
+<p>We didn't have that many landings with a high amount of added strings.</p>
+<p>I like both :-).</p>
+
+            </section>
+
+            <section class="post-info">
+                <div class="post-share">
+                    <a class="twitter" href="https://twitter.com/share?text=Porcupine, meet Churchill&amp;url=/2010/07/porcupine-meet-churchill.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
+                    </a>
+                    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=/2010/07/porcupine-meet-churchill.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
+                    </a>
+                    <a class="googleplus" href="https://plus.google.com/share?url=/2010/07/porcupine-meet-churchill.html" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <i class="ic ic-googleplus"></i><span class="hidden">Google+</span>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+
+                <aside class="post-tags">
+<a href="/tag/l10n.html">L10n</a><a href="/tag/mozilla.html">Mozilla</a>                </aside>
+
+                <div class="clear"></div>
+
+
+                </section>
+
+
+                <aside class="post-nav">
+                    <div class="clear"></div>
+                </aside>
+
+            </div>
+        </article>
+    </main>
+      <!-- TODO : Body class -->
+    <div id="body-class" style="display: none;" class=""></div>
+
+    <footer id="footer">
+      <div class="inner">
+        <section class="credits">
+
+
+          <span class="credits-theme">Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a></span>
+          <span class="credits-software">Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a></span>
+        </section>
+      </div>
+    </footer>
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/javascript" src="/theme/js/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <title>compare-locales 0.5 is out</title>
+
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+<link href="/compare-locales-05-is-out.html" rel="canonical" />
+  <!-- Feed -->
+
+  <link href="/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+  <!-- Code highlight color scheme -->
+      <link href="/theme/css/code_blocks/github.css" rel="stylesheet">
+
+
+  <!-- Custom fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+
+    <meta name="description" content="I just uploaded compare-locales 0.5 on pypi. To update your current install, use easy_install -U compare-locales This is the new version...">
+
+    <meta name="author" content="Axel Hecht">
+
+    <meta name="tags" content="L10n">
+
+
+
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="Axel Hecht"/>
+<meta property="og:title" content="compare-locales 0.5 is out"/>
+<meta property="og:description" content="I just uploaded compare-locales 0.5 on pypi. To update your current install, use easy_install -U compare-locales This is the new version..."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="/compare-locales-05-is-out.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2008-07-25 07:35:00+00:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="/author/axel-hecht.html">
+<meta property="article:section" content="L10n, Mozilla"/>
+<meta property="article:tag" content="L10n"/>
+<meta property="og:image" content="/theme/images/post-bg.jpg">
+
+<!-- Twitter Card -->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "compare-locales 0.5 is out",
+  "headline": "compare-locales 0.5 is out",
+  "datePublished": "2008-07-25 07:35:00+00:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Axel Hecht",
+    "url": "/author/axel-hecht.html"
+  },
+  "image": "/theme/images/post-bg.jpg",
+  "url": "/compare-locales-05-is-out.html",
+  "description": "I just uploaded compare-locales 0.5 on pypi. To update your current install, use easy_install -U compare-locales This is the new version..."
+}
+</script>
+</head>
+<!-- TODO : Body class -->
+<body class="home-template">
+
+<nav id="menu">
+  <a class="close-button">Close</a>
+  <div class="nav-wrapper">
+    <p class="nav-label">Menu</p>
+    <ul>
+
+
+    </ul>
+  </div>
+</nav>
+    <!-- Progressbar -->
+    <div class="progress-container">
+        <span class="progress-bar"></span>
+    </div>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header id="post-header" >
+      <div class="inner">
+        <nav id="navigation">
+            <span id="home-button" class="nav-button">
+                <a class="home-button" href="/" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+            </span>
+          <span id="menu-button" class="nav-button">
+            <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+          </span>
+        </nav>
+        <h1 class="post-title">compare-locales 0.5 is out</h1>
+        <!-- TODO : Proper class for headline -->
+        <span class="post-meta">
+                <a href="/author/axel-hecht.html">Axel Hecht</a>
+            | <time datetime="Fri 25 July 2008">Fri 25 July 2008</time>
+        </span>
+        <!-- TODO : Modified check -->
+      </div>
+    </header>
+
+  <section id="wrapper">
+    <a class="hidden-close"></a>
+
+    <!-- Post content -->
+    <main class="content" role="main">
+        <article class="post">
+        <div class="inner">
+            <section class="post-content">
+                <p>I just uploaded compare-locales 0.5 on pypi. To update your current install, use</p>
+<p>easy_install -U compare-locales</p>
+<p>This is the new version that can handle mozilla-central. There are two main features that were required to do so:</p>
+<ul class="simple">
+<li>Not get the directories to compare from client.mk.</li>
+<li>Drop the default path for l10n directories.</li>
+</ul>
+<p>The latter was already an optional parameter to compare-locales, and is now mandatory. This is mostly because with hg, you'll more likely end up with several local repos representing branches or items of work. You just point which source to compare to which tree, and you're done.</p>
+<p>The first change is a bit more drastic. I created new files to hold the information about which directories actually contribute to the localization of an app, for Firefox on mozilla-central, cvs trunk, and the 1.8 branch, and for Thunderbird on cvs trunk and 1.8 branch. Now that cvs trunk is dead for shredder, we'll need a new one on comm-central. I suggest to put those files into $(APP)/locales/l10n.ini, you can take a peek at <a class="reference external" href="http://mxr.mozilla.org/mozilla-central/source/browser/locales/l10n.ini">the browser one on mxr</a>. As you can see, it pulls the toolkit information in from a seperate ini file. If you're creating an l10n.ini file for your app, feel free to CC me on the bug and request my review.</p>
+<p>The main change for localizers is that you call it differently. It doesn't really matter anymore from where you call it, just make sure that the first argument is the path to the l10n.ini, the second argument is the base dir for the localizations, and then list the locales that you want to compare. There is a remaining constraint in that the l10n base dir needs to have the localization in a subdir with the same name as the locale code.</p>
+<p>compare-locales browser/locales/l10n.ini ../l10n de fr hi-IN</p>
+<p>would compare German, French and Hindi Firefox localizations.</p>
+
+            </section>
+
+            <section class="post-info">
+                <div class="post-share">
+                    <a class="twitter" href="https://twitter.com/share?text=compare-locales 0.5 is out&amp;url=/compare-locales-05-is-out.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
+                    </a>
+                    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=/compare-locales-05-is-out.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
+                    </a>
+                    <a class="googleplus" href="https://plus.google.com/share?url=/compare-locales-05-is-out.html" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <i class="ic ic-googleplus"></i><span class="hidden">Google+</span>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+
+                <aside class="post-tags">
+<a href="/tag/l10n.html">L10n</a>                </aside>
+
+                <div class="clear"></div>
+
+
+                </section>
+
+
+                <aside class="post-nav">
+                    <div class="clear"></div>
+                </aside>
+
+            </div>
+        </article>
+    </main>
+      <!-- TODO : Body class -->
+    <div id="body-class" style="display: none;" class=""></div>
+
+    <footer id="footer">
+      <div class="inner">
+        <section class="credits">
+
+
+          <span class="credits-theme">Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a></span>
+          <span class="credits-software">Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a></span>
+        </section>
+      </div>
+    </footer>
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/javascript" src="/theme/js/script.js"></script>
+
+</body>
+</html>

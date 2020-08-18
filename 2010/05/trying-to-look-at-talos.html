@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <title>'Try'ing to look at Talos</title>
+
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+<link href="/2010/05/trying-to-look-at-talos.html" rel="canonical" />
+  <!-- Feed -->
+
+  <link href="/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+  <!-- Code highlight color scheme -->
+      <link href="/theme/css/code_blocks/github.css" rel="stylesheet">
+
+
+  <!-- Custom fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+
+    <meta name="description" content="I've started to hack on the bcp47 patch, and as I add complexity to the chrome registry code path, I'll actually need to look at...">
+
+    <meta name="author" content="Axel Hecht">
+
+    <meta name="tags" content="Mozilla">
+    <meta name="tags" content="trysite">
+
+
+
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="Axel Hecht"/>
+<meta property="og:title" content="'Try'ing to look at Talos"/>
+<meta property="og:description" content="I've started to hack on the bcp47 patch, and as I add complexity to the chrome registry code path, I'll actually need to look at..."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="/2010/05/trying-to-look-at-talos.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2010-05-20 03:15:00+00:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="/author/axel-hecht.html">
+<meta property="article:section" content="Mozilla"/>
+<meta property="article:tag" content="Mozilla"/>
+<meta property="article:tag" content="trysite"/>
+<meta property="og:image" content="/theme/images/post-bg.jpg">
+
+<!-- Twitter Card -->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "'Try'ing to look at Talos",
+  "headline": "'Try'ing to look at Talos",
+  "datePublished": "2010-05-20 03:15:00+00:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Axel Hecht",
+    "url": "/author/axel-hecht.html"
+  },
+  "image": "/theme/images/post-bg.jpg",
+  "url": "/2010/05/trying-to-look-at-talos.html",
+  "description": "I've started to hack on the bcp47 patch, and as I add complexity to the chrome registry code path, I'll actually need to look at..."
+}
+</script>
+</head>
+<!-- TODO : Body class -->
+<body class="home-template">
+
+<nav id="menu">
+  <a class="close-button">Close</a>
+  <div class="nav-wrapper">
+    <p class="nav-label">Menu</p>
+    <ul>
+
+
+    </ul>
+  </div>
+</nav>
+    <!-- Progressbar -->
+    <div class="progress-container">
+        <span class="progress-bar"></span>
+    </div>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header id="post-header" >
+      <div class="inner">
+        <nav id="navigation">
+            <span id="home-button" class="nav-button">
+                <a class="home-button" href="/" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+            </span>
+          <span id="menu-button" class="nav-button">
+            <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+          </span>
+        </nav>
+        <h1 class="post-title">'Try'ing to look at Talos</h1>
+        <!-- TODO : Proper class for headline -->
+        <span class="post-meta">
+                <a href="/author/axel-hecht.html">Axel Hecht</a>
+            | <time datetime="Thu 20 May 2010">Thu 20 May 2010</time>
+        </span>
+        <!-- TODO : Modified check -->
+      </div>
+    </header>
+
+  <section id="wrapper">
+    <a class="hidden-close"></a>
+
+    <!-- Post content -->
+    <main class="content" role="main">
+        <article class="post">
+        <div class="inner">
+            <section class="post-content">
+                <p>I've started to hack on the bcp47 patch, and as I add complexity to the chrome registry code path, I'll actually need to look at performance results. Being a good citizen, I'll start with try-server builds. TBH, the prospect of having to do that kept me from starting on this patch for a while, and it didn't come far yet, too. Now, enough rant, I've created a hack. Open the book of e-ville.</p>
+<p>When looking at talos results, I've got two problems: An overwhelming amount of numbers, and, in particular for the try server, finding something OK to compare with. All tools we have so far compare runs that are close in time, but in terms of try, that's not necessarily close in code, nor anything else good. So here's what I did:</p>
+<ol class="arabic simple">
+<li>Open the try pushlog, and select a push to investigate.</li>
+<li>Load <tt class="docutils literal"><span class="pre">/try/json-info?node=</span></tt> until the reference repo has a parent of that changeset pushed, checked via <tt class="docutils literal"><span class="pre">/mozilla-central/json-pushes?changeset=</span></tt>.</li>
+<li>Load up to five later pushes than the one found.</li>
+<li>Load a total of ten pushes including the ones above going back in time.</li>
+<li>Ask graphs-stage api for the perf results.</li>
+<li>Average per test and platform, and create a scatter plot for each, with 1 being the mean, displaying min and max of the mozilla-central reference numbers, plus the try result.</li>
+<li>Show missing perf results in the try run and the base results.</li>
+</ol>
+<p>On to the caveats: None of the json apis above support cross-site XHR requests, AFAICT, so I had to create a full blown web app to do this. I picked django just because that's what I'm used to. The app is tested on 1.1.1, but should work on 1.2 as well. So far, there's no db requirements.</p>
+<p>Even worse, <tt class="docutils literal"><span class="pre">json-info</span></tt> is really slow, so the app as it is right now doesn't even remotely scale. Mostly the reason why I don't intend to host it anywhere as is.</p>
+<p>I don't understand why there is pretty much noise in which test results actually come up. Nor if graph-stage is the right graph server to use to begin with.</p>
+<p>It looks like ripped out of the book of e-ville.</p>
+<p>Here's the two screens for your sneak-preview pleasure:</p>
+<p>The start screen, where you can select your push:</p>
+<p><a class="reference external" href="http://www.flickr.com/photos/axelhecht/4623422407/"><img alt="First screen of my ughful try talos compare app" src="http://farm4.static.flickr.com/3385/4623422407_82e9264042_o.png" style="width: 498px; height: 504px;" /></a></p>
+<p>After clicking Go, and waiting a while, you'd end up with</p>
+<p><a class="reference external" href="http://www.flickr.com/photos/axelhecht/4624027250/"><img alt="second screen of my ughful try talos compare app" src="http://farm5.static.flickr.com/4038/4624027250_4e7a5f2210_b.jpg" style="width: 1024px; height: 453px;" /></a></p>
+<p>You can get to the alert showing test name and platform by clicking on the dots.</p>
+<p>If you're interested, the code is triple-licensed and on <a class="reference external" href="http://hg.mozilla.org/users/axel_mozilla.com/trysite/">hg.mozilla.org</a>. Patches welcome.</p>
+<p>I could in theory see solving the perf problems with integrating the pushes app we have for the l10n dashboard, but that's more involved than I feel like spending time on right now. Mostly because I don't exactly know how good refreshing the try clone would perform.</p>
+
+            </section>
+
+            <section class="post-info">
+                <div class="post-share">
+                    <a class="twitter" href="https://twitter.com/share?text='Try'ing to look at Talos&amp;url=/2010/05/trying-to-look-at-talos.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
+                    </a>
+                    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=/2010/05/trying-to-look-at-talos.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
+                    </a>
+                    <a class="googleplus" href="https://plus.google.com/share?url=/2010/05/trying-to-look-at-talos.html" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <i class="ic ic-googleplus"></i><span class="hidden">Google+</span>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+
+                <aside class="post-tags">
+<a href="/tag/mozilla.html">Mozilla</a><a href="/tag/trysite.html">trysite</a>                </aside>
+
+                <div class="clear"></div>
+
+
+                </section>
+
+
+                <aside class="post-nav">
+                    <div class="clear"></div>
+                </aside>
+
+            </div>
+        </article>
+    </main>
+      <!-- TODO : Body class -->
+    <div id="body-class" style="display: none;" class=""></div>
+
+    <footer id="footer">
+      <div class="inner">
+        <section class="credits">
+
+
+          <span class="credits-theme">Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a></span>
+          <span class="credits-software">Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a></span>
+        </section>
+      </div>
+    </footer>
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/javascript" src="/theme/js/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <title>New version of compare-locales released, please update</title>
+
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+<link href="/2010/04/new-version-of-compare-locales-released-please-update.html" rel="canonical" />
+  <!-- Feed -->
+
+  <link href="/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+  <!-- Code highlight color scheme -->
+      <link href="/theme/css/code_blocks/github.css" rel="stylesheet">
+
+
+  <!-- Custom fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+
+    <meta name="description" content="I've released a new version of compare-locales, and you should really update. The new version of compare-locales adds: support for more...">
+
+    <meta name="author" content="Axel Hecht">
+
+    <meta name="tags" content="L10n">
+    <meta name="tags" content="Mozilla">
+
+
+
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="Axel Hecht"/>
+<meta property="og:title" content="New version of compare-locales released, please update"/>
+<meta property="og:description" content="I've released a new version of compare-locales, and you should really update. The new version of compare-locales adds: support for more..."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="/2010/04/new-version-of-compare-locales-released-please-update.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2010-04-08 16:29:00+00:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="/author/axel-hecht.html">
+<meta property="article:section" content="L10n, Mozilla"/>
+<meta property="article:tag" content="L10n"/>
+<meta property="article:tag" content="Mozilla"/>
+<meta property="og:image" content="/theme/images/post-bg.jpg">
+
+<!-- Twitter Card -->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "New version of compare-locales released, please update",
+  "headline": "New version of compare-locales released, please update",
+  "datePublished": "2010-04-08 16:29:00+00:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Axel Hecht",
+    "url": "/author/axel-hecht.html"
+  },
+  "image": "/theme/images/post-bg.jpg",
+  "url": "/2010/04/new-version-of-compare-locales-released-please-update.html",
+  "description": "I've released a new version of compare-locales, and you should really update. The new version of compare-locales adds: support for more..."
+}
+</script>
+</head>
+<!-- TODO : Body class -->
+<body class="home-template">
+
+<nav id="menu">
+  <a class="close-button">Close</a>
+  <div class="nav-wrapper">
+    <p class="nav-label">Menu</p>
+    <ul>
+
+
+    </ul>
+  </div>
+</nav>
+    <!-- Progressbar -->
+    <div class="progress-container">
+        <span class="progress-bar"></span>
+    </div>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header id="post-header" >
+      <div class="inner">
+        <nav id="navigation">
+            <span id="home-button" class="nav-button">
+                <a class="home-button" href="/" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+            </span>
+          <span id="menu-button" class="nav-button">
+            <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+          </span>
+        </nav>
+        <h1 class="post-title">New version of compare-locales released, please update</h1>
+        <!-- TODO : Proper class for headline -->
+        <span class="post-meta">
+                <a href="/author/axel-hecht.html">Axel Hecht</a>
+            | <time datetime="Thu 08 April 2010">Thu 08 April 2010</time>
+        </span>
+        <!-- TODO : Modified check -->
+      </div>
+    </header>
+
+  <section id="wrapper">
+    <a class="hidden-close"></a>
+
+    <!-- Post content -->
+    <main class="content" role="main">
+        <article class="post">
+        <div class="inner">
+            <section class="post-content">
+                <p>I've released a new version of compare-locales, and you should <strong>really</strong> update.</p>
+<p>The new version of compare-locales adds:</p>
+<ul class="simple">
+<li>support for more than one filter.py</li>
+<li>support for filter.py returning more than just bools, but &quot;error&quot;, &quot;report&quot;, or &quot;ignore&quot;.</li>
+</ul>
+<p><strong>Why?</strong></p>
+<div class="line-block">
+<div class="line">Lorentz strings. They are missing, but them missing isn't fatal. So we needed a third state.</div>
+<div class="line">And some of them are in toolkit, so we're moving parts of the filter.py logic from all over the place into</div>
+<div class="line"><tt class="docutils literal"><span class="pre">releases/mozilla-1.9.2/toolkit/locales/filter.py</span></tt>. That means that we can remove the hacks in comm-central and mobile-browser, making our life so much more reliable and predictable.</div>
+</div>
+<p>The changes to 1.9.2 will land shortly, so versions of compare-locales prior to 0.7 will stop working.</p>
+<p><strong>Update paths:</strong></p>
+<div class="line-block">
+<div class="line"><tt class="docutils literal">easy_install <span class="pre">-U</span> <span class="pre">compare-locales</span></tt></div>
+<div class="line">is the easiest way to do it. Depending on OS and local settings, you might want to</div>
+<div class="line"><tt class="docutils literal">sudo easy_install <span class="pre">-U</span> <span class="pre">compare-locales</span></tt></div>
+</div>
+<div class="line-block">
+<div class="line">Or,</div>
+<div class="line"><tt class="docutils literal">hg clone <span class="pre">http://hg.mozilla.org/build/compare-locales/</span></tt></div>
+<div class="line">and do whatever you did last time, setting paths or python setup.py install.</div>
+</div>
+<p><strong>How does it look? Where's beef? Or veggies?</strong></p>
+<p>Here's what 0.8 spits out for German on 1.9.2 with patched filter.py:</p>
+<pre class="literal-block">
+de
+   browser/chrome/browser
+     browser.properties
+         +crashedpluginsMessage.learnMore
+         +crashedpluginsMessage.reloadButton.accesskey
+         +crashedpluginsMessage.reloadButton.label
+         +crashedpluginsMessage.submitButton.accesskey
+         +crashedpluginsMessage.submitButton.label
+         +crashedpluginsMessage.title
+     preferences/advanced.dtd
+         +submitCrashes.accesskey
+         +submitCrashes.label
+   toolkit/chrome/mozapps/plugins/plugins.dtd
+       +reloadPlugin.middle
+       +reloadPlugin.post
+       +reloadPlugin.pre
+       +report.disabled
+       +report.failed
+       +report.please
+       +report.submitted
+       +report.submitting
+       +report.unavailable
+de:
+keys: 940
+report: 17
+unchanged: 634
+changed: 4561
+87% of entries changed
+</pre>
+<p>You can see the regular output of missing strings, and you'll recognize all of lorentz. New here are three things:</p>
+<div class="line-block">
+<div class="line">The strings in the long display are not counted as missing, but are in a new summary item called &quot;report&quot;. Those strings are not fatal, but should get localized.</div>
+<div class="line">The return value of compare-locales is only dependent on *missing* strings, i.e., code checking the return value will see a successful run of compare-locales if there are reported strings, as long as there are none missing.</div>
+<div class="line">If you switch l10n-merge on, it won't merge the reported strings, but rely on the real code falling back as intended.</div>
+</div>
+<p>Not-so-important feature update, compare-dirs is now supporting l10n-merge, too. That's sweet for the upcoming weave stuff.</p>
+<p>Questions are welcome here, bug reports are welcome in <a class="reference external" href="https://bugzilla.mozilla.org/enter_bug.cgi?product=Mozilla%20Localizations&amp;component=Infrastructure&amp;rep_platform=All&amp;op_sys=All&amp;short_desc=%5Bcompare-locales%5D">&quot;Mozilla
+Localizations&quot;, &quot;Infrastructure&quot; component</a>.</p>
+
+            </section>
+
+            <section class="post-info">
+                <div class="post-share">
+                    <a class="twitter" href="https://twitter.com/share?text=New version of compare-locales released, please update&amp;url=/2010/04/new-version-of-compare-locales-released-please-update.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
+                    </a>
+                    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=/2010/04/new-version-of-compare-locales-released-please-update.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
+                    </a>
+                    <a class="googleplus" href="https://plus.google.com/share?url=/2010/04/new-version-of-compare-locales-released-please-update.html" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <i class="ic ic-googleplus"></i><span class="hidden">Google+</span>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+
+                <aside class="post-tags">
+<a href="/tag/l10n.html">L10n</a><a href="/tag/mozilla.html">Mozilla</a>                </aside>
+
+                <div class="clear"></div>
+
+
+                </section>
+
+
+                <aside class="post-nav">
+                    <div class="clear"></div>
+                </aside>
+
+            </div>
+        </article>
+    </main>
+      <!-- TODO : Body class -->
+    <div id="body-class" style="display: none;" class=""></div>
+
+    <footer id="footer">
+      <div class="inner">
+        <section class="credits">
+
+
+          <span class="credits-theme">Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a></span>
+          <span class="credits-software">Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a></span>
+        </section>
+      </div>
+    </footer>
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/javascript" src="/theme/js/script.js"></script>
+
+</body>
+</html>
