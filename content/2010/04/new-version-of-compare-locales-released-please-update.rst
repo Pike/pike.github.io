@@ -1,7 +1,7 @@
 New version of compare-locales released, please update
 ######################################################
 :date: 2010-04-08 16:29
-:category: L10n, Mozilla
+:category: L10n
 :tags: L10n, Mozilla
 :slug: 2010/04/new-version-of-compare-locales-released-please-update
 

@@ -1,7 +1,7 @@
 Progress on l10n.mozilla.org
 ############################
 :date: 2014-05-22 04:44
-:category: L10n, Mozilla
+:category: L10n
 :tags: L10n, Mozilla
 :slug: 2014/05/progress-on-l10n-mozilla-org
 

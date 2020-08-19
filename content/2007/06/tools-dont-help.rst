@@ -1,7 +1,7 @@
 tools don't help
 ################
 :date: 2007-06-26 04:03
-:category: L10n, Mozilla
+:category: L10n
 :slug: 2007/06/tools-dont-help
 
 Localization tools are a pity. The Hebrew localizers switched from one tool to the other, and attached a patch to bug `373436 <https://bugzilla.mozilla.org/show_bug.cgi?id=373436>`__, +1190/-818 lines for toolkit alone. Given that toolkit 'only' has some 2000 strings, that's a pretty big diff.

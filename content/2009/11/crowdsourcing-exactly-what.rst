@@ -1,7 +1,7 @@
 Crowdsourcing ... exactly what?
 ###############################
 :date: 2009-11-12 09:45
-:category: L10n, Mozilla
+:category: L10n
 :tags: crowd, L10n, Mozilla
 :slug: 2009/11/crowdsourcing-exactly-what
 

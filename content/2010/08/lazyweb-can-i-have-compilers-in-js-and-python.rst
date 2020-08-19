@@ -1,7 +1,7 @@
 Lazyweb, can I have compilers in js and python?
 ###############################################
 :date: 2010-08-31 08:10
-:category: L10n, Mozilla
+:category: L10n
 :tags: l20n
 :slug: 2010/08/lazyweb-can-i-have-compilers-in-js-and-python
 

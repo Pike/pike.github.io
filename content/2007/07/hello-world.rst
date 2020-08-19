@@ -1,7 +1,7 @@
 Hello? World?
 #############
 :date: 2007-07-23 03:32
-:category: Uncategorized
+:category: Misc
 :slug: 2007/07/hello-world
 
 Some adds just puzzle me.

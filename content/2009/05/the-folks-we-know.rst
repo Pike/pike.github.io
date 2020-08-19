@@ -1,7 +1,7 @@
 The folks we know
 #################
 :date: 2009-05-29 14:13
-:category: L10n, Mozilla
+:category: L10n
 :tags: L10n, Mozilla
 :slug: 2009/05/the-folks-we-know
 

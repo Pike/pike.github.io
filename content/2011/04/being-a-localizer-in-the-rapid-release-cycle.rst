@@ -1,7 +1,7 @@
 Being a localizer in the rapid release cycle
 ############################################
 :date: 2011-04-11 18:15
-:category: L10n, Mozilla
+:category: L10n
 :tags: L10n, Mozilla
 :slug: 2011/04/being-a-localizer-in-the-rapid-release-cycle
 

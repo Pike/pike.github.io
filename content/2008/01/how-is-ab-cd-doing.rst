@@ -1,7 +1,7 @@
 How is ab-CD doing?
 ###################
 :date: 2008-01-28 15:52
-:category: L10n, Mozilla
+:category: L10n
 :slug: 2008/01/how-is-ab-cd-doing
 
 Just wanted to plot a brief update. I'm currently mostly working on improving our understanding of how localizations are doing for Firefox 3. The plan is to come up with a dashboard, gathering at least the quantifiable machine-readable information. The work there is improving nicely, you can see it at http://l10n.mozilla.org/dashboard/. There is still stuff to come, like, I'm likely going to make the Builds tab the default one, and I'm going to move away from red and green.

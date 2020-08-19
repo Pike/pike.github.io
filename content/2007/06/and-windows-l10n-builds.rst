@@ -1,7 +1,7 @@
 ... and windows l10n builds
 ###########################
 :date: 2007-06-14 16:34
-:category: L10n, Mozilla
+:category: L10n
 :slug: 2007/06/and-windows-l10n-builds
 
 Coop picked up `bug 374197 <https://bugzilla.mozilla.org/show_bug.cgi?id=374197>`__ and thus we're having l10n windows builds on the trunk again. To quote the log,

@@ -1,7 +1,7 @@
 Triggering l10n builds
 ######################
 :date: 2009-02-24 16:03
-:category: L10n, Mozilla
+:category: L10n
 :tags: L10n, Mozilla
 :slug: 2009/02/triggering-l10n-builds
 

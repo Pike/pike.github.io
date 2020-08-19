@@ -1,7 +1,7 @@
 Web-based IDEs for Localization
 ###############################
 :date: 2012-01-26 09:16
-:category: L10n, Mozilla
+:category: L10n
 :tags: L10n, Mozilla, tools
 :slug: 2012/01/web-based-ides-for-localization
 

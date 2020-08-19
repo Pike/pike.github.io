@@ -1,7 +1,7 @@
 Thanks
 ######
 :date: 2006-10-26 09:01
-:category: L10n, Mozilla
+:category: L10n
 :slug: 2006/10/thanks
 
 The short post I want to get out is "Thanks". I'll definitely try to get around and do the long post, but that requires me to have a dictionary by my side, it seems.

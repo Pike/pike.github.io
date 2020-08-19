@@ -1,7 +1,7 @@
 compare-locales 0.9.5
 #####################
 :date: 2012-02-15 08:05
-:category: L10n, Mozilla
+:category: L10n
 :tags: compare-locales, L10n, Mozilla
 :slug: 2012/02/compare-locales-0-9-5
 

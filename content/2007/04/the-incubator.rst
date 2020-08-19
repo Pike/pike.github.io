@@ -1,7 +1,7 @@
 The incubator
 #############
 :date: 2007-04-30 15:21
-:category: L10n, Mozilla
+:category: L10n
 :slug: 2007/04/the-incubator
 
 When working on new localizations of Firefox and Thunderbird, it's pretty tricky to get all the tooling right and to distribute your work for testing. In addition, there's no real build environment that tells me how far particular localizations are. That changed, enter the `incubator <http://l10n.mozilla.org/buildbot/>`__. Incubator runs in buildbot for the most part, and calls into the Mozilla build system for the real work. I don't repack builds, as these are really for early testing, I do generate language packs against the last stable release, though. I'm looking forward to the app-agnostic branching for 2.0.0.4, here, too, then the language packs should have a real chance to work against Thunderbird, too. For now, check out the `language packs <http://l10n.mozilla.org/~buildmaster/langpacks/>`__. I'm repackaging the l10n trunk against en-US branch, so we can get lively engineering work on the side of the localizers against a stable and popular target. Thus *incubator*.

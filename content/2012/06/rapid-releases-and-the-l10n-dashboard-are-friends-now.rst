@@ -1,7 +1,7 @@
 Rapid releases and the l10n dashboard are friends now
 #####################################################
 :date: 2012-06-09 12:07
-:category: L10n, Mozilla
+:category: L10n
 :tags: elmo, L10n, Mozilla
 :slug: 2012/06/rapid-releases-and-the-l10n-dashboard-are-friends-now
 

@@ -1,7 +1,7 @@
 Planet Mozilla L10N
 ###################
 :date: 2007-03-06 13:03
-:category: L10n, Mozilla
+:category: L10n
 :slug: 2007/03/planet-mozilla-l10n
 
 I'd like to introduce you to `Planet Mozilla L10N <http://l10n.mozilla.org/planet/>`__, a new resource that's hosted on the l10n server. We'd like to syndicate blog posts by our localization community that are of interest to other localizers. We started off with a few feeds that are already on planet.mozilla.org, but really only a few of general interest to the Mozilla community. I for one syndicate only the posts in my l10n category, for example.

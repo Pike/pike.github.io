@@ -1,7 +1,7 @@
 compare-locales 0.9.1 is out
 ############################
 :date: 2010-11-24 07:30
-:category: L10n, Mozilla
+:category: L10n
 :tags: L10n, Mozilla
 :slug: 2010/11/compare-locales-0-9-1-is-out
 

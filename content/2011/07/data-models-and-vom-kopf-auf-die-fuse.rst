@@ -1,7 +1,7 @@
 Data models and "vom Kopf auf die Füße"
 #######################################
 :date: 2011-07-22 04:28
-:category: L10n, Mozilla
+:category: L10n
 :tags: L10n, Mozilla
 :slug: 2011/07/data-models-and-vom-kopf-auf-die-fuse
 

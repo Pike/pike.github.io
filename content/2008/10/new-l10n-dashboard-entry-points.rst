@@ -1,7 +1,7 @@
 New l10n dashboard entry points
 ###############################
 :date: 2008-10-26 09:13
-:category: L10n, Mozilla
+:category: L10n
 :tags: L10n, Mozilla
 :slug: 2008/10/new-l10n-dashboard-entry-points
 

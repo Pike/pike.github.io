@@ -1,7 +1,7 @@
 Ukrainian localization landed on trunk
 ######################################
 :date: 2007-03-30 04:34
-:category: L10n, Mozilla
+:category: L10n
 :slug: 2007/03/ukrainian-localization-landed-on-trunk
 
 I'd like to congratulate `Tim Babych <http://tymofiy.livejournal.com/>`__ and the Ukrainian localization team for the `initial landing <http://bonsai-l10n.mozilla.org/cvsquery.cgi?treeid=default&module=all&branch=HEAD&branchtype=match&dir=l10n%2Fuk&file=&filetype=match&who=&whotype=match&sortby=Date&hours=2&date=explicit&mindate=2007-03-01&maxdate=2007-03-31&cvsroot=%2Fl10n>`__ of the Ukrainian localization of Firefox 2 on the trunk.

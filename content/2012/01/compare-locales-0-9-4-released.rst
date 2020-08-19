@@ -1,7 +1,7 @@
 compare-locales 0.9.4 released
 ##############################
 :date: 2012-01-20 04:37
-:category: L10n, Mozilla
+:category: L10n
 :tags: L10n, Mozilla
 :slug: 2012/01/compare-locales-0-9-4-released
 

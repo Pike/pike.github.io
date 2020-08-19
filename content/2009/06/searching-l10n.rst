@@ -1,7 +1,7 @@
 Searching l10n
 ##############
 :date: 2009-06-02 07:20
-:category: L10n, Mozilla
+:category: L10n
 :tags: dashboard, L10n, Mozilla
 :slug: 2009/06/searching-l10n
 

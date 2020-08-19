@@ -1,8 +1,8 @@
 Reviewing sign-offs, slightly different
 #######################################
 :date: 2011-05-10 03:39
-:category: L10n, Mozilla
-:tags: L10n
+:category: L10n
+:tags: L10n, Mozilla
 :slug: 2011/05/reviewing-sign-offs-slightly-different
 
 Opening the magic box of l10n admin stuff:

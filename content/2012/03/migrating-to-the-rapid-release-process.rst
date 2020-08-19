@@ -1,7 +1,7 @@
 Migrating to the rapid release process
 ######################################
 :date: 2012-03-23 10:45
-:category: L10n, Mozilla
+:category: L10n
 :tags: L10n, Mozilla
 :slug: 2012/03/migrating-to-the-rapid-release-process
 

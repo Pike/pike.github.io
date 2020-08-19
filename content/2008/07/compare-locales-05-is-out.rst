@@ -1,8 +1,8 @@
 compare-locales 0.5 is out
 ##########################
 :date: 2008-07-25 07:35
-:category: L10n, Mozilla
-:tags: L10n
+:category: L10n
+:tags: L10n, compare-locales
 :slug: 2008/07/compare-locales-05-is-out
 
 I just uploaded compare-locales 0.5 on pypi. To update your current install, use

@@ -1,7 +1,7 @@
 Looking at a l10n bugzilla classification
 #########################################
 :date: 2010-07-26 13:44
-:category: L10n, Mozilla
+:category: L10n
 :tags: L10n, Mozilla
 :slug: 2010/07/looking-at-a-l10n-bugzilla-classification
 

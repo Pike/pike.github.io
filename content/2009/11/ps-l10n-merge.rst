@@ -1,7 +1,7 @@
 PS: l10n-merge
 ##############
 :date: 2009-11-06 08:02
-:category: L10n, Mozilla
+:category: L10n
 :tags: build, L10n, Mozilla
 :slug: 2009/11/ps-l10n-merge
 

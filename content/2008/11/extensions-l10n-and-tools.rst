@@ -1,7 +1,7 @@
 extensions, l10n, and tools
 ###########################
 :date: 2008-11-05 16:15
-:category: L10n, Mozilla
+:category: L10n
 :tags: L10n, Mozilla
 :slug: 2008/11/extensions-l10n-and-tools
 

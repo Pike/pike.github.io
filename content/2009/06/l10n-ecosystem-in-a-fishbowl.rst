@@ -1,7 +1,7 @@
 L10n ecosystem in a fishbowl
 ############################
 :date: 2009-06-01 07:02
-:category: L10n, Mozilla
+:category: L10n
 :tags: build, buildbot, L10n, Mozilla
 :slug: 2009/06/l10n-ecosystem-in-a-fishbowl
 

@@ -1,7 +1,7 @@
 L10n buildbots builds, the first quarter
 ########################################
 :date: 2008-04-14 09:37
-:category: L10n, Mozilla
+:category: L10n
 :slug: 2008/04/l10n-buildbots-builds-the-first-quarter
 
 The current setup of my l10n buildbot is running for 3 months now, or a quarter. I figured that'd be a good time to do some stats.

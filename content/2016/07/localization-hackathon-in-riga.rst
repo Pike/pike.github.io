@@ -1,7 +1,7 @@
 Localization Hackathon in Riga
 ##############################
 :date: 2016-07-14 16:33
-:category: Events, Languages &amp; Cultures, Localization, Mozilla L10n team, Planet, Translation
+:category: L10n
 :tags: hackathon
 :slug: 2016/07/localization-hackathon-in-riga
 

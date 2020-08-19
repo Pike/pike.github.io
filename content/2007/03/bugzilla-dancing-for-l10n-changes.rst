@@ -1,7 +1,7 @@
 Bugzilla dancing for l10n changes
 #################################
 :date: 2007-03-08 11:25
-:category: L10n, Mozilla
+:category: L10n
 :slug: 2007/03/bugzilla-dancing-for-l10n-changes
 
 We're having a `string change on a stable branch <https://bugzilla.mozilla.org/show_bug.cgi?id=372409>`__, and I'd like to give an overview of what I did how to make this less painful. Less is intentionally a relative measure, it's still really very badly painful.

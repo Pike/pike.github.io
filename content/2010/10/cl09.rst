@@ -1,7 +1,7 @@
 Releasing compare-locales 0.9, aka, the value checker
 #####################################################
 :date: 2010-10-04 09:06
-:category: L10n, Mozilla
+:category: L10n
 :tags: L10n, Mozilla
 :slug: 2010/10/cl09
 

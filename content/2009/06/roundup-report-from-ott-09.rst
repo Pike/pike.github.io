@@ -1,7 +1,7 @@
 Roundup report from OTT 09
 ##########################
 :date: 2009-06-29 08:42
-:category: L10n, ott09
+:category: L10n
 :tags: L10n, ott09
 :slug: 2009/06/roundup-report-from-ott-09
 

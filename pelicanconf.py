@@ -14,6 +14,9 @@ TIMEZONE = 'UTC'
 
 DEFAULT_LANG = 'en'
 
+ARTICLE_URL = '{slug}'
+ARTICLE_SAVE_AS = '{slug}/index.html'
+
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
@@ -21,11 +24,17 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
+# Menu
+DISPLAY_PAGES_ON_MENU = False
+DISPLAY_CATEGORIES_ON_MENU = True
+
 # Blogroll
 LINKS = tuple()
 
 # Social widget
-SOCIAL = tuple()
+SOCIAL = (
+    ("Twitter", "https://twitter.com/axelhecht"),
+)
 
 DEFAULT_PAGINATION = 10
 

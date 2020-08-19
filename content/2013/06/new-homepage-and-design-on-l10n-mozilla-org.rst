@@ -1,7 +1,7 @@
 New homepage and design on l10n.mozilla.org
 ###########################################
 :date: 2013-06-24 13:49
-:category: Localization, Mozilla L10n team
+:category: L10n
 :slug: 2013/06/new-homepage-and-design-on-l10n-mozilla-org
 
 Today we've launched a new homepage on `l10n.mozilla.org <https://l10n.mozilla.org/>`__, and a new sandstone theme.

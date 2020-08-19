@@ -1,7 +1,7 @@
 Risk management for releases at scale
 #####################################
 :date: 2013-02-15 08:26
-:category: L10n, Mozilla
+:category: L10n
 :tags: L10n, Mozilla
 :slug: 2013/02/risk-management-for-releases-at-scale
 

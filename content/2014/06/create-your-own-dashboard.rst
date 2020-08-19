@@ -1,7 +1,7 @@
 Create your own dashboard
 #########################
 :date: 2014-06-17 08:38
-:category: L10n, Mozilla
+:category: L10n
 :tags: L10n, Mozilla
 :slug: 2014/06/create-your-own-dashboard
 

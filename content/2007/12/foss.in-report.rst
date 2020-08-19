@@ -1,7 +1,7 @@
 FOSS.IN report
 ##############
 :date: 2007-12-17 08:15
-:category: fossin2007, L10n, Mozilla
+:category: L10n
 :slug: 2007/12/foss.in-report
 
 I've been out of Berlin for two weeks, first to MV for workweek, where we had three and a half days of meetings. Interesting stuff, but nothing to blog about yet.

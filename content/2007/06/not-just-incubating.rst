@@ -1,7 +1,7 @@
 Not just incubating
 ###################
 :date: 2007-06-06 03:46
-:category: L10n, Mozilla
+:category: L10n
 :slug: 2007/06/not-just-incubating
 
 I have written about the incubator `before <{filename}/2007/04/the-incubator.rst>`__, it's a tool that should help localizations newly in CVS to work towards release. It's based on buildbot, and I whacked it pretty hard recently.

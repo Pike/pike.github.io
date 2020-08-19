@@ -1,7 +1,7 @@
 got l10n builds
 ###############
 :date: 2009-06-05 03:22
-:category: L10n, Mozilla
+:category: L10n
 :tags: build, L10n, Mozilla
 :slug: 2009/06/got-l10n-builds
 

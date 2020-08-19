@@ -1,7 +1,7 @@
 Localizing Lorentz
 ##################
 :date: 2010-06-24 07:20
-:category: L10n, Mozilla
+:category: L10n
 :tags: L10n, Mozilla
 :slug: 2010/06/localizing-lorentz
 

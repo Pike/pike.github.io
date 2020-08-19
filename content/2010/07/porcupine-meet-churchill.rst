@@ -1,7 +1,7 @@
 Porcupine, meet Churchill
 #########################
 :date: 2010-07-27 12:16
-:category: L10n, Mozilla
+:category: L10n
 :tags: L10n, Mozilla
 :slug: 2010/07/porcupine-meet-churchill
 

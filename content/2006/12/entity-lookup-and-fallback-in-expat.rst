@@ -1,7 +1,7 @@
 entity lookup and fallback in expat
 ###################################
 :date: 2006-12-08 10:14
-:category: L10n, Mozilla
+:category: L10n
 :slug: 2006/12/entity-lookup-and-fallback-in-expat
 
 As there were more people talking about this than I recall, here's the public correction on what I though would be true:

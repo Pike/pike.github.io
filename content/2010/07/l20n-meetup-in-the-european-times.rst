@@ -1,7 +1,7 @@
 l20n meetup in the european times
 #################################
 :date: 2010-07-21 15:02
-:category: L10n, Mozilla
+:category: L10n
 :tags: L10n
 :slug: 2010/07/l20n-meetup-in-the-european-times
 

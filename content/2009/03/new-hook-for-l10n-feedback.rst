@@ -1,7 +1,7 @@
 New hook for l10n feedback
 ##########################
 :date: 2009-03-23 03:51
-:category: L10n, Mozilla
+:category: L10n
 :tags: L10n, Mozilla
 :slug: 2009/03/new-hook-for-l10n-feedback
 

@@ -1,7 +1,7 @@
 Lorentz l10n trees are dealt with
 #################################
 :date: 2010-04-11 09:11
-:category: L10n, Mozilla
+:category: L10n
 :tags: L10n, Mozilla
 :slug: 2010/04/lorentz-l10n-trees-are-dealt-with
 

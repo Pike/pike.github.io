@@ -1,7 +1,7 @@
 l10n impact of new features
 ###########################
 :date: 2007-03-27 04:59
-:category: L10n, Mozilla
+:category: L10n
 :slug: 2007/03/l10n-impact-of-new-features
 
 We had our first l10n impact meeting for Firefox 3, `places <http://wiki.mozilla.org/Places>`__ was on. The meeting minutes are on the `wiki <http://wiki.mozilla.org/Places:L10n_impact_meeting/2007-03-19>`__, but there are few key points that are of more general interest.

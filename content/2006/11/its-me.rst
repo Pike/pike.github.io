@@ -1,7 +1,7 @@
 It's me :)
 ##########
 :date: 2006-11-09 12:02
-:category: Uncategorized
+:category: Misc
 :slug: 2006/11/its-me
 
 I'm getting a whole slew of spam in my mozilla.com account these days titled *It's "Name" :)*, 'sent' by *Name Surname*. I bothered looking at the mail now, just to see what's happening, and the messages talk about oil, and a company called

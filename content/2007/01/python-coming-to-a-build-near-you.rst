@@ -1,7 +1,7 @@
 python coming to a build near you
 #################################
 :date: 2007-01-11 15:41
-:category: L10n, Mozilla
+:category: L10n
 :slug: 2007/01/python-coming-to-a-build-near-you
 
 As a heads-up, I'm making some progress to use a single python process per jar.mn in `bug 361583 <https://bugzilla.mozilla.org/show_bug.cgi?id=361583>`__. AFAICT, I have all the odd ends figured out to merely run one python script per ``jar.mn``, instead of starting a two perl processes per ``jar.mn``, and one per preprocessed entry, plus two calls for zip.

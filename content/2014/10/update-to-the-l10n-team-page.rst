@@ -1,7 +1,7 @@
 Update to the l10n team page
 ############################
 :date: 2014-10-05 07:02
-:category: L10n, Mozilla
+:category: L10n
 :tags: elmo, L10n, Mozilla
 :slug: 2014/10/update-to-the-l10n-team-page
 

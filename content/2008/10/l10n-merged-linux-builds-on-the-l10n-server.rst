@@ -1,7 +1,7 @@
 l10n-merged linux builds on the l10n server
 ###########################################
 :date: 2008-10-21 14:43
-:category: L10n, Mozilla
+:category: L10n
 :tags: build, buildbot, L10n, Mozilla
 :slug: 2008/10/l10n-merged-linux-builds-on-the-l10n-server
 

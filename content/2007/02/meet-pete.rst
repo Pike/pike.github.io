@@ -1,7 +1,7 @@
 Meet Pete
 #########
 :date: 2007-02-01 06:28
-:category: L10n, Mozilla
+:category: L10n
 :slug: 2007/02/meet-pete
 
 I've been doing some investigation on localization architectures in the last two months or so, triggered by parts of the 50-2-100 thread in .l10n and .planning. In particular, I've been reading the archives of `translate-i18n <http://sourceforge.net/mailarchive/forum.php?forum_id=7939>`__, which happens to be the (main?) gettext mailing list. Looking at the problem reports there and following the links out to stuff like `XLIFF <http://www.oasis-open.org/committees/tc_home.php?wg_abbrev=xliff>`__, I looked for solutions to the following tasks:

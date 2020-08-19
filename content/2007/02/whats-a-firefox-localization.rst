@@ -1,7 +1,7 @@
 What's a Firefox localization?
 ##############################
 :date: 2007-02-14 09:15
-:category: L10n, Mozilla
+:category: L10n
 :slug: 2007/02/whats-a-firefox-localization
 
 One of the untold stories of Firefox is that localizing Firefox is something different. Inside our localization community, it is an often heard complaint that we're doing *this* while every other project in its sane mind does *that*. I have been thinking about that often, but we haven't actually made a story out of it, so here is my take.

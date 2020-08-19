@@ -1,7 +1,7 @@
 working demo, waterfall and more
 ################################
 :date: 2008-12-19 16:50
-:category: L10n, Mozilla
+:category: L10n
 :tags: build, buildbot, Mozilla
 :slug: 2008/12/working-demo-waterfall-and-more
 

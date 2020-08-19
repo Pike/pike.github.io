@@ -1,7 +1,7 @@
 Why l10n tools should be editors instead of serializers
 #######################################################
 :date: 2012-07-20 09:18
-:category: L10n, Mozilla
+:category: L10n
 :tags: L10n, Mozilla
 :slug: 2012/07/why-l10n-tools-should-be-editors-instead-of-serializers
 

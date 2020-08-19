@@ -1,7 +1,7 @@
 Riding the Duck
 ###############
 :date: 2009-05-11 08:28
-:category: Uncategorized
+:category: Misc
 :tags: San Francisco
 :slug: 2009/05/riding-the-duck
 

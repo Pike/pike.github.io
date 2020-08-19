@@ -1,7 +1,8 @@
 compare-locales 3.0 - GSOC
 ##########################
 :date: 2018-03-20 18:54
-:category: Planet, Tools
+:category: L10n
+:tags: compare-locales, tools
 :slug: 2018/03/compare-locales-3-0-gsoc
 
 There's something magic about `compare-locales 3.0 <https://pypi.python.org/pypi/compare-locales/3.0.0>`__. It comes with Python 3 support.

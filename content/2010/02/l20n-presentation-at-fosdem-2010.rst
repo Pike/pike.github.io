@@ -1,7 +1,7 @@
 L20n presentation at FOSDEM 2010
 ################################
 :date: 2010-02-05 04:26
-:category: L10n, Mozilla
+:category: L10n
 :tags: L10n, l20n, Mozilla
 :slug: 2010/02/l20n-presentation-at-fosdem-2010
 

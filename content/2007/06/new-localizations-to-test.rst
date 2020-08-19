@@ -1,7 +1,7 @@
 New localizations to test
 #########################
 :date: 2007-06-14 07:18
-:category: L10n, Mozilla
+:category: L10n
 :slug: 2007/06/new-localizations-to-test
 
 We have a few new localization teams putting a whole lot of effort in getting their languages up and running. For those, the l10n server is creating language packs right now, and as always, they can use as many eyes as possible.

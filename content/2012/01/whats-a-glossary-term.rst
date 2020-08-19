@@ -1,7 +1,7 @@
 What's a glossary term?
 #######################
 :date: 2012-01-27 17:23
-:category: L10n, Mozilla
+:category: L10n
 :tags: L10n, Mozilla, tools
 :slug: 2012/01/whats-a-glossary-term
 

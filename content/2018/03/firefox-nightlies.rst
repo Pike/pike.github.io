@@ -1,7 +1,7 @@
 Firefox Nightlies
 #################
 :date: 2018-03-01 18:21
-:category: Firefox, Localization, Planet
+:category: L10n
 :slug: 2018/03/firefox-nightlies
 
 We've run into a problem with localized Firefox Nightlies in some languages today. We'd like to apologize for that, and also help you getting unstuck.

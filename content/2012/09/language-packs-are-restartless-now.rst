@@ -1,7 +1,7 @@
 Language packs are restartless now
 ##################################
 :date: 2012-09-27 04:04
-:category: L10n, Mozilla
+:category: L10n
 :tags: L10n, Mozilla
 :slug: 2012/09/language-packs-are-restartless-now
 

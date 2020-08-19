@@ -1,7 +1,7 @@
 white russian
 #############
 :date: 2008-07-22 15:38
-:category: L10n, Mozilla
+:category: L10n
 :tags: buildbot, L10n, Mozilla
 :slug: 2008/07/white-russian
 

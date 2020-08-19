@@ -1,7 +1,7 @@
 Users and testers
 #################
 :date: 2008-03-27 07:55
-:category: L10n, Mozilla
+:category: L10n
 :slug: 2008/03/users-and-testers
 
 Trevor swiftly fixed `bug 424993 <https://bugzilla.mozilla.org/show_bug.cgi?id=424993>`__, so now I can talk about users and testers of Firefox 2 and 3, per locale, per platform. Thanks. This is data over the last 7 days, so it's not dead-on representative, and it won't cover new locales in B5, but only the end-game in B4. As we're constantly ramping up in testers, that's a good time area, and it will remove those users that just shortly checked B4 due to the media rush. Thus, in particular for localizations, it should be much more representative of "satisfied testers".

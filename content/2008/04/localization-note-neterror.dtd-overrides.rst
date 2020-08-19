@@ -1,7 +1,7 @@
 # Localization note (netError.dtd): overrides
 #############################################
 :date: 2008-04-08 05:33
-:category: L10n, Mozilla
+:category: L10n
 :slug: 2008/04/localization-note-neterror.dtd-overrides
 
 I thought I knew what we did for netError.xhtml and netError.dtd, but I didn't, so here's a little thing I learned today:

@@ -1,7 +1,7 @@
 Create a localized build locally
 ################################
 :date: 2017-08-04 16:19
-:category: Firefox, Firefox Mobile, Localization, Planet
+:category: L10n
 :slug: 2017/08/create-a-localized-build-locally
 
 Yesterday we changed the way that you create localized builds on mozilla-central.

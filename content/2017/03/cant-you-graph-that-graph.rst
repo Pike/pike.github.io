@@ -1,7 +1,7 @@
 Can't you graph that graph
 ##########################
 :date: 2017-03-23 07:01
-:category: L10n, Mozilla
+:category: L10n
 :tags: L10n, mercurial, Mozilla
 :slug: 2017/03/cant-you-graph-that-graph
 

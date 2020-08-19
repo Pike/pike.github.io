@@ -1,7 +1,7 @@
 Running into builds, just testing
 #################################
 :date: 2009-06-10 10:29
-:category: L10n, Mozilla
+:category: L10n
 :tags: build, buildbot, L10n, Mozilla
 :slug: 2009/06/running-into-builds-just-testing
 

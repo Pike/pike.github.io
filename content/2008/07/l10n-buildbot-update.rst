@@ -1,7 +1,7 @@
 l10n buildbot update
 ####################
 :date: 2008-07-24 15:31
-:category: L10n, Mozilla
+:category: L10n
 :tags: buildbot, L10n
 :slug: 2008/07/l10n-buildbot-update
 

@@ -1,7 +1,7 @@
 The Ten Hands
 #############
 :date: 2017-07-11 13:23
-:category: Localization, Mozilla L10n team
+:category: L10n
 :slug: 2017/07/the-ten-hands
 
 Gaul is entirely occupied by the Romans. Well, not entirely... One small village of indomitable Gauls still holds out against the invaders.

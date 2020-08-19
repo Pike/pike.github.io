@@ -1,7 +1,7 @@
 String freezes on 1.9.2
 #######################
 :date: 2009-09-09 14:59
-:category: L10n, Mozilla
+:category: L10n
 :tags: L10n, Mozilla
 :slug: 2009/09/string-freezes-on-1-9-2
 

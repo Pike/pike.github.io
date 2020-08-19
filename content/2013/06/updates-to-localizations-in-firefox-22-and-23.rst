@@ -1,7 +1,7 @@
 Updates to localizations in Firefox 22 and 23
 #############################################
 :date: 2013-06-27 05:44
-:category: Firefox, Languages &amp; Cultures, Localization
+:category: L10n
 :slug: 2013/06/updates-to-localizations-in-firefox-22-and-23
 
 If you haven't noticed already, we think our localizers are pretty awesome. We're proud to announce that, on top of all the teams that follow the rapid release process, today's update to Firefox desktop 22 (and Firefox 23 Beta) contains major updates to a few localizations that we'd like to call out.

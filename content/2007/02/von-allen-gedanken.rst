@@ -1,7 +1,7 @@
 Von allen Gedanken ...
 ######################
 :date: 2007-02-19 09:15
-:category: L10n, Mozilla
+:category: L10n
 :slug: 2007/02/von-allen-gedanken
 
 Welcome to another round of `l20n <http://wiki.mozilla.org/L20n>`__. I finally added expressions and macros. Expressions are closely following the C grammar, I ripped out the bitwise operators and some C-isms. Macros are a new grammar struct to implement things like plural forms, with the additional benefit that I didn't limit this to one form, but actually embedded this into the grammar. That is, if a localizer feels like having to use a different implementation for plurals, (s)he can. This should be useful in particular when it comes down to limiting the plural forms on integers, non-negative numbers, general floats, if you want to handle NaN etc. An example for such a macro would be

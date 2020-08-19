@@ -1,7 +1,7 @@
 A tale of convert and convert
 #############################
 :date: 2013-09-19 07:49
-:category: L10n, Mozilla
+:category: L10n
 :tags: L10n, mercurial, Mozilla
 :slug: 2013/09/a-tale-of-convert-and-convert
 

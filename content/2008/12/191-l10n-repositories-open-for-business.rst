@@ -1,7 +1,7 @@
 1.9.1 l10n repositories open for business
 #########################################
 :date: 2008-12-02 14:40
-:category: L10n, Mozilla
+:category: L10n
 :tags: L10n, Mozilla
 :slug: 2008/12/191-l10n-repositories-open-for-business
 

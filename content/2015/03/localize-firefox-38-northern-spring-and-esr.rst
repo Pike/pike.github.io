@@ -1,7 +1,7 @@
 Localize Firefox 38: Northern Spring and ESR!
 #############################################
 :date: 2015-03-18 20:49
-:category: Firefox, Firefox Mobile, Localization
+:category: L10n
 :slug: 2015/03/localize-firefox-38-northern-spring-and-esr
 
 | Firefox 38 is now string frozen. On March 30th, we'll migrate 38 to

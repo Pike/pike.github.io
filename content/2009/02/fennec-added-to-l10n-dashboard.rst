@@ -1,7 +1,7 @@
 Fennec added to l10n dashboard
 ##############################
 :date: 2009-02-27 10:45
-:category: L10n, Mozilla
+:category: L10n
 :tags: Fennec, L10n, Mozilla
 :slug: 2009/02/fennec-added-to-l10n-dashboard
 

@@ -1,7 +1,7 @@
 l10n merge
 ##########
 :date: 2008-07-03 10:10
-:category: L10n, Mozilla
+:category: L10n
 :tags: L10n
 :slug: 2008/07/l10n-merge
 

@@ -1,7 +1,7 @@
 On updating the automation behind l10n.m.o
 ##########################################
 :date: 2017-03-03 13:01
-:category: L10n, Mozilla
+:category: L10n
 :tags: buildbot, compare-locales, L10n, Mozilla
 :slug: 2017/03/on-updating-the-automation-behind-l10n-m-o
 

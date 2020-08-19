@@ -1,7 +1,7 @@
 State of the Zwiebelfisch
 #########################
 :date: 2008-10-02 15:45
-:category: L10n, Mozilla
+:category: L10n
 :tags: L10n, Mozilla
 :slug: 2008/10/state-of-the-zwiebelfisch
 

@@ -1,7 +1,7 @@
 MultilingualWeb: Workshop in Madrid
 ###################################
 :date: 2010-11-05 08:24
-:category: L10n, Mozilla
+:category: L10n
 :tags: L10n, mlw, Mozilla
 :slug: 2010/11/multilingualweb-workshop-in-madrid
 
