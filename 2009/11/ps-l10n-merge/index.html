@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <title>PS: l10n-merge</title>
+
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+<link href="/2009/11/ps-l10n-merge" rel="canonical" />
+  <!-- Feed -->
+
+  <link href="/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+  <!-- Code highlight color scheme -->
+      <link href="/theme/css/code_blocks/github.css" rel="stylesheet">
+
+
+  <!-- Custom fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+
+    <meta name="description" content="Armen just blogged about this, and as it's constantly mentioned around l10n, I wanted to add a bit more detail to l10n-merge. l10n-merge...">
+
+    <meta name="author" content="Axel Hecht">
+
+    <meta name="tags" content="build">
+    <meta name="tags" content="L10n">
+    <meta name="tags" content="Mozilla">
+
+
+
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="Axel Hecht"/>
+<meta property="og:title" content="PS: l10n-merge"/>
+<meta property="og:description" content="Armen just blogged about this, and as it's constantly mentioned around l10n, I wanted to add a bit more detail to l10n-merge. l10n-merge..."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="/2009/11/ps-l10n-merge"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2009-11-06 08:02:00+00:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="/author/axel-hecht.html">
+<meta property="article:section" content="L10n"/>
+<meta property="article:tag" content="build"/>
+<meta property="article:tag" content="L10n"/>
+<meta property="article:tag" content="Mozilla"/>
+<meta property="og:image" content="/theme/images/post-bg.jpg">
+
+<!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@axelhecht">
+    <meta name="twitter:title" content="PS: l10n-merge">
+    <meta name="twitter:url" content="/2009/11/ps-l10n-merge">
+
+        <meta name="twitter:image:src" content="/theme/images/post-bg.jpg">
+
+      <meta name="twitter:description" content="Armen just blogged about this, and as it's constantly mentioned around l10n, I wanted to add a bit more detail to l10n-merge. l10n-merge...">
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "PS: l10n-merge",
+  "headline": "PS: l10n-merge",
+  "datePublished": "2009-11-06 08:02:00+00:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Axel Hecht",
+    "url": "/author/axel-hecht.html"
+  },
+  "image": "/theme/images/post-bg.jpg",
+  "url": "/2009/11/ps-l10n-merge",
+  "description": "Armen just blogged about this, and as it's constantly mentioned around l10n, I wanted to add a bit more detail to l10n-merge. l10n-merge..."
+}
+</script>
+</head>
+<!-- TODO : Body class -->
+<body class="home-template">
+
+<nav id="menu">
+  <a class="close-button">Close</a>
+  <div class="nav-wrapper">
+    <p class="nav-label">Menu</p>
+    <ul>
+
+                  <li class="nav-l10n active" role="presentation"><a href="/category/l10n.html">L10n</a></li>
+                  <li role="presentation"><a href="/category/misc.html">Misc</a></li>
+                  <li role="presentation"><a href="/category/mozilla.html">Mozilla</a></li>
+                  <li role="presentation"><a href="/category/rdf.html">RDF</a></li>
+
+    </ul>
+  </div>
+</nav>
+    <!-- Progressbar -->
+    <div class="progress-container">
+        <span class="progress-bar"></span>
+    </div>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header id="post-header" >
+      <div class="inner">
+        <nav id="navigation">
+            <span id="home-button" class="nav-button">
+                <a class="home-button" href="/" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+            </span>
+          <span id="menu-button" class="nav-button">
+            <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+          </span>
+        </nav>
+        <h1 class="post-title">PS: l10n-merge</h1>
+        <!-- TODO : Proper class for headline -->
+        <span class="post-meta">
+                <a href="/author/axel-hecht.html">Axel Hecht</a>
+            | <time datetime="Fri 06 November 2009">Fri 06 November 2009</time>
+        </span>
+        <!-- TODO : Modified check -->
+      </div>
+    </header>
+
+  <section id="wrapper">
+    <a class="hidden-close"></a>
+
+    <!-- Post content -->
+    <main class="content" role="main">
+        <article class="post">
+        <div class="inner">
+            <section class="post-content">
+                <p><a class="reference external" href="http://armenzg.blogspot.com/2009/11/firefox-release-engineering.html">Armen just blogged about this</a>, and as it's constantly mentioned around l10n, I wanted to add a bit more detail to l10n-merge.</p>
+<p>l10n-merge is originally an idea by our Japanese localizer dynamis. The current implementation used in the builds is by me, integrated as an option to compare-locales. There are spin-offs of that algorithm in the silme library, too.</p>
+<p>l10n-merge attempts to solve one reason for &quot;yellow screens of death&quot;, i.e., XML parsing errors triggered by incomplete localizations. This is really crucial as localizations don't just pop up by swinging magic wands, they're incremental work, and a huge chunk of that. So in order to test your work, you need to see the strings you have in, say, Firefox, without having the other 4000 strings done yet. Other l10n-infrastructures handle this by falling back to the original language at runtime (gettext), but doing that at runtime of course has perf impact, and size. l10n-merge does the same thing at compile (repackaging) time.</p>
+<p>Design goals for l10n-merge were:</p>
+<ul class="simple">
+<li>not mess with any source repositories</li>
+<li>not do any file-io that's not really needed</li>
+</ul>
+<p>Thus, in order to not mess with the source repos, l10n-merge doesn't modify the sources inline, but creates copies of the files it touches in a separate dir. Commonly, we're using '<tt class="docutils literal">merged</tt>' in the build dir. Now, creating a full copy of everything would be tons of file io, so l10n-merge only creates copies for those files which actually need to get entities added to existing localized content. This plays together with code in JarMaker.py which is able to pick up locale chrome content from several source dirs.</p>
+<p>A Firefox localization contains some 450 files, and say for the current 9 B1-to-B2 missing strings in two files, it would copy over those two files from l10n, and add the missing entities to the end. Then JarMaker is called with the right options, and for those two files, will pick them up from <tt class="docutils literal">merged</tt>, the rest of the localization is gotten from l10n. For missing files, it actually looks into the en-US sources, too, so we don't have to do anything for those. To give an example, for <tt class="docutils literal">chrome/browser/foo</tt> in the <tt class="docutils literal">browser</tt> 'module', it searches:</p>
+<ol class="arabic simple">
+<li><tt class="docutils literal"><span class="pre">.../merged/browser/chrome/foo</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">l10n/ab-CD/browser/chrome/foo</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">mozilla/browser/locales/en-US/chrome/foo</span></tt></li>
+</ol>
+<p>Now it's time to list some pitfalls that come with l10n-merge:</p>
+<ul class="simple">
+<li>If you're passing the wrong dir for mergedir, nothing breaks. All build logic breakage would come from missing files, and due to the fallback to en-US, there are no missing files.</li>
+<li>l10n-merge, as compare-locales, doesn't cover XML parsing errors inside entity values yet. <a class="reference external" href="https://bugzilla.mozilla.org/show_bug.cgi?id=504339">Bug 504339</a> is filed, there are some tricky questions on reporting, as well as having to write an XML parser from scratch.</li>
+<li>l10n-merge only appends entities, but that's fine 95% of the time. Only counter-examples are DTDs including other DTDs.</li>
+<li>People using l10n-merge need to manually maintain the merge dir. Pruning it via compare-locales is risky business if you specify the wrong path by accident, so I consider this a feature. But if you're seeing Spanish in a French build, clobber the mergedir and build again :-)</li>
+</ul>
+
+            </section>
+
+            <section class="post-info">
+                <div class="post-share">
+                    <a class="twitter" href="https://twitter.com/share?text=PS: l10n-merge&amp;url=/2009/11/ps-l10n-merge" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
+                    </a>
+                    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=/2009/11/ps-l10n-merge" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
+                    </a>
+                    <a class="googleplus" href="https://plus.google.com/share?url=/2009/11/ps-l10n-merge" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <i class="ic ic-googleplus"></i><span class="hidden">Google+</span>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+
+                <aside class="post-tags">
+<a href="/tag/build.html">build</a><a href="/tag/l10n.html">L10n</a><a href="/tag/mozilla.html">Mozilla</a>                </aside>
+
+                <div class="clear"></div>
+
+
+                </section>
+
+
+                <aside class="post-nav">
+                    <div class="clear"></div>
+                </aside>
+
+            </div>
+        </article>
+    </main>
+      <!-- TODO : Body class -->
+    <div id="body-class" style="display: none;" class=""></div>
+
+    <footer id="footer">
+      <div class="inner">
+        <section class="credits">
+
+
+          <span class="credits-theme">Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a></span>
+          <span class="credits-software">Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a></span>
+        </section>
+      </div>
+    </footer>
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/javascript" src="/theme/js/script.js"></script>
+
+</body>
+</html>

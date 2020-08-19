@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <title>l10n merge</title>
+
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+<link href="/2008/07/l10n-merge" rel="canonical" />
+  <!-- Feed -->
+
+  <link href="/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+  <!-- Code highlight color scheme -->
+      <link href="/theme/css/code_blocks/github.css" rel="stylesheet">
+
+
+  <!-- Custom fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+
+    <meta name="description" content="I've just pushed an implementation of l10n-merge to my tooling repository. It's now actually just an option to compare-locales, and will...">
+
+    <meta name="author" content="Axel Hecht">
+
+    <meta name="tags" content="L10n">
+
+
+
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="Axel Hecht"/>
+<meta property="og:title" content="l10n merge"/>
+<meta property="og:description" content="I've just pushed an implementation of l10n-merge to my tooling repository. It's now actually just an option to compare-locales, and will..."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="/2008/07/l10n-merge"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2008-07-03 10:10:00+00:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="/author/axel-hecht.html">
+<meta property="article:section" content="L10n"/>
+<meta property="article:tag" content="L10n"/>
+<meta property="og:image" content="/theme/images/post-bg.jpg">
+
+<!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@axelhecht">
+    <meta name="twitter:title" content="l10n merge">
+    <meta name="twitter:url" content="/2008/07/l10n-merge">
+
+        <meta name="twitter:image:src" content="/theme/images/post-bg.jpg">
+
+      <meta name="twitter:description" content="I've just pushed an implementation of l10n-merge to my tooling repository. It's now actually just an option to compare-locales, and will...">
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "l10n merge",
+  "headline": "l10n merge",
+  "datePublished": "2008-07-03 10:10:00+00:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Axel Hecht",
+    "url": "/author/axel-hecht.html"
+  },
+  "image": "/theme/images/post-bg.jpg",
+  "url": "/2008/07/l10n-merge",
+  "description": "I've just pushed an implementation of l10n-merge to my tooling repository. It's now actually just an option to compare-locales, and will..."
+}
+</script>
+</head>
+<!-- TODO : Body class -->
+<body class="home-template">
+
+<nav id="menu">
+  <a class="close-button">Close</a>
+  <div class="nav-wrapper">
+    <p class="nav-label">Menu</p>
+    <ul>
+
+                  <li class="nav-l10n active" role="presentation"><a href="/category/l10n.html">L10n</a></li>
+                  <li role="presentation"><a href="/category/misc.html">Misc</a></li>
+                  <li role="presentation"><a href="/category/mozilla.html">Mozilla</a></li>
+                  <li role="presentation"><a href="/category/rdf.html">RDF</a></li>
+
+    </ul>
+  </div>
+</nav>
+    <!-- Progressbar -->
+    <div class="progress-container">
+        <span class="progress-bar"></span>
+    </div>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header id="post-header" >
+      <div class="inner">
+        <nav id="navigation">
+            <span id="home-button" class="nav-button">
+                <a class="home-button" href="/" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+            </span>
+          <span id="menu-button" class="nav-button">
+            <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+          </span>
+        </nav>
+        <h1 class="post-title">l10n merge</h1>
+        <!-- TODO : Proper class for headline -->
+        <span class="post-meta">
+                <a href="/author/axel-hecht.html">Axel Hecht</a>
+            | <time datetime="Thu 03 July 2008">Thu 03 July 2008</time>
+        </span>
+        <!-- TODO : Modified check -->
+      </div>
+    </header>
+
+  <section id="wrapper">
+    <a class="hidden-close"></a>
+
+    <!-- Post content -->
+    <main class="content" role="main">
+        <article class="post">
+        <div class="inner">
+            <section class="post-content">
+                <p>I've just pushed an implementation of l10n-merge to my <a class="reference external" href="http://hg.mozilla.org/users/axel_mozilla.com/tooling/">tooling repository</a>. It's now actually just an option to compare-locales, and will do the weakest heuristic for now.</p>
+<p>Whenever compare-locales finds missing entries in an existing file, it will create a copy of that file in a staging directory for the merge, and append the missing entries. For the bulk of our files, that should work fine. Bookmarks.html is an exception, as are the netError files, I think order of entities and dtd inclusions matters there. In the end, you get a staging directory with files that got fixed up, a localization directory with both good files and files with missing entries, and the original en-US source. Making jar.mn actually pick localized files up from three different places in a particular order is in my <a class="reference external" href="http://hg.mozilla.org/users/axel_mozilla.com/index.cgi/build-patches/">build-patches repository</a>.</p>
+<p>Here's why, in case you wonder: First and foremost, it leaves the original source alone. I like it like that. Secondly, it does as few file manipulations as possible in the best case, a complete localization doesn't do a single copy or something. It's not all that invasive into the build system as one might think, too. At least as soon as you want to look at the code to see where you're looking for files, checking a bunch of source base dirs is rather trivial.</p>
+
+            </section>
+
+            <section class="post-info">
+                <div class="post-share">
+                    <a class="twitter" href="https://twitter.com/share?text=l10n merge&amp;url=/2008/07/l10n-merge" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
+                    </a>
+                    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=/2008/07/l10n-merge" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
+                    </a>
+                    <a class="googleplus" href="https://plus.google.com/share?url=/2008/07/l10n-merge" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <i class="ic ic-googleplus"></i><span class="hidden">Google+</span>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+
+                <aside class="post-tags">
+<a href="/tag/l10n.html">L10n</a>                </aside>
+
+                <div class="clear"></div>
+
+
+                </section>
+
+
+                <aside class="post-nav">
+                    <div class="clear"></div>
+                </aside>
+
+            </div>
+        </article>
+    </main>
+      <!-- TODO : Body class -->
+    <div id="body-class" style="display: none;" class=""></div>
+
+    <footer id="footer">
+      <div class="inner">
+        <section class="credits">
+
+
+          <span class="credits-theme">Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a></span>
+          <span class="credits-software">Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a></span>
+        </section>
+      </div>
+    </footer>
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/javascript" src="/theme/js/script.js"></script>
+
+</body>
+</html>

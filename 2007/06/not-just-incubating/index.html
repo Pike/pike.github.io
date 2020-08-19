@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <title>Not just incubating</title>
+
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+<link href="/2007/06/not-just-incubating" rel="canonical" />
+  <!-- Feed -->
+
+  <link href="/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+  <!-- Code highlight color scheme -->
+      <link href="/theme/css/code_blocks/github.css" rel="stylesheet">
+
+
+  <!-- Custom fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+
+    <meta name="description" content="I have written about the incubator before, it's a tool that should help localizations newly in CVS to work towards release. It's based...">
+
+    <meta name="author" content="Axel Hecht">
+
+
+
+
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="Axel Hecht"/>
+<meta property="og:title" content="Not just incubating"/>
+<meta property="og:description" content="I have written about the incubator before, it's a tool that should help localizations newly in CVS to work towards release. It's based..."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="/2007/06/not-just-incubating"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2007-06-06 03:46:00+00:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="/author/axel-hecht.html">
+<meta property="article:section" content="L10n"/>
+<meta property="og:image" content="/theme/images/post-bg.jpg">
+
+<!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@axelhecht">
+    <meta name="twitter:title" content="Not just incubating">
+    <meta name="twitter:url" content="/2007/06/not-just-incubating">
+
+        <meta name="twitter:image:src" content="/theme/images/post-bg.jpg">
+
+      <meta name="twitter:description" content="I have written about the incubator before, it's a tool that should help localizations newly in CVS to work towards release. It's based...">
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "Not just incubating",
+  "headline": "Not just incubating",
+  "datePublished": "2007-06-06 03:46:00+00:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Axel Hecht",
+    "url": "/author/axel-hecht.html"
+  },
+  "image": "/theme/images/post-bg.jpg",
+  "url": "/2007/06/not-just-incubating",
+  "description": "I have written about the incubator before, it's a tool that should help localizations newly in CVS to work towards release. It's based..."
+}
+</script>
+</head>
+<!-- TODO : Body class -->
+<body class="home-template">
+
+<nav id="menu">
+  <a class="close-button">Close</a>
+  <div class="nav-wrapper">
+    <p class="nav-label">Menu</p>
+    <ul>
+
+                  <li class="nav-l10n active" role="presentation"><a href="/category/l10n.html">L10n</a></li>
+                  <li role="presentation"><a href="/category/misc.html">Misc</a></li>
+                  <li role="presentation"><a href="/category/mozilla.html">Mozilla</a></li>
+                  <li role="presentation"><a href="/category/rdf.html">RDF</a></li>
+
+    </ul>
+  </div>
+</nav>
+    <!-- Progressbar -->
+    <div class="progress-container">
+        <span class="progress-bar"></span>
+    </div>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header id="post-header" >
+      <div class="inner">
+        <nav id="navigation">
+            <span id="home-button" class="nav-button">
+                <a class="home-button" href="/" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+            </span>
+          <span id="menu-button" class="nav-button">
+            <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+          </span>
+        </nav>
+        <h1 class="post-title">Not just incubating</h1>
+        <!-- TODO : Proper class for headline -->
+        <span class="post-meta">
+                <a href="/author/axel-hecht.html">Axel Hecht</a>
+            | <time datetime="Wed 06 June 2007">Wed 06 June 2007</time>
+        </span>
+        <!-- TODO : Modified check -->
+      </div>
+    </header>
+
+  <section id="wrapper">
+    <a class="hidden-close"></a>
+
+    <!-- Post content -->
+    <main class="content" role="main">
+        <article class="post">
+        <div class="inner">
+            <section class="post-content">
+                <p>I have written about the incubator <a class="reference external" href="/2007/04/the-incubator">before</a>, it's a tool that should help localizations newly in CVS to work towards release. It's based on buildbot, and I whacked it pretty hard recently.</p>
+<p>The <a class="reference external" href="http://l10n.mozilla.org/buildbot/">result</a> can be seen on the l10n server again. What's new?</p>
+<ul class="simple">
+<li>Incubator is now L10n Trunk, I'm running my tools on all localizations working on the trunk now. That's both localizations moving towards fx3 and new ones.</li>
+<li>It's using the python implementation of CompareLocales. It does check more, and it's output could potentially suck less. Red again means items missing, orange is obsolete items, green is good.</li>
+<li>I'm exposing stats on localizations. You'll find a <em>90% translated</em> in the output box of the comparison step. More below.</li>
+<li>There's one column for trunk, and one for incubators. You can tell which build is yours by looking at the description of the comparison step.</li>
+<li>Technically, it doesn't sink the l10n server anymore on incubator check-ins.</li>
+<li>Only incubator builds do langpacks right now, and only if the comparison ain't red. There's a download link labeled [D] on the upload step that takes you there.</li>
+</ul>
+<p><strong>So what's the stats?</strong> First of all, I know that &quot;<em>translated</em>&quot; isn't the right term, but it's as wrong as anything else, so wth. What I'm doing is, I'm counting all entries in DTDs and properties files which key does not match [kK]ey. Then I'm comparing those values to the en-US values and then do a 100*changed/(changed + unchanged). There are still a bunch of values that don't need to be changed to be localized, so I'm not worried that we're not at 100% anywhere. I do think that the differences between the high 70s and the 90 are real, though. I'm confident that removing the keys made those stats comparable mostly, as it did fix Japanese.</p>
+<p><strong>Why the redo?</strong> As indicated above, the first implementation didn't scale, so I needed a bit more buildbot-ism. I didn't feel good about adding new languages to the incubator just for load reasons. That's solved. The amount of languages leading to numbers of columns turned out to be bad, too.</p>
+<p><strong>What the redo?</strong> I'll make follow-up post on that, this one is long enough.</p>
+
+            </section>
+
+            <section class="post-info">
+                <div class="post-share">
+                    <a class="twitter" href="https://twitter.com/share?text=Not just incubating&amp;url=/2007/06/not-just-incubating" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
+                    </a>
+                    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=/2007/06/not-just-incubating" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
+                    </a>
+                    <a class="googleplus" href="https://plus.google.com/share?url=/2007/06/not-just-incubating" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <i class="ic ic-googleplus"></i><span class="hidden">Google+</span>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+
+
+                <div class="clear"></div>
+
+
+                </section>
+
+
+                <aside class="post-nav">
+                    <div class="clear"></div>
+                </aside>
+
+            </div>
+        </article>
+    </main>
+      <!-- TODO : Body class -->
+    <div id="body-class" style="display: none;" class=""></div>
+
+    <footer id="footer">
+      <div class="inner">
+        <section class="credits">
+
+
+          <span class="credits-theme">Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a></span>
+          <span class="credits-software">Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a></span>
+        </section>
+      </div>
+    </footer>
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/javascript" src="/theme/js/script.js"></script>
+
+</body>
+</html>

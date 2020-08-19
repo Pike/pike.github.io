@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <title>Migrating to the rapid release process</title>
+
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+<link href="/2012/03/migrating-to-the-rapid-release-process" rel="canonical" />
+  <!-- Feed -->
+
+  <link href="/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+  <!-- Code highlight color scheme -->
+      <link href="/theme/css/code_blocks/github.css" rel="stylesheet">
+
+
+  <!-- Custom fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+
+    <meta name="description" content="Wait, what, migrating to the rapid release process? Aren't we, like, doing that? Well, not in the data models that drive the l10n...">
+
+    <meta name="author" content="Axel Hecht">
+
+    <meta name="tags" content="L10n">
+    <meta name="tags" content="Mozilla">
+
+
+
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="Axel Hecht"/>
+<meta property="og:title" content="Migrating to the rapid release process"/>
+<meta property="og:description" content="Wait, what, migrating to the rapid release process? Aren't we, like, doing that? Well, not in the data models that drive the l10n..."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="/2012/03/migrating-to-the-rapid-release-process"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2012-03-23 10:45:00+00:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="/author/axel-hecht.html">
+<meta property="article:section" content="L10n"/>
+<meta property="article:tag" content="L10n"/>
+<meta property="article:tag" content="Mozilla"/>
+<meta property="og:image" content="/theme/images/post-bg.jpg">
+
+<!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@axelhecht">
+    <meta name="twitter:title" content="Migrating to the rapid release process">
+    <meta name="twitter:url" content="/2012/03/migrating-to-the-rapid-release-process">
+
+        <meta name="twitter:image:src" content="/theme/images/post-bg.jpg">
+
+      <meta name="twitter:description" content="Wait, what, migrating to the rapid release process? Aren't we, like, doing that? Well, not in the data models that drive the l10n...">
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "Migrating to the rapid release process",
+  "headline": "Migrating to the rapid release process",
+  "datePublished": "2012-03-23 10:45:00+00:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Axel Hecht",
+    "url": "/author/axel-hecht.html"
+  },
+  "image": "/theme/images/post-bg.jpg",
+  "url": "/2012/03/migrating-to-the-rapid-release-process",
+  "description": "Wait, what, migrating to the rapid release process? Aren't we, like, doing that? Well, not in the data models that drive the l10n..."
+}
+</script>
+</head>
+<!-- TODO : Body class -->
+<body class="home-template">
+
+<nav id="menu">
+  <a class="close-button">Close</a>
+  <div class="nav-wrapper">
+    <p class="nav-label">Menu</p>
+    <ul>
+
+                  <li class="nav-l10n active" role="presentation"><a href="/category/l10n.html">L10n</a></li>
+                  <li role="presentation"><a href="/category/misc.html">Misc</a></li>
+                  <li role="presentation"><a href="/category/mozilla.html">Mozilla</a></li>
+                  <li role="presentation"><a href="/category/rdf.html">RDF</a></li>
+
+    </ul>
+  </div>
+</nav>
+    <!-- Progressbar -->
+    <div class="progress-container">
+        <span class="progress-bar"></span>
+    </div>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header id="post-header" >
+      <div class="inner">
+        <nav id="navigation">
+            <span id="home-button" class="nav-button">
+                <a class="home-button" href="/" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+            </span>
+          <span id="menu-button" class="nav-button">
+            <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+          </span>
+        </nav>
+        <h1 class="post-title">Migrating to the rapid release process</h1>
+        <!-- TODO : Proper class for headline -->
+        <span class="post-meta">
+                <a href="/author/axel-hecht.html">Axel Hecht</a>
+            | <time datetime="Fri 23 March 2012">Fri 23 March 2012</time>
+        </span>
+        <!-- TODO : Modified check -->
+      </div>
+    </header>
+
+  <section id="wrapper">
+    <a class="hidden-close"></a>
+
+    <!-- Post content -->
+    <main class="content" role="main">
+        <article class="post">
+        <div class="inner">
+            <section class="post-content">
+                <p>Wait, what, migrating to the rapid release process? Aren't we, like, doing that? Well, not in the data models that drive the l10n dashboard. What follows is two-fold, for one, why would I be hacking on a patch for <a class="reference external" href="/2011/08/sung-to-the-tune-of">half a year</a>? But also, there are some interesting technical tidbits on how to do intensive data migrations in a django project. I'll link to the actual code in full later, right now the patch is still in flux. I'll need to write this stuff down to get a review on the patch, so why not here.</p>
+<p>I've blogged about <a class="reference external" href="/2011/07/data-models-and-vom-kopf-auf-die-fuse">data models before</a>, but here's a quick glossary:</p>
+<p><tt class="docutils literal">Tree</tt> models a set of repositories to run automated tests against, namely, <em>compare-locales</em>. <tt class="docutils literal">AppVersion</tt> models the thing we're shipping, say Firefox 3.6 or Firefox 13.</p>
+<p>When gandalf and I originally designed this part of the dashboard, the relationship between what we build and what we shipped was static, kinda like</p>
+<p><a class="reference external" href="/images/2012/03/old-style.png"><img alt="Static relation between AppVersion and Tree" class="alignnone size-full wp-image-455" src="/images/2012/03/old-style.png" style="width: 372px; height: 163px;" /></a></p>
+<p>Small caveat, for <tt class="docutils literal">AppVersion</tt>s we're not building right now, the old tree is stored as <tt class="docutils literal">lasttree</tt>. We'll need that data further down.</p>
+<p>The rapid release process now lets AppVersions jump from Tree to Tree like little birds. So we need to have some intermediary that models that relationship, with <tt class="docutils literal">start</tt> and <tt class="docutils literal">end</tt> time. More like</p>
+<p><a class="reference external" href="/images/2012/03/new-style.png"><img alt="Connect AppVersions and Trees through a model in time" class="alignnone size-full wp-image-454" src="/images/2012/03/new-style.png" style="width: 338px; height: 182px;" /></a></p>
+<p>Sorry for the ugliness, but that's the pretty part so far.</p>
+<p>Let's start with doing that migration. Be warned, it's migration 1 out of 4.</p>
+<p>This first migration covers the sql schema, and persists the existing links between AppVersions and Trees. We'll want to drop two ForeignKey columns for tree and lasttree from AppVersion, and add a ManyToMany table for the new relationship. Plus constraints and indices, sure. As I don't speak sql, I want to use the ORM as much as I can, which sounds like one couldn't. Enter a fake migration app that mimics the import pieces of our shipping app. It'll contain a subset of <tt class="docutils literal">AppVersion</tt> to the extent we need it, and the intermediate model, <tt class="docutils literal">AppVersionTreeThrough</tt>. This needs to be really fake code, as you shouldn't rely too much on the version of the code on disk to be really what you need for this db migration step. I cheat a bit on that, though. The import trick here is that the fake <tt class="docutils literal">AppVersion</tt> contains both the old and the new fields, and that the fake <tt class="docutils literal">AppVersionTreeThrough</tt> matches the one you migrate to in all flags and fields.</p>
+<p>Now, getting django to eat a fake app is tricky. You need a module for the app, and that module needs to have a <tt class="docutils literal">models</tt> module. Both need to be in <tt class="docutils literal">sys.modules</tt>, and they need to have the <tt class="docutils literal">__file__</tt> properties set. Just because django is paranoid about equality of code and thinks it needs to verify location on disk. But hey, I can spoof all of that. Python ftw. Then you create a meta class, copying most data for db and management from your original app, and with that meta, create Model subclasses.</p>
+<p>Ok, so now we have python code to do the migration, but we don't have the SQL tables and columns yet. Let's get our fingers dirty with that.</p>
+<pre class="literal-block">
+from django.core.management import color, sql
+style = color.no_style()
+sql.sql_all(mig_module.models, style, ship_connection)
+</pre>
+<p>This is going to return a list of all CREATE TABLE, CREATE INDEX, ALTER TABLE ADD CONSTRAINT sql commands for our fake migration models. The migration code inspects that, and creates the many-to-many table, adds constraints and indices, and tweaks the CREATE TABLE statement for AppVersion to just pull out the SQL definitions for the columns. Those get inserted into ALTER TABLE ADD COLUMN statements, and then we execute all that.</p>
+<p>At this point, the database contains the old columns with the old data, and the new empty tables (and columns).</p>
+<p>Now migrate the data, with the help of the our intermediate classes that can create the django orm magic. As we're still in the first phase of our migration, let's not overrotate and just make links between AppVersion and Tree over all time for those that are currently bound, and for those that used to be linked (read <tt class="docutils literal">lasttree</tt>), make the <tt class="docutils literal">end</tt> time just <tt class="docutils literal">now()</tt>. We'll fix that later. That's a nice and easy loop.</p>
+<p>Now we've used our migration app to the extent we need. It'd be nice if we could just leave it with that, but we've got to tear it down, because otherwise the validation step will complain about multiple apps referring to the same tables. Module caches in django are tough, the following code does that at least for 1.3:</p>
+<pre class="literal-block">
+# prune &quot;migration_phase_1&quot; app again
+del settings.INSTALLED_APPS[-1]
+from django.db.models import loading
+loading.cache.app_models.pop('migration_phase_1', None)
+loading.cache.register_models('migration_phase_1')  # clear cache
+# empty sys modules from our fake modules
+sys.modules.pop(mig_name)
+sys.modules.pop(mig_models_name)
+</pre>
+<p>And, yes, now we can DROP stuff, at least when using mysql. sqlite doesn't do that, and in contrast to peterbe, I don't mind postgres ;-). Of course, as django adds constraints with rather arbitrary names, the best thing we can do is inspect the database for the actual names of those, and then we drop'em, and the columns.</p>
+<p>And if you think this blog post is too long, you're right. Let's talk about the migrations 2-4.</p>
+<p>The second migration just inspects our actual builds, and adjusts the start and end times for stuff that's not on the rapid release cycle, and old.</p>
+<p>The third migration fights the past. To make our mismatching data model work for the rapid cycle, I replicated a lot of history data each time we migrated appversions, to a newly created set of appversions for that cycle. Now that our data model gets that right, this migration searches for that data (Signoff entries, and their associated Action ones), and deletes them.</p>
+<p>The forth migration sets the start and end times for the rapid release cycle, including the off-times for Firefox 5, and moves the Signoff entries from the long running aurora AppVersion to the respective AppVersions on aurora at the time. Not too bad, but really loads of weird data, and it gets worse every six weeks :-).</p>
+<p><strong>Phew</strong>. You made it. Now all I need to do is to fix the code that uses all that data.</p>
+
+            </section>
+
+            <section class="post-info">
+                <div class="post-share">
+                    <a class="twitter" href="https://twitter.com/share?text=Migrating to the rapid release process&amp;url=/2012/03/migrating-to-the-rapid-release-process" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
+                    </a>
+                    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=/2012/03/migrating-to-the-rapid-release-process" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
+                    </a>
+                    <a class="googleplus" href="https://plus.google.com/share?url=/2012/03/migrating-to-the-rapid-release-process" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <i class="ic ic-googleplus"></i><span class="hidden">Google+</span>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+
+                <aside class="post-tags">
+<a href="/tag/l10n.html">L10n</a><a href="/tag/mozilla.html">Mozilla</a>                </aside>
+
+                <div class="clear"></div>
+
+
+                </section>
+
+
+                <aside class="post-nav">
+                    <div class="clear"></div>
+                </aside>
+
+            </div>
+        </article>
+    </main>
+      <!-- TODO : Body class -->
+    <div id="body-class" style="display: none;" class=""></div>
+
+    <footer id="footer">
+      <div class="inner">
+        <section class="credits">
+
+
+          <span class="credits-theme">Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a></span>
+          <span class="credits-software">Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a></span>
+        </section>
+      </div>
+    </footer>
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/javascript" src="/theme/js/script.js"></script>
+
+</body>
+</html>
