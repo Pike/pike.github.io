@@ -37,9 +37,9 @@ I think of technical debt as the legacy of our past decisions. And that there ar
 
 As much as this is a cliffhanger, this is also all that I want to put into the first post. In the next post, I'm going to talk about how to live with technical debt, and when to make good decisions.
 
-If you have comments, feel free to contact me on `twitter`_ and `linkedin`_.
+If you have comments, feel free to contact me on `Twitter`_ and `LinkedIn`_.
 
 .. [#elmo] I've done that not too long ago. The details are not all that relevant as is this: Shut down things you can't keep up.
 
-.. _twitter: https://twitter.com/axelhecht
-.. _linkedin: https://www.linkedin.com/in/draxelhecht
+.. _Twitter: https://twitter.com/axelhecht
+.. _LinkedIn: https://www.linkedin.com/in/draxelhecht
