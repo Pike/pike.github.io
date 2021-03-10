@@ -7,9 +7,9 @@ Technical Debt as Decisions
 
 I've got thinking about technical debt a lot lately, and how to manage it. This post will be about decisions as a definition of technical debt.
 
-In a second post I'll talk about investments, risk management and insurrances as a model on how to live with technical debt. I also want to talk about how to make conscious decisions within that framework, in particular with Open Source tech in mind. That's probably going into a third post.
+In a second post I'll talk about investments, risk management and insurances as a model on how to live with technical debt. I also want to talk about how to make conscious decisions within that framework, in particular with Open Source tech in mind. That's probably going into a third post.
 
-To set the context, why would you care? Technical debt is not going to kill your project or product. But it can slow down and weaken your response. If you're out of luck, any other seemingly harmless challenge can kill your project. It's like one of those deseases you die with, not of.
+To set the context, why would you care? Technical debt is not going to kill your project or product. But it can slow down and weaken your response. If you're out of luck, any other seemingly harmless challenge can kill your project. It's like one of those diseases you die with, not of.
 
 Let's talk about decisions. Good decisions. Bad decisions. I'm going with loaded words here, mostly because they're short. The difference between a good and a bad decision is the number of people that regret a given decision. At a given point in time.
 
@@ -17,7 +17,7 @@ Let's do a hypothetical and constructed example of how that ties into technical 
 
 You wake up one morning, and someone's taking money out of your bank account. You investigate, and it turns out there's a known vulnerability in one of the external parts of said service. Not too bad, though, there's already a new version with a fix. They've also dropped Python 2 support.
 
-We made a perfectly fine decision, we have a somewhat urgent problem and a seemingly easy fix. The elefant in the room is that the easy fix isn't easy for **us**. The decision to not add support for Python 3 is a bad decision **now**. We have technical debt. Now we have three possible ways forward.
+We made a perfectly fine decision, we have a somewhat urgent problem and a seemingly easy fix. The elephant in the room is that the easy fix isn't easy for **us**. The decision to not add support for Python 3 is a bad decision **now**. We have technical debt. Now we have three possible ways forward.
 
 * We stick to our original decision. We can do that in two ways.
 
@@ -37,9 +37,9 @@ I think of technical debt as the legacy of our past decisions. And that there ar
 
 As much as this is a cliffhanger, this is also all that I want to put into the first post. In the next post, I'm going to talk about how to live with technical debt, and when to make good decisions.
 
-If you have comments, feel free to contact me on `twitter`_ and `linkedin`_.
+If you have comments, feel free to contact me on `Twitter`_ and `LinkedIn`_.
 
-.. [#elmo] I've done that not too long ago. The details are not all that relevant as is this: Shut things down you can't keep up.
+.. [#elmo] I've done that not too long ago. The details are not all that relevant as is this: Shut down things you can't keep up.
 
-.. _twitter: https://twitter.com/axelhecht
-.. _linkedin: https://www.linkedin.com/in/draxelhecht
+.. _Twitter: https://twitter.com/axelhecht
+.. _LinkedIn: https://www.linkedin.com/in/draxelhecht
