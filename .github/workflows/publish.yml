@@ -23,7 +23,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install wheel
-        pip install pelican==4.5.4
+        pip install pelican==4.5.4 'markupsafe<2.1'
     - name: Build
       run: |
         pelican
